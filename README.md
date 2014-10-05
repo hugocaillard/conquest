@@ -2,4 +2,4 @@ conquest
 ========
 
 RTS game.
-Made with with modern Web technologies. 
+Made with modern Web technologies. 
