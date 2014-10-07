@@ -1,0 +1,33 @@
+{
+  "name": "conquest",
+  "version": "0.1.0",
+  "description": "RTS game made with Koa and MongoDB.",
+  "main": "app.js",
+  "dependencies": {
+    "koa": "~0.12.2",
+    "koa-csrf": "~2.1.3",
+    "koa-mongo": "~0.1.1",
+    "koa-route": "~2.1.0",
+    "koa-session": "~2.0.0",
+    "koa-static": "~1.4.7",
+    "socket.io": "~1.1.0"
+  },
+  "devDependencies": {
+    "gulp": "~3.8.8",
+    "gulp-livereload": "~2.1.1"
+  },
+  "scripts": {
+    "start": "node --harmony app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hugocaillard/conquest.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hugocaillard/conquest/issues"
+  },
+  "homepage": "https://github.com/hugocaillard/conquest"
+}

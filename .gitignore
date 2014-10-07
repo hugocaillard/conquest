@@ -80,6 +80,8 @@ ssl
 .tmp
 nbproject
 
+components
+
 
 ############################
 # Node.js
@@ -107,3 +109,5 @@ bower
 ############################
 
 production.json
+
+

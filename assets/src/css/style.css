@@ -1,0 +1,6 @@
+@import 'necolas/normalize.css';
+@import './headings.css';
+
+header {
+  padding: 0 10px;
+}
