@@ -1,5 +1,5 @@
 Conquest
-========
+====
 
 RTS game.
 Made with with modern Web technologies. 
@@ -8,7 +8,7 @@ Made with with modern Web technologies.
 You can use [n](https://www.npmjs.org/package/n), [nvm](https://www.npmjs.org/package/nvm) or  [nvmw](https://www.npmjs.org/package/nvmw) to manage several versions of node.
 
 Getting starterd
---------
+---
 
 ```
     $ cd conquest
