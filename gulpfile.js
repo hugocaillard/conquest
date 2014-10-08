@@ -3,7 +3,7 @@ var livereload = require('gulp-livereload');
 var exec = require('child_process').exec;
 
 gulp.task('build-js', function (cb) {
-  exec('duo assets/src/app.js > assets/public/app.js', function (err, stdout, stderr) {
+  exec('duo assets/src/js/app.js > assets/public/app.js', function (err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
     cb(err);
@@ -22,8 +22,8 @@ gulp.task('build-css', function (cb) {
 
 gulp.task('watch', function() {
   livereload.listen();
-  gulp.watch('assets/src/app.js', ['build-js']);
-  gulp.watch('assets/src/css/style.css', ['build-css']);
+  gulp.watch('assets/src/js/*.js', ['build-js']);
+  gulp.watch('assets/src/css/*.css', ['build-css']);
 });
 
 gulp.task('default', ['watch', 'build-js', 'build-css']);

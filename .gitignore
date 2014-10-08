@@ -81,6 +81,8 @@ ssl
 nbproject
 
 components
+assets/public/app.js
+assets/public/style.css
 
 
 ############################

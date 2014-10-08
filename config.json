@@ -1,3 +1,4 @@
 {
-  "secret": "your secret"
+  "secret": "your secret",
+  "env": "development"
 }
