@@ -1,16 +1,19 @@
 // get the config file
-var config = require('./config');
+var fs = require('fs');
+var config;
+if (fs.existsSync('./config'))
+  config = require('./config')
+else {
+  console.log('Warning: You should rename config.sample.json to config.json');
+  config = require('./config.sample');
+}
 
 // run the gulp command to build and watch (and re-build) the assets
 // only in dev
 if (config.env == 'development') {
-  console.log(config.env);
   var exec = require('child_process').exec;
-  exec('./node_modules/.bin/gulp', function (err, stdout, stderr) {
-    console.log('watching');
-    console.log(stdout);
-    console.log(stderr);
-  });
+  console.log('Running Gulp');
+  exec('./node_modules/.bin/gulp');
 }
 
 /**
