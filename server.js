@@ -13,7 +13,6 @@ var serve    = require('koa-static');
 var router   = require('koa-router');
 var session  = require('koa-session');
 var passport = require('koa-passport');
-var json     = require('koa-json');
 
 var app = require('koa')();
 
@@ -50,8 +49,6 @@ app.get('/game', views.game);
 
 
 // API
-app.use(json());
-
 // var users = require('./lib/users');
 // app.use(app.get('/user/:id', users.getOne):
 
