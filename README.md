@@ -17,3 +17,4 @@ Getting starterd
 ```
 
 You also need to run MongoDB.
+`server.js` runs Gulp for you. So you don't even need to have it installed globally.
