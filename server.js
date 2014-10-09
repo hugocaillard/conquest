@@ -1,20 +1,23 @@
+var colors = require('colors');
 // get the config file
 var fs = require('fs');
 var config;
 if (fs.existsSync('./config'))
   config = require('./config')
 else {
-  console.log('Warning: You should rename config.sample.json to config.json');
+  console.log('[Warning] You should rename config.sample.json to config.json'.yellow);
   config = require('./config.sample');
 }
+module.exports.config = config;
 
 // run the gulp command to build and watch (and re-build) the assets
 // only in dev
 if (config.env == 'development') {
   var exec = require('child_process').exec;
-  console.log('Running Gulp');
+  console.log('[Info] Running Gulp'.green);
   exec('./node_modules/.bin/gulp');
 }
+
 
 /**
   APP
@@ -40,11 +43,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-// serve assets
-var serve = require('koa-static');
-app.use(serve('./assets/public/'));
-
-
 // routes
 var router = require('koa-router');
 app.use(router(app));
@@ -59,21 +57,21 @@ app.get('/', views.home);
 app.get('/game', views.game);
 
 
+// serve assets
+var serve = require('koa-static');
+app.use(serve('./assets/public/'));
+
+
 // sockets
 var server = require('http').Server(app.callback());
 var io = require('socket.io')(server);
+module.exports.io = io;
 
 io.on('connection', function(socket){
   socket.emit('init', {message: "Hey you"});
 });
 
 
-// expose some objects to other modules
-var conquest = {};
-conquest.io = io;
-module.exports.c = conquest;
-
-
 // let's go
 server.listen(3000);
-console.log('Listening :3000');
+console.log('[Info] Listening :3000'.green);

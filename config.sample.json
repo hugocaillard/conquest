@@ -1,4 +1,16 @@
 {
+  "env": "development",
   "secret": "your secret",
-  "env": "development"
+
+  "db": {
+    "host": "localhost",
+    "port": 27017,
+    "user": "",
+    "pass": "",
+    "name": "conquest",
+    "max": 100,
+    "min": 1,
+    "timeout": 30000,
+    "log": false
+  }
 }

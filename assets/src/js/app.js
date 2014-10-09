@@ -1,3 +1,5 @@
+'use strict';
+
 var _ = require('./tools.js');
 
 var socket = io('http://localhost');
@@ -15,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function(){
     username: 'Cohars',
     password: 'pcw123'
   };
+  // simple example
   _.post('/users/login', data, users.loginHandler);
 
   // game data uses socket.io
