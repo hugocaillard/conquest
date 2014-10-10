@@ -12,15 +12,41 @@ var users = {
 };
 
 document.addEventListener('DOMContentLoaded', function(){
-  // authentification is handled with AJAX
-  var data = {
-    username: 'Cohars',
-    password: 'pcw123'
-  };
-  // simple example
-  _.post('/users/login', data, users.loginHandler);
 
-  // game data uses socket.io
+  /**
+    * send forms with ajax
+  */
+  var forms = _.$('form.ajax');
+  _.elLoop(forms, function(form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var self = this;
+      var url = _.attr(self, 'action')
+      var method = _.attr(self, 'method');
+      var data = _.serialize(this);
+      if (data && method === 'post')
+        _.post(url, data);
+    });
+  });
+
+  /**
+    * show passwords
+  */
+  var showPassButtons = _.$('input[data-action="showPassword"]');
+  _.elLoop(showPassButtons, function(button) {
+    button.addEventListener('change', function() {
+      var self = this;
+      var previous = _.previous(self);
+      if (self.checked)
+        _.attr(previous, 'type', 'text');
+      else
+        _.attr(previous, 'type', 'password');
+    });
+  });
+
+  /**
+    * socket.io
+  */
   socket.on('init', function(resData) {
     console.log(resData.message);
 

@@ -4,6 +4,8 @@
   "description": "RTS game made with Koa and MongoDB.",
   "main": "app.js",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "co": "^3.1.0",
     "co-monk": "~1.0.0",
     "colors": "~1.0.2",
     "koa": "~0.12.2",
@@ -13,11 +15,12 @@
     "koa-router": "~3.4.0",
     "koa-session": "~2.0.0",
     "koa-static": "~1.4.7",
-    "monk": "^0.9.0",
+    "monk": "~0.9.0",
     "passport-local": "~1.0.0",
     "socket.io": "~1.1.0"
   },
   "devDependencies": {
+    "duo": "^0.8.4",
     "gulp": "~3.8.8",
     "gulp-livereload": "~2.1.1"
   },

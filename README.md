@@ -9,8 +9,9 @@ You can use [n](https://www.npmjs.org/package/n), [nvm](https://www.npmjs.org/pa
 ## Getting starterd
 
 ```
+    $ npm i -g duo
     $ cd conquest
-    $ npm install
+    $ npm i
     $ npm start
 ```
 

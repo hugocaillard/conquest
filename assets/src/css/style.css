@@ -1,5 +1,10 @@
 @import 'necolas/normalize.css';
 @import './headings.css';
+@import './forms.css';
+
+
+html {box-sizing: border-box;}
+*, *:before, *:after {box-sizing: inherit;}
 
 header {
   padding: 0 10px;

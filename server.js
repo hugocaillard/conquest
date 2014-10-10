@@ -31,11 +31,6 @@ app.keys = [config.secret];
 app.use(session());
 
 
-// body parser
-var bodyParser = require('koa-bodyparser');
-app.use(bodyParser());
-
-
 // auth
 require('./lib/auth');
 var passport = require('koa-passport');
@@ -43,23 +38,29 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-// routes
+// body parser
+var bodyParser = require('koa-bodyparser');
+app.use(bodyParser());
+
+
+// users routes
 var router = require('koa-router');
 app.use(router(app));
 
 var users = require('./lib/users');
 app.post('/users/login', users.login);
+app.post('/users/register', users.register);
+
+
+// serve assets
+var serve = require('koa-static');
+app.use(serve('./assets/public/'));
 
 
 // serve views
 var views = require('./lib/views');
 app.get('/', views.home);
 app.get('/game', views.game);
-
-
-// serve assets
-var serve = require('koa-static');
-app.use(serve('./assets/public/'));
 
 
 // sockets

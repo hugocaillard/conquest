@@ -22,8 +22,9 @@ gulp.task('build-css', function (cb) {
 
 gulp.task('watch', function() {
   livereload.listen();
-  gulp.watch('assets/src/js/*.js', ['build-js']);
-  gulp.watch('assets/src/css/*.css', ['build-css']);
+  gulp.watch('assets/src/js/**/*.js', ['build-js']);
+  gulp.watch('assets/src/css/**/*.css', ['build-css']);
+  gulp.watch('views/**/*.html');
 });
 
 gulp.task('default', ['watch', 'build-js', 'build-css']);

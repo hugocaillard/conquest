@@ -12,5 +12,28 @@
   <header>
     <h1>Conquest</h1>
   </header>
+
+  <section class="login">
+    <h2>Login</h2>
+    <form action="/users/login" method="post" class="ajax">
+      <input type="text" name="username" placeholder="Username">
+      <input type="password" name="password" placeholder="Password">
+      <input type="checkbox" data-action="showPassword">
+      <label for="showPassword"><small>Show password</small></label>
+      <input type="submit" value="login">
+    </form>
+  </section>
+
+  <section class="register">
+    <h2>Register</h2>
+    <form action="/users/register" method="post" class="ajax">
+      <input type="text" name="username" placeholder="Username">
+      <input type="email" name="email" placeholder="email">
+      <input type="password" name="password" placeholder="Password">
+      <input type="checkbox" data-action="showPassword">
+      <label for="showPassword"><small>Show password</small></label>
+      <input type="submit" value="register">
+    </form>
+  </section>
 </body>
 </html>
