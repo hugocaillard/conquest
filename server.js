@@ -1,3 +1,5 @@
+'use strict';
+
 var colors = require('colors');
 // get the config file
 var fs = require('fs');
