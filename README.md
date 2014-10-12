@@ -22,8 +22,6 @@ You also need to run MongoDB.
 
 ## RoadMap
 
-- [Back] Set-up MongoDB ([koa-mongo](https://github.com/MangroveTech/koa-mongo))
-- [Back] Set-up users sign-up and login (with passport)
 - [Back] Generate and save in DB the map of the game (*i.e* a big big json file)
 - [Front] Render the map in SVG ([svg.js](http://svgjs.com/) or [Snap.js](http://snapsvg.io/))
 - [Back] Set-up the game loop, the `ticker`, it will update the map/game and send web sockets of the new data to the connected players every 100ms.

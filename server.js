@@ -75,6 +75,18 @@ io.on('connection', function(socket){
 });
 
 
+// The game
+var game = require('./lib/game/game');
+game.init();
+// send the JSON of the map
+var map = require('./lib/game/mapper').map;
+map = JSON.stringify(map);
+app.get('/map', function*(next) {
+  this.body = map;
+});
+
+
+
 // let's go
 server.listen(3000);
 console.log('[Info] Listening :3000'.green);
