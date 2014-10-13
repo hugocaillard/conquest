@@ -15,8 +15,9 @@
   },
 
   "game": {
+    "teams": ["alpha", "beta", "gamma"],
     "map": {
-      "size": 5
+      "size": 4
     }
   }
 }
