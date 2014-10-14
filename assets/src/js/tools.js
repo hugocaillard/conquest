@@ -8,6 +8,10 @@ module.exports.byClass = function(className) {
   return document.getElementsByClassName(className);
 };
 
+module.exports.byId = function(idName) {
+  return document.getElementById(idName);
+};
+
 module.exports.$ = function(selector) {
   return document.querySelectorAll(selector);
 };
@@ -55,6 +59,25 @@ module.exports.post = function(url, data, cb) {
 
   request.send(JSON.stringify(data));
 };
+
+module.exports.get = function(url, cb) {
+  request = new XMLHttpRequest();
+  request.open('GET', url, true);
+
+  request.onload = function() {
+    if (request.status >= 200 && request.status < 400){
+      cb(JSON.parse(request.responseText));
+    } else {
+      console.log('An error happened while getting %s.', url)
+    }
+  };
+
+  request.onerror = function() {
+    console.log('An error happened while getting %s.', url)
+  };
+
+  request.send();
+}
 
 /**
   * forms and data functions

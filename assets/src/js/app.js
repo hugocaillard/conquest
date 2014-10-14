@@ -1,7 +1,8 @@
 'use strict';
 
 var _ = require('./tools.js');
-
+var game = require('./game.js');
+console.log(game);
 var socket = io('http://localhost');
 
 
@@ -54,4 +55,6 @@ document.addEventListener('DOMContentLoaded', function(){
       console.log(resData.message);
     });
   });
+
+  game.init();
 });
