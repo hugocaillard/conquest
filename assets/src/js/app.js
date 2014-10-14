@@ -2,7 +2,7 @@
 
 var _ = require('./tools.js');
 var game = require('./game.js');
-console.log(game);
+
 var socket = io('http://localhost');
 
 
@@ -12,8 +12,7 @@ var users = {
   }
 };
 
-document.addEventListener('DOMContentLoaded', function(){
-
+document.addEventListener('DOMContentLoaded', function() {
   /**
     * send forms with ajax
   */

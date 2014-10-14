@@ -1,30 +1,53 @@
+var map = require('map-stream');
 var gulp = require('gulp');
+var Duo = require('duo');
 var livereload = require('gulp-livereload');
-var exec = require('child_process').exec;
 
-gulp.task('build-js', function (cb) {
-  exec('duo assets/src/js/app.js > assets/public/app.js', function (err, stdout, stderr) {
-    console.log(stdout);
-    console.log(stderr);
-    cb(err);
-    livereload.changed('assets/public/app.js');
-  });
-});
-
-gulp.task('build-css', function (cb) {
-  exec('duo assets/src/css/style.css > assets/public/style.css', function (err, stdout, stderr) {
-    console.log(stdout);
-    console.log(stderr);
-    cb(err);
-    livereload.changed('assets/public/style.css');
-  });
-});
-
+/*
+ * Watch
+*/
 gulp.task('watch', function() {
-  livereload.listen();
-  gulp.watch('assets/src/js/**/*.js', ['build-js']);
-  gulp.watch('assets/src/css/**/*.css', ['build-css']);
-  gulp.watch('views/**/*.html');
+  gulp.watch('./assets/src/js/**/*.js', ['js']);
+  gulp.watch('./assets/src/css/**/*.css', ['css']);
 });
 
-gulp.task('default', ['watch', 'build-js', 'build-css']);
+/*
+ * Scripts
+*/
+gulp.task('js', function() {
+  gulp.src('assets/src/js/app.js')
+    .pipe(duo())
+    .pipe(gulp.dest('assets/public'))
+    .pipe(livereload());
+});
+
+/*
+ * Styles
+*/
+gulp.task('css', function() {
+  gulp.src('assets/src/css/style.css')
+    .pipe(duo())
+    .pipe(gulp.dest('assets/public'))
+    .pipe(livereload());
+});
+
+/*
+ * Default
+*/
+gulp.task('default', ['js', 'css', 'watch']);
+
+/*
+ * Duo with source-map
+*/
+function duo() {
+  return map(function (file, fn) {
+    Duo(process.cwd())
+      .development(true)
+      .entry(file.path)
+      .run(function (err, src) {
+        if (err) return fn(err);
+        file.contents = new Buffer(src);
+        fn(null, file);
+      });
+  });
+};
