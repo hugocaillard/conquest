@@ -5,12 +5,12 @@ var game = require('./game.js');
 
 var socket = io('http://localhost');
 
-
 var users = {
   loginHandler: function(resData) {
     console.log(resData);
   }
 };
+
 
 document.addEventListener('DOMContentLoaded', function() {
   /**
@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
         _.post(url, data);
     });
   });
-
   /**
     * show passwords
   */
@@ -43,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         _.attr(previous, 'type', 'password');
     });
   });
+
 
   /**
     * socket.io

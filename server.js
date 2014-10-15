@@ -56,7 +56,7 @@ app.post('/users/register', users.register);
 
 // serve assets
 var serve = require('koa-static');
-app.use(serve('./assets/'));
+app.use(serve('./assets/public'));
 
 
 // serve views
