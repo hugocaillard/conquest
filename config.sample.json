@@ -1,5 +1,5 @@
 {
-  "env": "development",
+  "development": true,
   "secret": "your secret",
 
   "db": {

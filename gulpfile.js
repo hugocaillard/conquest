@@ -7,8 +7,8 @@ var livereload = require('gulp-livereload');
  * Watch
 */
 gulp.task('watch', function() {
-  gulp.watch('./assets/src/js/**/*.js', ['js']);
-  gulp.watch('./assets/src/css/**/*.css', ['css']);
+  gulp.watch(__dirname+'/assets/src/js/**/*.js', ['js']);
+  gulp.watch(__dirname+'/assets/src/css/**/*.css', ['css']);
 });
 
 /*

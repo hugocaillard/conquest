@@ -8,16 +8,16 @@ if (fs.existsSync('./config'))
   config = require('./config')
 else {
   console.log('[Warning] You should rename config.sample.json to config.json'.yellow);
-  config = require('./config.sample');
+  config = require(__dirname+'/config.sample');
 }
 module.exports.config = config;
 
 // run the gulp command to build and watch (and re-build) the assets
 // only in dev
-if (config.env == 'development') {
+if (config.development) {
   var exec = require('child_process').exec;
   console.log('[Info] Running Gulp'.green);
-  exec('./node_modules/.bin/gulp');
+  exec(__dirname+'/node_modules/.bin/gulp');
 }
 
 
@@ -34,7 +34,7 @@ app.use(session());
 
 
 // auth
-require('./lib/auth');
+require(__dirname+'/lib/auth');
 var passport = require('koa-passport');
 app.use(passport.initialize());
 app.use(passport.session());
@@ -49,18 +49,18 @@ app.use(bodyParser());
 var router = require('koa-router');
 app.use(router(app));
 
-var users = require('./lib/users');
+var users = require(__dirname+'/lib/users');
 app.post('/users/login', users.login);
 app.post('/users/register', users.register);
 
 
 // serve assets
 var serve = require('koa-static');
-app.use(serve('./assets/public'));
+app.use(serve(__dirname+'/assets/public'));
 
 
 // serve views
-var views = require('./lib/views');
+var views = require(__dirname+'/lib/views');
 app.get('/', views.home);
 app.get('/game', views.game);
 
@@ -76,10 +76,10 @@ io.on('connection', function(socket){
 
 
 // The game
-var game = require('./lib/game/game');
+var game = require(__dirname+'/lib/game/game');
 game.init();
 // send the JSON of the map
-var map = require('./lib/game/mapper').map;
+var map = require(__dirname+'/lib/game/mapper').map;
 map = JSON.stringify(map);
 app.get('/map', function*(next) {
   this.body = map;
@@ -88,5 +88,10 @@ app.get('/map', function*(next) {
 
 
 // let's go
-server.listen(3000);
-console.log('[Info] Listening :3000'.green);
+if (config.development) {
+  server.listen(3000);
+  console.log('[Info] Listening :3000'.green);
+}
+else {
+  module.exports.app = server;
+}
