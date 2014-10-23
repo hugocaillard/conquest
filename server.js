@@ -8,7 +8,7 @@ if (fs.existsSync('./config'))
   config = require('./config')
 else {
   console.log('[Warning] You should rename config.sample.json to config.json'.yellow);
-  config = require(__dirname+'/config.sample');
+  config = require(__dirname+'/config.sample.json');
 }
 module.exports.config = config;
 
@@ -92,6 +92,5 @@ if (config.development) {
   server.listen(3000);
   console.log('[Info] Listening :3000'.green);
 }
-else {
+else
   module.exports.app = server;
-}
