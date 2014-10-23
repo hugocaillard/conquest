@@ -3,7 +3,7 @@
 var _ = require('./tools.js');
 var game = require('./game.js');
 
-var socket = io('http://localhost');
+var socket = io('localhost');
 
 var users = {
   loginHandler: function(resData) {

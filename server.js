@@ -4,20 +4,25 @@ var colors = require('colors');
 // get the config file
 var fs = require('fs');
 var config;
-if (fs.existsSync('./config'))
-  config = require('./config')
+if (fs.existsSync(__dirname+'/config.json')) {
+  console.log('[Warning] Got config.json'.green);
+  config = require(__dirname+'/config');
+}
 else {
   console.log('[Warning] You should rename config.sample.json to config.json'.yellow);
   config = require(__dirname+'/config.sample.json');
 }
 module.exports.config = config;
 
-// run the gulp command to build and watch (and re-build) the assets
-// only in dev
+// run the gulp command to build and watch (and re-build, only on dev) the assets
+var exec = require('child_process').exec;
 if (config.development) {
-  var exec = require('child_process').exec;
-  console.log('[Info] Running Gulp'.green);
+  console.log('[Info] Running Gulp and Watching'.green);
   exec(__dirname+'/node_modules/.bin/gulp');
+}
+else {
+  console.log('[Info] Running Gulp Prod'.green);
+  exec(__dirname+'/node_modules/.bin/gulp prod');
 }
 
 
@@ -86,11 +91,8 @@ app.get('/map', function*(next) {
 });
 
 
-
 // let's go
 if (config.development) {
-  server.listen(3000);
+  server.listen(config.port);
   console.log('[Info] Listening :3000'.green);
 }
-else
-  module.exports.app = server;
