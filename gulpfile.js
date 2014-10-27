@@ -39,7 +39,7 @@ gulp.task('default', ['js', 'css', 'watch']);
 /*
  * Prod (temporary)
 */
-gulp.task('default', ['js', 'css']);
+gulp.task('prod', ['js', 'css']);
 
 /*
  * Duo with source-map

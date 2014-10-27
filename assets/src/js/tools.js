@@ -36,6 +36,14 @@ module.exports.attr = function attr(el, attr, value) {
     return el.getAttribute(attr);
 };
 
+module.exports.getWindowWidth = function() {
+  return window.innerWidth || document.documentElement.clientWidth;
+};
+
+module.exports.getWindowHeight = function() {
+  return window.innerHeight|| document.documentElement.clientHeight;
+};
+
 
 /**
   * AJAX functions
