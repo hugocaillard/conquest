@@ -218,12 +218,8 @@ var map = {
     }
 
     // center the map
-    board.viewbox({
-      x: -self.wWidth/2,
-      y: -self.wHeight/2,
-      width: board.viewbox().width,
-      height: board.viewbox().height
-    });
+    tiles.move(_.getWindowWidth()/2, _.getWindowHeight()/2);
+
     console.log("Map generated in %s ms.", Date.now()-start);
     self.setupMapInterractions(board, tiles);
   },
@@ -233,69 +229,49 @@ var map = {
     var scale = 1;
 
     self.readyToMove = false;
-    var vb = null;
-    var initialVb = board.viewbox();
-    var initialWidth = initialVb.width;
-    var initialHeight = initialVb.height;
-
-    board.mousedown(function(e) {
-      this.remember('start', {
-        x: e.x,
-        y: e.y,
-        viewbox: this.viewbox()
-      });
+    board.mousedown(function() {
+      self.readyToMove = true;
     });
 
     board.mouseup(function() {
-      this.forget('start');
+      self.readyToMove = false;
     });
 
     board.mousemove(function(e) {
-      vb = this.viewbox();
-
-      var deltaX = (e.x + vb.x) * scale;
-      var deltaY = (e.y + vb.y) * scale;
-
-      console.log(deltaX+'-'+deltaY);
-      if (this.remember('start')) {
-        vb = this.remember('start');
-        this.viewbox({
-          x: vb.viewbox.x-(e.x - vb.x)*scale,
-          y: vb.viewbox.y-(e.y - vb.y)*scale,
-          width: vb.viewbox.width,
-          height: vb.viewbox.height
+      if (self.readyToMove) {
+        window.requestAnimationFrame(function() {
+          tiles.dmove(e.movementX/scale, e.movementY/scale);
         });
-        console.log(board.viewbox());
       }
     });
 
-    var previousScale = 1;
+    var deltaX=0,deltaY=0,newDeltaX=0,newDeltaY=0,tx=0,ty=0;
     board.on('mousewheel', function(e) {
-      if ((e.wheelDeltaY > 0 && (scale - e.wheelDeltaY/2000) > .3)
-       || (e.wheelDeltaY < 0 && (scale - e.wheelDeltaY/2000) < 1.5)) {
+      if ((e.wheelDeltaY>0 && scale+e.wheelDeltaY/1000<3)
+          || (e.wheelDeltaY<0 && scale+e.wheelDeltaY/1000>.6)) {
 
-        scale -= e.wheelDeltaY/2000;
+        tx = tiles.x();
+        ty = tiles.y();
 
-        vb = this.viewbox();
+        // Get the current distance between the
+        // pointer and the center of the map
+        deltaX = (tx-e.x)/scale;
+        deltaY = (ty-e.y)/scale;
 
+        scale += (e.wheelDeltaY/1000);
 
-        var deltaX = vb.x + (e.x + vb.x) * (previousScale - scale) + self.wWidth/2-vb.x;
-        var deltaY = vb.y + (e.y + vb.y) * (previousScale - scale) + self.wHeight/2-vb.y;
+        // Get the new distance
+        newDeltaX = (tx-e.x)/scale;
+        newDeltaY = (ty-e.y)/scale;
 
-        previousScale = scale;
-
-        this.viewbox({
-          x: deltaX,
-          y: deltaY,
-          width: initialWidth*scale,
-          height: initialHeight*scale,
-        });
+        // Move the map so the newDeltas match with the old ones
+        // TODO: move it to the "animation" function that rune in a RAF
+        tiles.scale(scale, scale);
+        tiles.dmove(deltaX - newDeltaX, deltaY - newDeltaY);
       }
     });
   }
 }
-
-
 
 // coordonées du cursor sur la map
 // on scale
