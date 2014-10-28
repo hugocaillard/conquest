@@ -251,6 +251,12 @@ var map = {
     });
 
     board.mousemove(function(e) {
+      vb = this.viewbox();
+
+      var deltaX = (e.x + vb.x) * scale;
+      var deltaY = (e.y + vb.y) * scale;
+
+      console.log(deltaX+'-'+deltaY);
       if (this.remember('start')) {
         vb = this.remember('start');
         this.viewbox({
@@ -263,15 +269,24 @@ var map = {
       }
     });
 
+    var previousScale = 1;
     board.on('mousewheel', function(e) {
       if ((e.wheelDeltaY > 0 && (scale - e.wheelDeltaY/2000) > .3)
        || (e.wheelDeltaY < 0 && (scale - e.wheelDeltaY/2000) < 1.5)) {
 
-        vb = this.viewbox();
         scale -= e.wheelDeltaY/2000;
+
+        vb = this.viewbox();
+
+
+        var deltaX = vb.x + (e.x + vb.x) * (previousScale - scale) + self.wWidth/2-vb.x;
+        var deltaY = vb.y + (e.y + vb.y) * (previousScale - scale) + self.wHeight/2-vb.y;
+
+        previousScale = scale;
+
         this.viewbox({
-          x: vb.x - (0),
-          y: vb.y - (0),
+          x: deltaX,
+          y: deltaY,
           width: initialWidth*scale,
           height: initialHeight*scale,
         });
@@ -281,4 +296,8 @@ var map = {
 }
 
 
+
+// coordonées du cursor sur la map
+// on scale
+// mettre la nouvelle coordoné la ou elle était
 module.exports = map;
