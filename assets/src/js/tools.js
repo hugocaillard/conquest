@@ -76,7 +76,7 @@ module.exports.get = function(url, cb) {
 
   request.onload = function() {
     if (request.status >= 200 && request.status < 400){
-      cb(JSON.parse(request.responseText));
+      cb.call(this,JSON.parse(request.responseText));
     } else {
       console.log('An error happened while getting %s.', url)
     }

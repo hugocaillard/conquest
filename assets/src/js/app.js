@@ -3,8 +3,6 @@
 var _ = require('./tools.js');
 var game = require('./game.js');
 
-var socket = io('localhost');
-
 var users = {
   loginHandler: function(resData) {
     console.log(resData);
@@ -40,18 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
         _.attr(previous, 'type', 'text');
       else
         _.attr(previous, 'type', 'password');
-    });
-  });
-
-
-  /**
-    * socket.io
-  */
-  socket.on('init', function(resData) {
-    console.log(resData.message);
-
-    socket.on('message', function(resData) {
-      console.log(resData.message);
     });
   });
 

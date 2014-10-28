@@ -70,24 +70,31 @@ app.get('/', views.home);
 app.get('/game', views.game);
 
 
+// The game
+var game = require(__dirname+'/lib/game/game');
+game.init();
+// send the JSON of the map
+var map = require(__dirname+'/lib/game/mapper');
+app.get('/map', function*(next) {
+  this.body = JSON.stringify(map.map);
+});
+
 // sockets
 var server = require('http').Server(app.callback());
 var io = require('socket.io')(server);
 module.exports.io = io;
 
-io.on('connection', function(socket){
-  socket.emit('init', {message: "Hey you"});
-});
+var users = [];
+io.on('connection', function(socket) {
+  socket.emit('init', {message: 'Welcome', type:'success'});
 
-
-// The game
-var game = require(__dirname+'/lib/game/game');
-game.init();
-// send the JSON of the map
-var map = require(__dirname+'/lib/game/mapper').map;
-map = JSON.stringify(map);
-app.get('/map', function*(next) {
-  this.body = map;
+  var user = {team: 'alpha', position: map.spawns[0][0]};
+  users.push(user);
+  socket.emit('joined', user)
+  socket.on('movePlayer', function(data) {
+    var user = {team: 'alpha', position: data.position};
+    socket.emit('joined', user)
+  });
 });
 
 
