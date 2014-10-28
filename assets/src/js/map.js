@@ -25,6 +25,9 @@ var map = {
     // distance bewteen centers of adjacent hexagones
     self.dist = self.median*2;
 
+    self.wWidth = _.getWindowWidth();
+    self.wHeight = _.getWindowHeight();
+
     self.getMap(function(resData) {
       self.map = resData;
       self.buildMap();
@@ -204,57 +207,77 @@ var map = {
                  t.angles[4].x+','+t.angles[4].y+' '+
                  t.angles[5].x+','+t.angles[5].y;
 
-        if (i<10)
+        if (i<1)
           hexagon = tiles.polygon(coords).fill('#'+i+i+i).stroke({width: 1});
         else
-          hexagon = tiles.polygon(coords).fill('#fff').stroke({width: 1});
+          hexagon = tiles.polygon(coords).fill('#999').stroke({width: 1, color: '#222'});
 
         hexagon.attr('id', t.id);
         hexagon.attr('data-rank', i);
       }
     }
-    tiles.move(_.getWindowWidth()/2, _.getWindowHeight()/2);
-    console.log("Map generated in %s ms.", Date.now()-start);
 
+    // center the map
+    board.viewbox({
+      x: -self.wWidth/2,
+      y: -self.wHeight/2,
+      width: board.viewbox().width,
+      height: board.viewbox().height
+    });
+    console.log("Map generated in %s ms.", Date.now()-start);
+    self.setupMapInterractions(board, tiles);
+  },
+
+  setupMapInterractions: function(board, tiles) {
+    var self = this;
     var scale = 1;
 
     self.readyToMove = false;
-    board.mousedown(function() {
-      self.readyToMove = true;
+    var vb = null;
+    var initialVb = board.viewbox();
+    board.mousedown(function(e) {
+      this.remember('start', {
+        x: e.x,
+        y: e.y,
+        viewbox: this.viewbox()
+      });
     });
     board.mouseup(function() {
-      self.readyToMove = false;
+      this.forget('start');
     });
+
 
     board.mousemove(function(e) {
-      if (self.readyToMove) {
-        console.log(e);
-        window.requestAnimationFrame(function() {
-          tiles.dmove(e.movementX/scale, e.movementY/scale);
+      if (this.remember('start')) {
+        vb = this.remember('start');
+
+        this.viewbox({
+          x: vb.viewbox.x - (e.x - vb.x),
+          y: vb.viewbox.y - (e.y - vb.y),
+          width: vb.viewbox.width,
+          height: vb.viewbox.height
         });
       }
     });
 
-    _.byId('board').addEventListener('mousewheel', function(e) {
+    console.log(board.viewbox());
+    board.on('mousewheel', function(e) {
       e.preventDefault;
-      if (e.wheelDeltaY > 0) {
-        // zoom in
-        scale += e.wheelDeltaY/2000;
-        window.requestAnimationFrame(function() {
-          tiles.scale(scale, scale)
-        });
-      }
-      else if (e.wheelDeltaY < 0 && (scale + e.wheelDeltaY/1000) > .1) {
-        // zoom out
-        scale += e.wheelDeltaY/2000;
-        window.requestAnimationFrame(function() {
-          tiles.scale(scale, scale)
-        });
-      }
+      if ((e.wheelDeltaY > 0 && (scale - e.wheelDeltaY/2000) > .3)
+       || (e.wheelDeltaY < 0 && (scale - e.wheelDeltaY/2000) < 1.5)) {
 
+        vb = this.viewbox();
+        scale -= e.wheelDeltaY/2000;
+        this.viewbox({
+          x: (initialVb.x + e.x - self.wWidth/2 - vb.x)*scale,
+          y: (initialVb.y - e.y + self.wHeight/2 - vb.y)*scale,
+          width: initialVb.width*scale,
+          height: initialVb.height*scale,
+        });
+      }
 
       return false;
-    }, false);
+    });
   }
 }
 
