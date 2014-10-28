@@ -235,6 +235,9 @@ var map = {
     self.readyToMove = false;
     var vb = null;
     var initialVb = board.viewbox();
+    var initialWidth = initialVb.width;
+    var initialHeight = initialVb.height;
+
     board.mousedown(function(e) {
       this.remember('start', {
         x: e.x,
@@ -242,41 +245,37 @@ var map = {
         viewbox: this.viewbox()
       });
     });
+
     board.mouseup(function() {
       this.forget('start');
     });
 
-
     board.mousemove(function(e) {
       if (this.remember('start')) {
         vb = this.remember('start');
-
         this.viewbox({
-          x: vb.viewbox.x - (e.x - vb.x),
-          y: vb.viewbox.y - (e.y - vb.y),
+          x: vb.viewbox.x-(e.x - vb.x)*scale,
+          y: vb.viewbox.y-(e.y - vb.y)*scale,
           width: vb.viewbox.width,
           height: vb.viewbox.height
         });
+        console.log(board.viewbox());
       }
     });
 
-    console.log(board.viewbox());
     board.on('mousewheel', function(e) {
-      e.preventDefault;
       if ((e.wheelDeltaY > 0 && (scale - e.wheelDeltaY/2000) > .3)
        || (e.wheelDeltaY < 0 && (scale - e.wheelDeltaY/2000) < 1.5)) {
 
         vb = this.viewbox();
         scale -= e.wheelDeltaY/2000;
         this.viewbox({
-          x: (initialVb.x + e.x - self.wWidth/2 - vb.x)*scale,
-          y: (initialVb.y - e.y + self.wHeight/2 - vb.y)*scale,
-          width: initialVb.width*scale,
-          height: initialVb.height*scale,
+          x: vb.x - (0),
+          y: vb.y - (0),
+          width: initialWidth*scale,
+          height: initialHeight*scale,
         });
       }
-
-      return false;
     });
   }
 }
