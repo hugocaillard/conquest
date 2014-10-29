@@ -188,6 +188,10 @@ var mapData = {
     var map = require('./UI/map.js');
     map.drawMap();
     console.log("Map generated in %s ms.", Date.now()-start);
+
+    // The map is ready, let's init the sockets
+    var sockets = require('./sockets.js');
+    sockets.init();
   },
 
   setMapData: function() {

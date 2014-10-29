@@ -11,7 +11,7 @@ var map = {
     self.player = player;
 
     if (self.currentPos !== null)
-      self.currentPos.element.back().stroke({'width': .5});
+      self.currentPos.element.back().stroke({'width': .1});
 
     var tile = mapData.board[player.position];
     tile.element.front().stroke({'width': 4});
@@ -20,7 +20,9 @@ var map = {
   },
 
   tileClick: function(e) {
-    var index = parseInt(e.toElement.id);
+    e.preventDefault();
+    var el = e.target || e.toElement;
+    var index = parseInt(el.id);
     if (mapData.board[index].adjacents.indexOf(self.player.position) > -1) {
       sockets.move(index)
     }
@@ -51,11 +53,11 @@ var map = {
                t.angles[5].x+','+t.angles[5].y;
 
       if (i<1)
-        hexagon = tiles.polygon(coords).fill('#'+i+i+i).stroke({width: .5});
+        hexagon = tiles.polygon(coords).fill('#'+i+i+i).stroke({width: 0});
       else
         hexagon = tiles.polygon(coords)
                   .fill('#999')
-                  .stroke({width: .5, color: '#222'});
+                  .stroke({width: .1, color: '#222'});
 
       if (t.spawn) {
         hexagon.fill(colors[t.spawn]);
@@ -65,7 +67,8 @@ var map = {
       hexagon.attr('name', t.id);
       hexagon.attr('data-rank', i);
       mapData.board[i].element = hexagon;
-      hexagon.on('click', self.tileClick);
+      hexagon.on('contextmenu', self.tileClick);
+      hexagon.on('dblclick', self.tileClick);
     }
 
     // center the map
@@ -91,31 +94,33 @@ var map = {
     });
 
     boardContainer.on('mousemove', function(e) {
+      var x = e.movementX || e.mozMovementX;
+      var y = e.movementY || e.mozMovementY;
       if (self.readyToMove) {
         window.requestAnimationFrame(function() {
-          tiles.dmove(e.movementX/scale, e.movementY/scale);
+          tiles.dmove(x/scale, y/scale);
         });
       }
     });
 
     var deltaX=0,deltaY=0,newDeltaX=0,newDeltaY=0,tx=0,ty=0;
-    boardContainer.on('mousewheel', function(e) {
-      if ((e.wheelDeltaY>0 && scale+e.wheelDeltaY/1000<3)
-          || (e.wheelDeltaY<0 && scale+e.wheelDeltaY/1000>.6)) {
+    boardContainer.on('wheel', function(e) {
+      if ((e.deltaY>0 && scale-e.deltaY/1000>.5) // zoom out
+          || (e.deltaY<0 && scale-e.deltaY/1000<3)) { // zoom in
 
         tx = tiles.x();
         ty = tiles.y();
 
         // Get the current distance between the
         // pointer and the center of the map
-        deltaX = (tx-e.x)/scale;
-        deltaY = (ty-e.y)/scale;
+        deltaX = (tx-e.pageX)/scale;
+        deltaY = (ty-e.pageY)/scale;
 
-        scale += (e.wheelDeltaY/1000);
+        scale -= (e.deltaY/1000);
 
         // Get the new distance
-        newDeltaX = (tx-e.x)/scale;
-        newDeltaY = (ty-e.y)/scale;
+        newDeltaX = (tx-e.pageX)/scale;
+        newDeltaY = (ty-e.pageY)/scale;
 
         // Move the map so the newDeltas match with the old ones
         // TODO: move it to the "animation" function that rune in a RAF

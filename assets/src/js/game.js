@@ -12,9 +12,6 @@ var game = {
     if (_.byId('board')) {
       var mapData = require('./mapData.js');
       mapData.init();
-
-      var sockets = require('./sockets.js');
-      sockets.init();
     }
   },
 
@@ -22,6 +19,7 @@ var game = {
     self.player = d;
     map.showPlayer(self.player);
   }
+
 }
 
 

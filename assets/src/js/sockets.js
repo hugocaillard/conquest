@@ -4,19 +4,20 @@ var _ = require('./tools.js');
   * Handle socket.io
 */
 
-var socket = io('localhost');
 
 var sockets = {
   init: function() {
     var self = this;
 
-    socket.on('init', function(resData) {
+    self.socket = io('localhost');
+    self.socket.on('init', function(resData) {
       console.log(resData.message);
-
-      var game = require('./game.js');
-      socket.on('flash', self.flash);
-      socket.on('joined', game.joined);
     });
+
+    self.socket.on('flash', self.flash);
+
+    var game = require('./game.js');
+    self.socket.on('joined', game.joined);
   },
 
   flash: function(resData) {
@@ -25,7 +26,7 @@ var sockets = {
   },
 
   move: function(index) {
-    socket.emit('movePlayer', {position: index});
+    this.socket.emit('movePlayer', {position: index});
   }
 };
 
