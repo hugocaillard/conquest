@@ -70,6 +70,13 @@ app.get('/', views.home);
 app.get('/game', views.game);
 
 
+// sockets
+var server = require('http').Server(app.callback());
+var io = require('socket.io')(server);
+var sockets = require(__dirname+'/lib/game/sockets.js');
+sockets.init(io);
+
+
 // The game
 var game = require(__dirname+'/lib/game/game');
 game.init();
@@ -79,11 +86,7 @@ app.get('/map', function*(next) {
   this.body = JSON.stringify(map.map);
 });
 
-// sockets
-var server = require('http').Server(app.callback());
-var io = require('socket.io')(server);
-var sockets = require(__dirname+'/lib/game/sockets.js');
-sockets.init(io);
+sockets.ready();
 
 
 // let's go

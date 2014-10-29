@@ -56,7 +56,6 @@ module.exports.post = function(url, data, cb) {
     if(this.readyState == this.DONE) {
       if (request.status >= 200 && request.status < 400) {
         if (cb) {
-          console.log('HELLOOOO');
           cb.call(this, JSON.parse(request.response));
         }
         else

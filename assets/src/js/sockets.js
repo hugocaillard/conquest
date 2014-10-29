@@ -15,9 +15,14 @@ var sockets = {
     });
 
     self.socket.on('flash', self.flash);
+    self.socket.on('tick', self.tick);
 
     var game = require('./game.js');
     self.socket.on('joined', game.joined);
+  },
+
+  tick: function(resData) {
+    console.log(resData.ticks);
   },
 
   flash: function(resData) {

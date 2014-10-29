@@ -21,8 +21,15 @@ document.addEventListener('DOMContentLoaded', function() {
       var self = this;
       var url = _.attr(self, 'action')
       var method = _.attr(self, 'method');
-      var data = _.serialize(this);
-      if (data && method === 'post')
+      var data = _.serialize(self);
+      if (data && method === 'post' && url === '/users/login') {
+        _.post(url, data, function(d) {
+          if (d.logged === true) {
+            window.location.href = '/game';
+          }
+        });
+      }
+      else if (data && method === 'post')
         _.post(url, data);
     });
   });
