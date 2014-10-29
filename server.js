@@ -82,20 +82,8 @@ app.get('/map', function*(next) {
 // sockets
 var server = require('http').Server(app.callback());
 var io = require('socket.io')(server);
-module.exports.io = io;
-
-var users = [];
-io.on('connection', function(socket) {
-  socket.emit('init', {message: 'Welcome', type:'success'});
-
-  var user = {team: 'alpha', position: map.spawns[0][0]};
-  users.push(user);
-  socket.emit('joined', user)
-  socket.on('movePlayer', function(data) {
-    var user = {team: 'alpha', position: data.position};
-    socket.emit('joined', user)
-  });
-});
+var sockets = require(__dirname+'/lib/game/sockets.js');
+sockets.init(io);
 
 
 // let's go
