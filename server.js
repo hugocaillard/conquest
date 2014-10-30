@@ -33,9 +33,18 @@ var app = require('koa')();
 
 
 // session
-var session = require('koa-session');
+var session = require('koa-generic-session');
+var MongoStore = require('koa-generic-session-mongo');
 app.keys = [config.secret];
-app.use(session());
+app.use(session({
+  store: new MongoStore({
+    host: config.db.host,
+    port: config.db.port,
+    db: config.db.name,
+    user: config.db.user,
+    passw: config.db.pass
+  })
+}));
 
 
 // auth
@@ -43,6 +52,7 @@ require(__dirname+'/lib/auth');
 var passport = require('koa-passport');
 app.use(passport.initialize());
 app.use(passport.session());
+module.exports.passport = passport;
 
 
 // body parser
