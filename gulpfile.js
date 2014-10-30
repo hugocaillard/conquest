@@ -12,7 +12,7 @@ gulp.task('watch', function() {
 });
 
 /*
- * Scripts
+ * DEFAULT
 */
 gulp.task('js', function() {
   gulp.src('assets/src/js/app.js')
@@ -20,16 +20,27 @@ gulp.task('js', function() {
     .pipe(gulp.dest('assets/public'))
     .pipe(livereload());
 });
-
-/*
- * Styles
-*/
 gulp.task('css', function() {
   gulp.src('assets/src/css/style.css')
     .pipe(duo())
     .pipe(gulp.dest('assets/public'))
     .pipe(livereload());
 });
+
+/*
+ * PROD
+*/
+gulp.task('js-prod', function() {
+  gulp.src('assets/src/js/app.js')
+    .pipe(duo())
+    .pipe(gulp.dest('assets/public'))
+});
+gulp.task('css-prod', function() {
+  gulp.src('assets/src/css/style.css')
+    .pipe(duo())
+    .pipe(gulp.dest('assets/public'))
+});
+
 
 /*
  * Default
@@ -39,7 +50,7 @@ gulp.task('default', ['js', 'css', 'watch']);
 /*
  * Prod (temporary)
 */
-gulp.task('prod', ['js', 'css']);
+gulp.task('prod', ['js-prod', 'css-prod']);
 
 /*
  * Duo with source-map
