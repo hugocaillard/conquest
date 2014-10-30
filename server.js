@@ -83,6 +83,10 @@ app.get('/game', views.game);
 // sockets
 var server = require('http').Server(app.callback());
 var io = require('socket.io')(server);
+io.set('authorization', function (handshake, callback) {
+  console.log(handshake.headers);
+  callback(null, true);
+});
 var sockets = require(__dirname+'/lib/game/sockets.js');
 sockets.init(io);
 
