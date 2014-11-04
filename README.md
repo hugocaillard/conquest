@@ -22,10 +22,14 @@ You also need to run MongoDB.
 
 ## RoadMap
 
-- [Back] Generate and save in DB the map of the game (*i.e* a big big json file)
-- [Front] Render the map in SVG ([svg.js](http://svgjs.com/) or [Snap.js](http://snapsvg.io/))
-- [Back] Set-up the game loop, the `ticker`, it will update the map/game and send web sockets of the new data to the connected players every 100ms.
-- [Back] Save the state of the map/game in the DB (it doesn't need to be done in the ticker as we can do it every # minutes)
-- [Back] Handle mails to confirm accounts ([Nodemailer](http://www.nodemailer.com/))
+### The Game
+- [Front] Integrate information panels
+- [Back] Save in DB the map and the state of the game
+- [Back] Send the map to each teams (i.e: to each room) via sockets
+- [Front] Handle the display of the map, players and all informations at each tick
+- [Front] Panel to choose the class of the player at (re)spawn (Soldier, Engineer, Medic
+- [Back] Handle fights a tiles capture.
+- [Front] Display different states of tiles
 
-From here, the back-end will be almost done, and we'll be ready to code the actual game, *i.e*, moving players on the map and make them **fight**!
+### Other
+- [Back] Handle mails to confirm accounts ([Nodemailer](http://www.nodemailer.com/))

@@ -17,7 +17,7 @@ html, body {
 }
 
 .board {
-  background-color: #222;
+  background-color: #181818;
   overflow: hidden;
   position: fixed;
   top: 0;

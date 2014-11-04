@@ -9,6 +9,7 @@ var map = {
   showPlayer: function(player) {
     var self = this;
     self.player = player;
+    console.log(player);
 
     if (self.currentPos !== null)
       self.currentPos.element.back().stroke({'width': .1});
@@ -28,7 +29,10 @@ var map = {
     }
   },
 
-  // INITAL DISPLAY OF THE MAP
+
+  /**
+    * INITAL MAPPING
+  */
   drawMap: function() {
     var self = this;
 
@@ -52,12 +56,12 @@ var map = {
                t.angles[4].x+','+t.angles[4].y+' '+
                t.angles[5].x+','+t.angles[5].y;
 
-      if (i<1)
-        hexagon = tiles.polygon(coords).fill('#'+i+i+i).stroke({width: 0});
-      else
+      if (i!=0)
         hexagon = tiles.polygon(coords)
-                  .fill('#999')
-                  .stroke({width: .1, color: '#222'});
+                  .fill('#bbb')
+                  .stroke({width: .1, color: '#181818'});
+      else
+        hexagon = tiles.polygon(coords).fill('#'+i+i+i).stroke({width: 0});
 
       if (t.spawn) {
         hexagon.fill(colors[t.spawn]);
