@@ -27,8 +27,8 @@ You also need to run MongoDB.
 - [Back] Save in DB the map and the state of the game
 - [Back] Send the map to each teams (i.e: to each room) via sockets
 - [Front] Handle the display of the map, players and all informations at each tick
-- [Front] Panel to choose the class of the player at (re)spawn (Soldier, Engineer, Medic
-- [Back] Handle fights a tiles capture.
+- [Front] Panel to choose the class of the player at (re)spawn (Soldier, Engineer, Medic)
+- [Back] Handle fights a tiles capture
 - [Front] Display different states of tiles
 
 ### Other
