@@ -22,7 +22,7 @@ var sockets = {
   },
 
   tick: function(resData) {
-    console.log(resData.ticks);
+    console.table(resData);
   },
 
   flash: function(resData) {

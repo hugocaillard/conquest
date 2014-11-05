@@ -9,7 +9,6 @@ var map = {
   showPlayer: function(player) {
     var self = this;
     self.player = player;
-    console.log(player);
 
     if (self.currentPos !== null)
       self.currentPos.element.back().stroke({'width': .1});
@@ -45,7 +44,6 @@ var map = {
 
 
     var colors = {'alpha': '#DD4B39', 'beta': '#7AB800', 'gamma': '#4183C4'};
-
     for(var i=0;i<mapData.board.length;i++) {
       t = mapData.board[i];
 
