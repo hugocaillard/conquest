@@ -1,0 +1,45 @@
+/* STYLES OF OVERLAYS */
+.overlays>div {z-index: -1;}
+
+/* FLASH MESSAGE */
+
+
+/* CHOOSE FACTION */
+.choose-faction {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  width: 50%;
+  height: 200px;
+  margin-top: -100px;
+  background-color: #ddd;
+  color: #555;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity .3s ease-in;
+}
+  .choose-faction.show {
+    display: block;
+    opacity: .8;
+    z-index: 2;
+  }
+  .choose-faction.show:hover {
+    opacity: 1;
+  }
+  .choose-faction>div {
+    float: left;
+    width: 33.333%;
+    height: 100%;
+    border-left: solid 1px black;
+    text-align: center;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .15s ease-in;
+  }
+    .choose-faction>div:hover {
+      color: #333;
+      background-color: #eee;
+    }
+    .choose-faction>div:first-child {
+      border:none;
+    }

@@ -15,14 +15,11 @@ var sockets = {
     });
 
     self.socket.on('flash', self.flash);
-    self.socket.on('tick', self.tick);
 
     var game = require('./game.js');
     self.socket.on('joined', game.joined);
-  },
-
-  tick: function(resData) {
-    console.table(resData);
+    self.socket.on('player', game.setPlayer);
+    self.socket.on('tick', game.tick);
   },
 
   flash: function(resData) {
@@ -32,6 +29,15 @@ var sockets = {
 
   move: function(index) {
     this.socket.emit('movePlayer', {position: index});
+  },
+
+  setFaction: function(faction) {
+    var game = require('./game.js');
+    console.log(game.tileToSpawn);
+    this.socket.emit('setFaction', {
+      position: game.tileToSpawn,
+      faction: faction
+    });
   }
 };
 

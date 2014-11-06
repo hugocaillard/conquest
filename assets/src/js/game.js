@@ -1,10 +1,13 @@
 'use strict'
 
-var _ = require('./tools.js');
-var map = require('./UI/map.js');
+var _             = require('./tools.js');
+var map           = require('./UI/map.js');
+var chooseFaction = require('./UI/chooseFaction.js');
+var sockets       = require('./sockets.js');
 
 var game = {
   player: {},
+  tileToSpawn: 0,
 
   init: function() {
     var self = this;
@@ -12,14 +15,28 @@ var game = {
     if (_.byId('board')) {
       var mapData = require('./mapData.js');
       mapData.init();
+      chooseFaction.init();
     }
   },
 
-  joined: function(d) {
-    self.player = d;
-    map.showPlayer(self.player);
-  }
+  tick: function(d) {
+    game.map = d;
+  },
 
+  joined: function(d) {
+    game.player = d;
+    map.showPlayer(game.player);
+  },
+
+  setPlayer: function(d) {
+    game.player = d;
+    map.showPlayer(game.player);
+  },
+
+  setFaction: function(el) {
+    var self = this;
+    sockets.setFaction(el.toElement.id);
+  }
 }
 
 

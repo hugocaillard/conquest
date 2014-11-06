@@ -1,15 +1,16 @@
 var _ = require('../tools.js');
 var mapData = require('../mapData.js')
 var svg = require('wout/svg.js');
-var sockets = require('../sockets.js')
+var sockets = require('../sockets.js');
+var chooseFaction = require('./chooseFaction.js');
 
 var map = {
   player: {},
   currentPos: null,
+
   showPlayer: function(player) {
     var self = this;
     self.player = player;
-
     if (self.currentPos !== null)
       self.currentPos.element.back().stroke({'width': .1});
 
@@ -23,7 +24,18 @@ var map = {
     e.preventDefault();
     var el = e.target || e.toElement;
     var index = parseInt(el.id);
-    if (mapData.board[index].adjacents.indexOf(self.player.position) > -1) {
+
+    // spawn
+    var game = require('../game.js');
+    if (map.player.position === null &&
+        game.map[index] &&
+        game.map[index].ownedBy === player.team) {
+      chooseFaction.show();
+      game.tileToSpawn = index;
+    }
+
+    // move
+    else if (mapData.board[index].adjacents.indexOf(map.player.position)>-1) {
       sockets.move(index)
     }
   },
