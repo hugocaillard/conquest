@@ -8,8 +8,7 @@ var _ = require('./tools.js');
 var sockets = {
   init: function() {
     var self = this;
-
-    self.socket = io('localhost');
+    self.socket = io(window.location.hostname);
     self.socket.on('init', function(resData) {
       console.log(resData.message);
     });
@@ -33,7 +32,6 @@ var sockets = {
 
   setFaction: function(faction) {
     var game = require('./game.js');
-    console.log(game.tileToSpawn);
     this.socket.emit('setFaction', {
       position: game.tileToSpawn,
       faction: faction

@@ -30,6 +30,7 @@ var game = {
 
   setPlayer: function(d) {
     game.player = d;
+    if (chooseFaction.isVisible) chooseFaction.hide();
     map.showPlayer(game.player);
   },
 

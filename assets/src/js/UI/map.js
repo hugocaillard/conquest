@@ -11,13 +11,15 @@ var map = {
   showPlayer: function(player) {
     var self = this;
     self.player = player;
-    if (self.currentPos !== null)
-      self.currentPos.element.back().stroke({'width': .1});
+    if (player.position !== null) {
+      if (self.currentPos !== null)
+        self.currentPos.element.back().stroke({'width': .1});
 
-    var tile = mapData.board[player.position];
-    tile.element.front().stroke({'width': 4});
+      var tile = mapData.board[player.position];
+      tile.element.front().stroke({'width': 4});
 
-    self.currentPos = tile;
+      self.currentPos = tile;
+    }
   },
 
   tileClick: function(e) {
@@ -29,7 +31,7 @@ var map = {
     var game = require('../game.js');
     if (map.player.position === null &&
         game.map[index] &&
-        game.map[index].ownedBy === player.team) {
+        game.map[index].ownedBy === map.player.team) {
       chooseFaction.show();
       game.tileToSpawn = index;
     }

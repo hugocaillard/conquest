@@ -2,6 +2,7 @@ var _ = require('../tools.js');
 
 var chooseFaction = {
   chooseFaction: _.byId('choose-faction'),
+  isVisible: false,
 
   init: function() {
     var game = require('../game.js');
@@ -13,9 +14,11 @@ var chooseFaction = {
 
   show: function() {
     this.chooseFaction.classList.add('show');
+    this.isVisible = true;
   },
 
   hide: function() {
+    this.isVisible = false;
     this.chooseFaction.classList.remove('show');
   }
 };
