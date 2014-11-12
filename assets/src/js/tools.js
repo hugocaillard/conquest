@@ -16,6 +16,10 @@ module.exports.$ = function(selector) {
   return document.querySelectorAll(selector);
 };
 
+module.exports.$$ = function(selector) {
+  return document.querySelector(selector);
+};
+
 module.exports.elLoop = function(array, cb) {
   for (var i=0; i<array.length; i++) {
     cb(array[i]);

@@ -44,6 +44,34 @@ var map = {
 
 
   /**
+    * UPDATE MAP
+  */
+  visibleTiles: [],
+  updateMap: function(map) {
+    var self = this;
+
+    (function(visibleTiles) {
+      for (var i=0;i<visibleTiles.length;i++) {
+        if (map[visibleTiles[i]] === undefined) mapData.board[visibleTiles[i]].element.fill('#333');
+      }
+    })(self.visibleTiles);
+
+    self.visibleTiles = [];
+
+    for (var tile in map) {
+      self.visibleTiles.push(map[tile].index);
+      if (map[tile].ownedBy === "alpha")
+        mapData.board[map[tile].index].element.fill('#DD4B39');
+      else if (map[tile].ownedBy === "beta")
+        mapData.board[map[tile].index].element.fill('#7AB800');
+      else if (map[tile].ownedBy === "gamma")
+        mapData.board[map[tile].index].element.fill('#4183C4');
+      else
+        mapData.board[map[tile].index].element.fill('#bbb');
+    }
+  },
+
+  /**
     * INITAL MAPPING
   */
   drawMap: function() {
@@ -68,23 +96,17 @@ var map = {
                t.angles[4].x+','+t.angles[4].y+' '+
                t.angles[5].x+','+t.angles[5].y;
 
-      if (i!=0)
-        hexagon = tiles.polygon(coords)
-                  .fill('#bbb')
-                  .stroke({width: .1, color: '#181818'});
-      else
-        hexagon = tiles.polygon(coords).fill('#'+i+i+i).stroke({width: 0});
 
-      if (t.spawn) {
-        hexagon.fill(colors[t.spawn]);
-      }
+      hexagon = tiles.polygon(coords)
+                  .fill('#333')
+                  .stroke({width: .1, color: '#181818'});
+
 
       hexagon.attr('id', i);
       hexagon.attr('name', t.id);
       hexagon.attr('data-rank', i);
       mapData.board[i].element = hexagon;
-      hexagon.on('contextmenu', self.tileClick);
-      hexagon.on('dblclick', self.tileClick);
+      hexagon.on('click', self.tileClick);
     }
 
     // center the map
@@ -93,7 +115,7 @@ var map = {
       tiles.move(_.getWindowWidth()/2, _.getWindowHeight()/2);
     });
 
-    this.setupMapInterractions(boardContainer, tiles);
+    self.setupMapInterractions(boardContainer, tiles);
   },
 
   setupMapInterractions: function(boardContainer, tiles) {

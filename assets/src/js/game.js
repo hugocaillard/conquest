@@ -21,6 +21,7 @@ var game = {
 
   tick: function(d) {
     game.map = d;
+    map.updateMap(d);
   },
 
   joined: function(d) {
@@ -36,6 +37,7 @@ var game = {
 
   setFaction: function(el) {
     var self = this;
+    console.log(el);
     sockets.setFaction(el.toElement.id);
   }
 }
