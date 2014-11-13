@@ -28,9 +28,9 @@ var chooseFaction = {
   init: function() {
     var game = require('../game.js');
 
-    _.byId('soldier').addEventListener('click', game.setFaction);
-    _.byId('engineer').addEventListener('click', game.setFaction);
-    _.byId('medic').addEventListener('click', game.setFaction);
+    _.byId('soldier').addEventListener('click', game.setFaction, false);
+    _.byId('engineer').addEventListener('click', game.setFaction, false);
+    _.byId('medic').addEventListener('click', game.setFaction, false);
   },
 
   show: function() {

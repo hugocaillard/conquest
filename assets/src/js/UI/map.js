@@ -49,10 +49,10 @@ var map = {
   visibleTiles: [],
   updateMap: function(map) {
     var self = this;
-
     (function(visibleTiles) {
       for (var i=0;i<visibleTiles.length;i++) {
-        if (map[visibleTiles[i]] === undefined) mapData.board[visibleTiles[i]].element.fill('#333');
+        if (map[visibleTiles[i]] === undefined)
+           mapData.board[visibleTiles[i]].element.fill('#333');
       }
     })(self.visibleTiles);
 
@@ -101,7 +101,6 @@ var map = {
                   .fill('#333')
                   .stroke({width: .1, color: '#181818'});
 
-
       hexagon.attr('id', i);
       hexagon.attr('name', t.id);
       hexagon.attr('data-rank', i);
@@ -132,9 +131,9 @@ var map = {
     });
 
     boardContainer.on('mousemove', function(e) {
-      var x = e.movementX || e.mozMovementX;
-      var y = e.movementY || e.mozMovementY;
       if (self.readyToMove) {
+        var x = e.movementX || e.mozMovementX;
+        var y = e.movementY || e.mozMovementY;
         window.requestAnimationFrame(function() {
           tiles.dmove(x/scale, y/scale);
         });

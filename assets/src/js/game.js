@@ -36,9 +36,13 @@ var game = {
   },
 
   setFaction: function(el) {
-    var self = this;
-    console.log(el);
-    sockets.setFaction(el.toElement.id);
+    el = el.target;
+    var faction = el.id;
+    while (!faction || faction.length === 0) {
+      el = el.parentNode;
+      faction = el.id;
+    }
+    sockets.setFaction(faction);
   }
 }
 
