@@ -10,32 +10,38 @@
 </head>
 <body>
   <div id="board" class="board"></div>
-
+  <div class="score">Score: <span id="score">0</span></div>
+  <div class="p-life">Life: <span id="p-life">0</span></div>
   <!-- OVERLAYS -->
   <div class="overlays" id="overlays">
-    <div id="flash"></div>
+    <div class="flash" id="flash">
+      <p class="spawning">Click on a tile to spawn</p>
+    </div>
 
     <div class="choose-faction" id="choose-faction">
       <div id="soldier">
         <h3>Soldier</h3>
-        <p class="damages">Damages: <span></span></p>
+        <p class="xp">Experience: <span></span></p>
         <p class="life">Life points: <span></span></p>
+        <p class="damages">Damages: <span></span></p>
         <p class="capture">Capture points: <span></span></p>
         <p class="healing">Healing: <span></span></p>
       </div>
       <div id="engineer">
         <h3>Engineer</h3>
-        <p class="capture">Capture points: <span></span></p>
+        <p class="xp">Experience: <span></span></p>
         <p class="life">Life points: <span></span></p>
         <p class="damages">Damages: <span></span></p>
+        <p class="capture">Capture points: <span></span></p>
         <p class="healing">Healing: <span></span></p>
       </div>
       <div id="medic">
         <h3>Medic</h3>
-        <p class="healing">Healing: <span></span></p>
+        <p class="xp">Experience: <span></span></p>
         <p class="life">Life points: <span></span></p>
         <p class="damages">Damages: <span></span></p>
         <p class="capture">Capture points: <span></span></p>
+        <p class="healing">Healing: <span></span></p>
       </div>
     </div>
   </div>

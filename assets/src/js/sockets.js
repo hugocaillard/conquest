@@ -9,15 +9,12 @@ var sockets = {
   init: function() {
     var self = this;
     self.socket = io(window.location.hostname);
-    self.socket.on('init', function(resData) {
-      console.log(resData.message);
-    });
 
     self.socket.on('flash', self.flash);
 
     var game = require('./game.js');
     self.socket.on('joined', game.joined);
-    self.socket.on('player', game.setPlayer);
+   // self.socket.on('player', game.setPlayer);
     self.socket.on('tick', game.tick);
   },
 

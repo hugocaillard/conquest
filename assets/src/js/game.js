@@ -2,8 +2,10 @@
 
 var _             = require('./tools.js');
 var map           = require('./UI/map.js');
-var chooseFaction = require('./UI/chooseFaction.js');
 var sockets       = require('./sockets.js');
+
+var chooseFaction = require('./UI/chooseFaction.js');
+var flashMessages = require('./UI/flashMessages.js');
 
 var game = {
   player: {},
@@ -11,28 +13,35 @@ var game = {
 
   init: function() {
     var self = this;
-
+    self.playerLife = 0;
+    self.teamScore = 0;
     if (_.byId('board')) {
       var mapData = require('./mapData.js');
       mapData.init();
       chooseFaction.init();
+      flashMessages.init();
     }
   },
 
   tick: function(d) {
-    game.map = d;
-    map.updateMap(d);
+    game.map = d.map;
+    game.player = d.team.players[game.playerName];
+    map.updateMap(game.map);
+    map.showPlayer(game.player);
+
+    // TODO: move this
+    if (game.player.faction && game.playerLife != game.player.factions[game.player.faction].life) {
+      game.playerLife = game.player.factions[game.player.faction].life;
+      _.byId('p-life').innerHTML = game.playerLife;
+    }
+    if (game.teamScore != d.team.score) {
+      game.teamScore = d.team.score;
+      _.byId('score').innerHTML = game.teamScore;
+    }
   },
 
   joined: function(d) {
-    game.player = d;
-    map.showPlayer(game.player);
-  },
-
-  setPlayer: function(d) {
-    game.player = d;
-    if (chooseFaction.isVisible) chooseFaction.hide();
-    map.showPlayer(game.player);
+    game.playerName = d;
   },
 
   setFaction: function(el) {
@@ -43,6 +52,8 @@ var game = {
       faction = el.id;
     }
     sockets.setFaction(faction);
+    if (chooseFaction.isVisible) chooseFaction.hide();
+    if (flashMessages.isVisible) flashMessages.hide();
   }
 }
 
