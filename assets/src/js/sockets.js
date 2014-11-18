@@ -14,7 +14,6 @@ var sockets = {
 
     var game = require('./game.js');
     self.socket.on('joined', game.joined);
-   // self.socket.on('player', game.setPlayer);
     self.socket.on('tick', game.tick);
   },
 
