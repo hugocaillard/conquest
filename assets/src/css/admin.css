@@ -1,0 +1,38 @@
+.admin-container {
+  padding: 0 30px 200px;
+  background-color: #fefefe;
+}
+  .admin-container table {
+    width: 100%;
+  }
+  .admin-container th {
+    text-align: left;
+    border-bottom: solid 1px black;
+    padding: 0 4px;
+  }
+  .admin-container td {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 4px;
+  }
+    .admin-container td>input {
+      border: none;
+      width: auto;
+      background-color: transparent;
+    }
+  .admin-container tr:nth-child(2n) {
+    background-color: #eee;
+  }
+  .admin-container .send {
+    border: solid 1px #999;
+    text-align: center;
+    opacity: .6;
+    cursor: pointer;
+  }
+  .admin-container .send:hover {
+    opacity: 1;
+  }
+
+  .admin-container #template {
+    display: none;
+  }

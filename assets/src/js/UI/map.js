@@ -90,7 +90,7 @@ var map = {
     var self = this;
 
     /** SVG.JS */
-    var boardContainer = SVG('board');
+    var boardContainer = SVG(mapData.boardName);
     var tiles   = boardContainer.group();
     var hexagon = null;
     var coords  = null;

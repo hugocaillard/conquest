@@ -2,6 +2,7 @@
   "development": true,
   "port": 3000,
   "secret": "your secret",
+  "superadmin": "hugo@hugo.com",
 
   "db": {
     "host": "localhost",
@@ -16,6 +17,7 @@
   },
 
   "game": {
+    "win": 1000,
     "teams": ["alpha", "beta", "gamma"],
     "map": {
       "size": 5

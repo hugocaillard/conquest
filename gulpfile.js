@@ -19,6 +19,10 @@ gulp.task('js', function() {
     .pipe(duo())
     .pipe(gulp.dest('assets/public'))
     .pipe(livereload());
+  gulp.src('assets/src/js/admin/admin.js')
+    .pipe(duo())
+    .pipe(gulp.dest('assets/public'))
+    .pipe(livereload());
 });
 gulp.task('css', function() {
   gulp.src('assets/src/css/style.css')

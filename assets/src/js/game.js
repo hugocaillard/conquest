@@ -17,26 +17,34 @@ var game = {
     self.teamScore = 0;
     if (_.byId('board')) {
       var mapData = require('./mapData.js');
-      mapData.init();
+      mapData.init('board');
+
       chooseFaction.init();
       flashMessages.init();
+    }
+    else if (_.byId('board-admin')) {
+      var mapData = require('./mapData.js');
+      mapData.init('board-admin');
     }
   },
 
   tick: function(d) {
     game.map = d.map;
-    game.player = d.team.players[game.playerName];
     map.updateMap(game.map);
-    map.showPlayer(game.player);
 
-    // TODO: move this
-    if (game.player.faction && game.playerLife != game.player.factions[game.player.faction].life) {
-      game.playerLife = game.player.factions[game.player.faction].life;
-      _.byId('p-life').innerHTML = game.playerLife;
-    }
-    if (game.teamScore != d.team.score) {
-      game.teamScore = d.team.score;
-      _.byId('score').innerHTML = game.teamScore;
+    if (d.team) {
+      game.player = d.team.players[game.playerName];
+      map.showPlayer(game.player);
+
+      // TODO: move this
+      if (game.player.faction && game.playerLife != game.player.factions[game.player.faction].life) {
+        game.playerLife = game.player.factions[game.player.faction].life;
+        _.byId('p-life').innerHTML = game.playerLife;
+      }
+      if (game.teamScore != d.team.score) {
+        game.teamScore = d.team.score;
+        _.byId('score').innerHTML = game.teamScore;
+      }
     }
   },
 
