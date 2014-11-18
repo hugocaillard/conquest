@@ -82,6 +82,7 @@ nbproject
 
 components
 assets/public/app.js
+assets/public/admin.js
 assets/public/style.css
 config.json
 
