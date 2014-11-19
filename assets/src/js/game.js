@@ -32,7 +32,7 @@ var game = {
     game.map = d.map;
     map.updateMap(game.map);
 
-    if (d.team) {
+    if (d.team && d.team.players[game.playerName]) {
       game.player = d.team.players[game.playerName];
       map.showPlayer(game.player);
 

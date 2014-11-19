@@ -17,10 +17,10 @@
   },
 
   "game": {
-    "win": 1000,
+    "win": 100000,
     "teams": ["alpha", "beta", "gamma"],
     "map": {
-      "size": 5
+      "size": 12
     }
   }
 }

@@ -49,7 +49,6 @@ var map = {
 
     // move
     else if (mapData.board[index].adjacents.indexOf(map.player.position)>-1) {
-      mapData.board[index].element.front().stroke({'width': 1, 'color': '#fff'});
       sockets.move(index);
     }
   },
