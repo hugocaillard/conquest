@@ -16,7 +16,7 @@ var chooseFaction = {
     var factions = ['soldier', 'engineer', 'medic'];
     for (var faction in factions) {
       self[factions[faction]] = {
-        xp:   _.$$('#'+ factions[faction] +'>.xp>span'),
+        level:   _.$$('#'+ factions[faction] +'>.level>span'),
         dmg:  _.$$('#'+ factions[faction] +'>.damages>span'),
         maxLife: _.$$('#'+ factions[faction] +'>.life>span'),
         capt: _.$$('#'+ factions[faction] +'>.capture>span'),
@@ -32,7 +32,7 @@ var chooseFaction = {
 
     for (var faction in game.player.factions) {
       for (var spec in game.player.factions[faction]) {
-        if (spec != 'life') // we only want the maxLife
+        if (self[faction][spec])
           self[faction][spec].innerHTML = game.player.factions[faction][spec];
       }
     }
