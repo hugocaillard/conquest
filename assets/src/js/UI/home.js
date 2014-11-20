@@ -1,3 +1,4 @@
+var particles = require('VincentGarreau/particles.js@1.0.3:/particles.js');
 var _ = require('../tools.js');
 
 var home = {
@@ -7,12 +8,12 @@ var home = {
   },
 
   setParticles: function() {
-    var particles = require('VincentGarreau/particles.js@1.0.3:/particles.js');
+    console.log(particles);
     particlesJS('particles-js', {
       particles: {
         color: '#fff',
         shape: 'circle', // "circle", "edge" or "triangle"
-        opacity: 1,
+        opacity: .3,
         size: 4,
         size_random: true,
         nb: 150,
@@ -20,7 +21,7 @@ var home = {
           enable_auto: true,
           distance: 100,
           color: '#fff',
-          opacity: 1,
+          opacity: .3,
           width: 1,
           condensed_mode: {
             enable: false,
@@ -41,7 +42,7 @@ var home = {
         detect_on: 'canvas', // "canvas" or "window"
         mode: 'grab',
         line_linked: {
-          opacity: .5
+          opacity: .3
         },
         events: {
           onclick: {
@@ -54,6 +55,7 @@ var home = {
       /* Retina Display Support */
       retina_detect: true
     });
+  }
 }
 
 
