@@ -20,21 +20,19 @@ var game = {
     var self = this;
 
     var mapData = require('./mapData.js');
-    mapData.init();
-    chooseFaction.init();
+
     self.player = 0;
     self.teamScore = 0;
-    if (!!_.byId('board')) {
-      var mapData = require('./mapData.js');
+    if (_.byId('board')) {
       mapData.init('board');
 
       chooseFaction.init();
       flashMessages.init();
       panels.init();
     }
-    else if (!!_.byId('board-admin')) {
-      var mapData = require('./mapData.js');
+    else if (_.byId('board-admin')) {
       mapData.init('board-admin');
+      console.log('hey')
     }
   },
 

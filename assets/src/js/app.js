@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  if (!!_.byId('board')) {
+  if (_.byId('board') || _.byId('board-admin')) {
     var game = require('./game.js');
     game.init();
   }
