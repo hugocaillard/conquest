@@ -54,6 +54,7 @@ var home = {
       /* Retina Display Support */
       retina_detect: true
     });
+  }
 }
 
 
