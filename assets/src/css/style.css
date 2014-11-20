@@ -28,3 +28,6 @@ html, body {
   height: 100%;
   z-index: 1;
 }
+
+::-moz-selection {background: none;}
+::selection      {background: none;}

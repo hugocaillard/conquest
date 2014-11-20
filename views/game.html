@@ -11,7 +11,28 @@
 <body>
   <div id="board" class="board"></div>
   <div class="score">Score: <span id="score">0</span></div>
-  <div class="p-life">Life: <span id="p-life">0</span></div>
+
+  <div class="player" id="player">
+    <div class="faction" id="faction"></div>
+    <div id="level">Level: <span class="value"></span></div>
+    <div id="xp">XP: <span class="value"></span></div>
+    <div id="life">Life:
+      <span class="value"></span>
+      <span class="upgrade">+</span>
+    </div>
+    <div id="damages">Damages:
+      <span class="value"></span>
+      <span class="upgrade">+</span>
+    </div>
+    <div id="capt-pts">Capture Points:
+      <span class="value"></span>
+      <span class="upgrade">+</span>
+    </div>
+    <div id="heal-pts">Healing Points:
+      <span class="value"></span>
+      <span class="upgrade">+</span>
+    </div>
+  </div>
   <!-- OVERLAYS -->
   <div class="overlays" id="overlays">
     <div class="flash" id="flash">

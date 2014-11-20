@@ -6,23 +6,29 @@ var sockets       = require('./sockets.js');
 
 var chooseFaction = require('./UI/chooseFaction.js');
 var flashMessages = require('./UI/flashMessages.js');
+var panels = require('./UI/panels.js');
 
 var game = {
   player: {},
+  faction: {}, // the current, selected faction
   tileToSpawn: 0,
+  previousLife: 0,
+  previousFaction: '',
+  previousSpecs: '',
 
   init: function() {
     var self = this;
-    self.playerLife = 0;
+    self.player = 0;
     self.teamScore = 0;
-    if (_.byId('board')) {
+    if (!!_.byId('board')) {
       var mapData = require('./mapData.js');
       mapData.init('board');
 
       chooseFaction.init();
       flashMessages.init();
+      panels.init();
     }
-    else if (_.byId('board-admin')) {
+    else if (!!_.byId('board-admin')) {
       var mapData = require('./mapData.js');
       mapData.init('board-admin');
     }
@@ -36,10 +42,22 @@ var game = {
       game.player = d.team.players[game.playerName];
       map.showPlayer(game.player);
 
-      // TODO: move this
-      if (game.player.faction && game.playerLife != game.player.factions[game.player.faction].life) {
-        game.playerLife = game.player.factions[game.player.faction].life;
-        _.byId('p-life').innerHTML = game.playerLife;
+      // Update UI
+      if (game.player.faction && game.player.position !== null) {
+        game.faction = game.player.factions[game.player.faction];
+        if (game.faction.life != game.previousLife) {
+          panels.setPlayerLife(game.faction.life);
+          game.previousLife = game.faction.life;
+        }
+        if (game.player.faction != game.previousFaction ||
+            JSON.stringify(game.faction) != game.previousSpecs) {
+          panels.setPlayerSpecs(game.player.faction, game.faction);
+          game.previousFaction = game.player.faction;
+          game.previousSpecs = JSON.stringify(game.faction);
+        }
+      }
+      else {
+        panels.hidePlayerPanel();
       }
       if (game.teamScore != d.team.score) {
         game.teamScore = d.team.score;
