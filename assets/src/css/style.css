@@ -1,7 +1,11 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import 'necolas/normalize.css';
 @import './headings.css';
 @import './forms.css';
 @import './overlays.css';
+@import './right-panel.css';
+@import './left-panel.css';
+@import './landing.css';
 
 
 html {box-sizing: border-box;}
@@ -26,4 +30,9 @@ html, body {
   width: 100%;
   height: 100%;
   z-index: 1;
+}
+
+.panel{
+  position: fixed;
+  width: 400px;
 }
