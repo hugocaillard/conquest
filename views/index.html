@@ -9,31 +9,49 @@
   <script src="app.js" defer></script>
 </head>
 <body>
-  <header>
-    <h1>Conquest</h1>
-  </header>
 
-  <section class="login">
-    <h2>Login</h2>
-    <form action="/users/login" method="post" class="ajax">
-      <input type="text" name="username" placeholder="Email">
-      <input type="password" name="password" placeholder="Password">
-      <input type="checkbox" data-action="showPassword">
-      <label for="showPassword"><small>Show password</small></label>
-      <input type="submit" value="login">
-    </form>
-  </section>
+  <div class="landing">
+    <div class="buttons">
+      <div class="about"><a href="">About</a></div>
+      <div class="how-to"><a href="">How to play</a></div>
+    </div>
 
-  <section class="register">
-    <h2>Register</h2>
-    <form action="/users/register" method="post" class="ajax">
-      <input type="text" name="username" placeholder="Username">
-      <input type="email" name="email" placeholder="email">
-      <input type="password" name="password" placeholder="Password">
-      <input type="checkbox" data-action="showPassword">
-      <label for="showPassword"><small>Show password</small></label>
-      <input type="submit" value="register">
-    </form>
-  </section>
+    <div id="particles-js"></div>
+
+    <div class="planet">
+      <div class="title"></div>
+      <div class="outer-planet"></div>
+      <div class="med-planet"></div>
+      <div class="med2-planet"></div>
+      <div class="inner-planet"></div>
+    </div>
+
+    <section class="login">
+      <h2>Login</h2>
+      <form action="/users/login" method="post" class="ajax">
+        <input type="text" name="username" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <input type="checkbox" data-action="showPassword">
+        <label for="showPassword"><small>Show password</small></label>
+        <input type="submit" value="login">
+      </form>
+    </section>
+
+     <div class="start-contain">
+      <div class="start"><a href="">Start</a></div>
+    </div>
+
+    <section class="register">
+      <h2>Register</h2>
+      <form action="/users/register" method="post" class="ajax">
+        <input type="text" name="username" placeholder="Username">
+        <input type="email" name="email" placeholder="email">
+        <input type="password" name="password" placeholder="Password">
+        <input type="checkbox" data-action="showPassword">
+        <label for="showPassword"><small>Show password</small></label>
+        <input type="submit" value="register">
+      </form>
+    </section>
+  </div>
 </body>
 </html>
