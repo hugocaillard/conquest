@@ -1,9 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import 'necolas/normalize.css';
-@import './headings.css';
-@import './forms.css';
-@import './overlays.css';
-@import './admin.css';
-
 
 html {box-sizing: border-box;}
 *, *:before, *:after {box-sizing: inherit;}
@@ -18,6 +14,16 @@ html, body {
   overflow: hidden;
 }
 
+@import './headings.css';
+@import './forms.css';
+@import './overlays.css';
+@import './right-panel.css';
+@import './left-panel.css';
+@import './landing.css';
+@import './admin.css';
+
+
+
 .board {
   background-color: #181818;
   overflow: hidden;
@@ -28,6 +34,12 @@ html, body {
   height: 100%;
   z-index: 1;
 }
+
+.panel{
+  position: fixed;
+  width: 400px;
+}
+
 
 ::-moz-selection {background: none;}
 ::selection      {background: none;}

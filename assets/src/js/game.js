@@ -18,6 +18,10 @@ var game = {
 
   init: function() {
     var self = this;
+
+    var mapData = require('./mapData.js');
+    mapData.init();
+    chooseFaction.init();
     self.player = 0;
     self.teamScore = 0;
     if (!!_.byId('board')) {

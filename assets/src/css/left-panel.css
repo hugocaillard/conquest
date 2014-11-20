@@ -1,0 +1,162 @@
+/* TEMP: player data - temporary style in the bottom left corner */
+.player {
+  width: 200px;
+  position: absolute;
+  bottom: 10px;left: 10px;
+  color: white;
+  z-index: 3;
+  display: none;
+}
+  .player.show {
+    display: block;
+  }
+  .player>div {
+    margin: 10px 0;
+    position: relative;
+  }
+  .player .value {
+    position: absolute;
+    right: 30px;
+  }
+  .player .faction {
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .player .upgrade {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0 5px;
+    border: solid 1px white;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: .5;
+    transition: opacity .15s ease-in;
+    display: none;
+  }
+    .player .upgrade.show {
+      display: block;
+    }
+    .player .upgrade:hover {
+      opacity: 1;
+    }
+
+
+#left-panel {
+  top: 0;
+  left: 0px;
+  bottom: 0;
+  background-color: #11181d;
+  z-index: 2;
+}
+
+#tab-name {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  border-bottom: 2px solid #036ef3;
+}
+
+
+
+      /*
+      * Player info tab
+      * Name
+      * Class         ........
+      * Abilities
+      */
+
+#player-infos .first-infos-wrapper {
+  text-align: left;
+  margin: 15px;
+  position: relative;
+  background: url("./imgs/space.jpg");
+}
+
+#player-infos .first-infos-wrapper #player-name {
+  color: #fff;
+  font-size: 18px;
+}
+
+#player-infos .first-infos-wrapper #player-name::after {
+  content: "-";
+  color: #036ef3;
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+#player-infos .first-infos-wrapper #player-class {
+  color: #036ef3;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+#player-infos .first-infos-wrapper #icon-class {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+  background-color: rgba(3,110,243,.5);
+  margin-top: 15px;
+  position: relative;
+}
+
+#player-infos .first-infos-wrapper #icon-class #refresh-button {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  background-color: rgba(3,110,243,.7);
+  margin-top: 15px;
+  position: absolute;
+  right: -25px;
+  top: 25px;
+}
+
+#player-infos .first-infos-wrapper .level-wrapper {
+  text-align: center;
+}
+
+#player-infos .first-infos-wrapper .xp-wrapper {
+  width: 80%;
+  display: inline-block;
+}
+
+#player-infos .first-infos-wrapper .level {
+  color: #fff;
+  font-size: 20px;
+  margin-top: 25px;
+  text-align: right;
+}
+
+#player-infos .first-infos-wrapper #xp-progress {
+  height: 10px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #74797d;
+}
+
+#player-infos .first-infos-wrapper #xp-progress span {
+  position: relative;
+  width: 67%;
+  background-color: #036ef3;
+  display: block;
+  height: 100%;
+  border-radius: 5px;
+}
+
+#player-infos .first-infos-wrapper #number-level {
+  display: inline-block;
+  color: #fff;
+  font-size: 40px;
+  vertical-align: bottom;
+  position: relative;
+  top: 7px;
+  margin-left: 5px;
+}
+
+#player-infos .skills .title-skills {
+  color: #fff;
+  text-transform: uppercase;
+}
