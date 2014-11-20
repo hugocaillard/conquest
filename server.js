@@ -68,6 +68,10 @@ var users = require(__dirname+'/lib/users');
 app.post('/users/login', users.login);
 app.post('/users/register', users.register);
 
+var admin = require(__dirname+'/lib/admin');
+app.post('/admin/users', admin.getUsers);
+app.post('/admin/users/update', admin.updateUser);
+
 
 // serve assets
 var serve = require('koa-static');
@@ -78,6 +82,8 @@ app.use(serve(__dirname+'/assets/public'));
 var views = require(__dirname+'/lib/views');
 app.get('/', views.home);
 app.get('/game', views.game);
+app.get('/admin', views.admin);
+app.get('/admin/map', views.adminMap);
 
 
 // sockets

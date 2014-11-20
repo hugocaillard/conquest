@@ -10,32 +10,62 @@
 </head>
 <body>
   <div id="board" class="board"></div>
+  <div class="score">Score: <span id="score">0</span></div>
 
+
+  <!--  TEMPORARY : should be move in the left panel
+        Mind the IDs for the JS   -->
+  <div class="player" id="player">
+    <div class="faction" id="faction"></div>
+    <div id="level">Level: <span class="value"></span></div>
+    <div id="xp">XP: <span class="value"></span></div>
+    <div id="life">Life:
+      <span class="value"></span>
+      <span class="upgrade">+</span>
+    </div>
+    <div id="damages">Damages:
+      <span class="value"></span>
+      <span class="upgrade">+</span>
+    </div>
+    <div id="capt-pts">Capture Points:
+      <span class="value"></span>
+      <span class="upgrade">+</span>
+    </div>
+    <div id="heal-pts">Healing Points:
+      <span class="value"></span>
+      <span class="upgrade">+</span>
+    </div>
+  </div>
   <!-- OVERLAYS -->
   <div class="overlays" id="overlays">
-    <div id="flash"></div>
+    <div class="flash" id="flash">
+      <p class="spawning">Click on a tile to spawn</p>
+    </div>
 
     <div class="choose-faction" id="choose-faction">
       <div id="soldier">
         <h3>Soldier</h3>
-        <p class="damages">Damages: <span></span></p>
+        <p class="level">Level: <span></span></p>
         <p class="life">Life points: <span></span></p>
+        <p class="damages">Damages: <span></span></p>
         <p class="capture">Capture points: <span></span></p>
         <p class="healing">Healing: <span></span></p>
       </div>
       <div id="engineer">
         <h3>Engineer</h3>
-        <p class="capture">Capture points: <span></span></p>
+        <p class="level">Level: <span></span></p>
         <p class="life">Life points: <span></span></p>
         <p class="damages">Damages: <span></span></p>
+        <p class="capture">Capture points: <span></span></p>
         <p class="healing">Healing: <span></span></p>
       </div>
       <div id="medic">
         <h3>Medic</h3>
-        <p class="healing">Healing: <span></span></p>
+        <p class="level">Level: <span></span></p>
         <p class="life">Life points: <span></span></p>
         <p class="damages">Damages: <span></span></p>
         <p class="capture">Capture points: <span></span></p>
+        <p class="healing">Healing: <span></span></p>
       </div>
     </div>
   </div>

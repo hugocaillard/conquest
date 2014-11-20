@@ -12,9 +12,12 @@ var mapData = {
   radius: 20,
 
 
-  init: function() {
+  init: function(boardName) {
     var self = this;
     start = Date.now();
+
+    self.boardName = boardName;
+
     // Operations we don't want to repeat thousands of times
     self.halfRadius = self.radius/2;
     self.radius15 = self.radius*1.5;

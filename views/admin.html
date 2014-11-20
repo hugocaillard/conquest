@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Conquest | ADMIN</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="/admin.js" defer></script>
+</head>
+<body>
+  <div class="admin-container">
+    <h1>Conquest – Admin</h1>
+
+    <div class="users">
+      <h2>Users</h2>
+      <input type="text" class="search" id="search-users" placeholder="Search users" autofocus>
+      <table class="results" >
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Slug</th>
+          <th>Confirmed</th>
+          <th>Admin</th>
+          <th>Created at</th>
+          <th>Password</th>
+          <th>Update</th>
+        </tr>
+        <tr id="template">
+          <td><input type="text" class="username"></td>
+          <td><input type="text" class="email"></td>
+          <td><input type="text" class="slug"></td>
+          <td><input type="text" class="confirmed"></td>
+          <td><input type="text" class="admin"></td>
+          <td><input type="text" class="createdAt"></td>
+          <td><input type="text" class="password"></td>
+          <td data-id="" class="send">Send</td>
+        </tr>
+        <tbody id="users-results">
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

@@ -2,7 +2,9 @@ var _ = require('../tools.js');
 var mapData = require('../mapData.js')
 var svg = require('wout/svg.js');
 var sockets = require('../sockets.js');
+
 var chooseFaction = require('./chooseFaction.js');
+var flashMessages = require('./flashMessages.js');
 
 var map = {
   player: {},
@@ -13,12 +15,21 @@ var map = {
     self.player = player;
     if (player.position !== null) {
       if (self.currentPos !== null)
-        self.currentPos.element.back().stroke({'width': .1});
+        self.currentPos.element.back().stroke({'width': 1, 'color': '#181818'});
 
       var tile = mapData.board[player.position];
-      tile.element.front().stroke({'width': 4});
+      tile.element.front().stroke({'width': 5, 'color': '#fff'});
 
       self.currentPos = tile;
+    }
+    else {
+      if (self.currentPos !== null)
+        self.currentPos.element.back().stroke({'width': 1, 'color': '#181818'});
+      if (player.faction === null)
+        flashMessages.show('Welcome.<br>Click on a tile owned by your team to spawn');
+      else
+        flashMessages.show('You are dead<br>Click on a tile owned by your team to respawn');
+
     }
   },
 
@@ -38,7 +49,7 @@ var map = {
 
     // move
     else if (mapData.board[index].adjacents.indexOf(map.player.position)>-1) {
-      sockets.move(index)
+      sockets.move(index);
     }
   },
 
@@ -78,7 +89,7 @@ var map = {
     var self = this;
 
     /** SVG.JS */
-    var boardContainer = SVG('board');
+    var boardContainer = SVG(mapData.boardName);
     var tiles   = boardContainer.group();
     var hexagon = null;
     var coords  = null;
@@ -99,7 +110,7 @@ var map = {
 
       hexagon = tiles.polygon(coords)
                   .fill('#333')
-                  .stroke({width: .1, color: '#181818'});
+                  .stroke({width: 1, color: '#181818'});
 
       hexagon.attr('id', i);
       hexagon.attr('name', t.id);

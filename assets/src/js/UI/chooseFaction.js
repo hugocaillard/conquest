@@ -1,36 +1,29 @@
+'use strict';
+
 var _ = require('../tools.js');
 
 var chooseFaction = {
   // DOM Elements
   chooseFaction: _.byId('choose-faction'),
-  soldier: {
-    dmg: _.$$('#soldier>.damages>span'),
-    life: _.$$('#soldier>.life>span'),
-    capt: _.$$('#soldier>.capture>span'),
-    heal: _.$$('#soldier>.healing>span'),
-  },
-  engineer: {
-    dmg: _.$$('#engineer>.damages>span'),
-    life: _.$$('#engineer>.life>span'),
-    capt: _.$$('#engineer>.capture>span'),
-    heal: _.$$('#engineer>.healing>span'),
-  },
-  medic: {
-    dmg: _.$$('#medic>.damages>span'),
-    life: _.$$('#medic>.life>span'),
-    capt: _.$$('#medic>.capture>span'),
-    heal: _.$$('#medic>.healing>span'),
-  },
-
 
   isVisible: false,
 
   init: function() {
-    var game = require('../game.js');
+    var self = this;
 
-    _.byId('soldier').addEventListener('click', game.setFaction, false);
-    _.byId('engineer').addEventListener('click', game.setFaction, false);
-    _.byId('medic').addEventListener('click', game.setFaction, false);
+    var game = require('../game.js');
+    // Get DOM elements and set event listeners
+    var factions = ['soldier', 'engineer', 'medic'];
+    for (var faction in factions) {
+      self[factions[faction]] = {
+        level:   _.$$('#'+ factions[faction] +'>.level>span'),
+        dmg:  _.$$('#'+ factions[faction] +'>.damages>span'),
+        maxLife: _.$$('#'+ factions[faction] +'>.life>span'),
+        capt: _.$$('#'+ factions[faction] +'>.capture>span'),
+        heal: _.$$('#'+ factions[faction] +'>.healing>span')
+      };
+      _.byId(factions[faction]).addEventListener('click', game.setFaction, false);
+    }
   },
 
   show: function() {
@@ -39,7 +32,8 @@ var chooseFaction = {
 
     for (var faction in game.player.factions) {
       for (var spec in game.player.factions[faction]) {
-        self[faction][spec].innerHTML = game.player.factions[faction][spec];
+        if (self[faction][spec])
+          self[faction][spec].innerHTML = game.player.factions[faction][spec];
       }
     }
     this.chooseFaction.classList.add('show');

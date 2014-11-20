@@ -1,31 +1,46 @@
+.score {
+  position: absolute;
+  color: white;
+  z-index: 3;
+}
+  .score {top: 10px;left: 10px;}
+
+
 /* STYLES OF OVERLAYS */
 .overlays>div {z-index: -1;}
-
-/* FLASH MESSAGE */
-
-
-/* CHOOSE FACTION */
-.choose-faction {
-  position: absolute;
-  top: 50%;
-  left: 25%;
-  width: 50%;
-  height: 200px;
-  margin-top: -100px;
-  background-color: #ddd;
-  color: #555;
-  opacity: 0;
-  z-index: -1;
-  transition: opacity .3s ease-in;
-}
-  .choose-faction.show {
+  .overlays>div.show {
     display: block;
     opacity: .8;
     z-index: 2;
   }
-  .choose-faction.show:hover {
+  .overlays>div.show:hover {
     opacity: 1;
   }
+
+/* FLASH MESSAGE */
+.flash {
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 0;right: 0;
+  color: white;
+  text-align: center;
+}
+
+/* CHOOSE FACTION */
+.choose-faction {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 80%;
+  height: 230px;
+  margin-top: -115px;
+  background-color: #ddd;
+  color: #555;
+  opacity: 0;
+  transition: opacity .3s ease-in;
+}
   .choose-faction>div {
     float: left;
     width: 33.333%;
