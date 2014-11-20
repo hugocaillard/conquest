@@ -1,7 +1,6 @@
 'use strict';
 
 var _ = require('./tools.js');
-var game = require('./game.js');
 
 var users = {
   loginHandler: function(resData) {
@@ -48,5 +47,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  game.init();
+  if (!!_.byId('board')) {
+    var game = require('./game.js');
+    game.init();
+  }
+
+  if (!!_.byId('landing')) {
+    var home = require('./UI/home.js');
+    home.init();
+  }
 });
