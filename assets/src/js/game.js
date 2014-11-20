@@ -12,11 +12,9 @@ var game = {
   init: function() {
     var self = this;
 
-    if (_.byId('board')) {
-      var mapData = require('./mapData.js');
-      mapData.init();
-      chooseFaction.init();
-    }
+    var mapData = require('./mapData.js');
+    mapData.init();
+    chooseFaction.init();
   },
 
   tick: function(d) {
