@@ -1,0 +1,158 @@
+body#landing{
+  background: url("./imgs/background-landing.jpg");
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  text-align: center;
+}
+
+.planet{
+  width: 300px;
+  height: 300px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -150px;
+  background: url("./imgs/planet.png");
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.planet .title{
+  width: 750px;
+  height: 100px;
+  position: absolute;
+  top: 35%;
+  left: -75%;
+  background: url("./imgs/conquest.png");
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.outer-planet{
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  left: -17%;
+  top: -17%;
+  background: url("./imgs/outer-planet.png");
+  -webkit-background-size: cover;
+  background-size: cover;
+  opacity: .3;
+  -webkit-animation:spin 10s linear infinite;
+  -moz-animation:spin 10s linear infinite;
+  animation:spin 10s linear infinite;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.med-planet{
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -175px;
+  margin-top: -175px;
+  background: url("./imgs/med-planet.png");
+  -webkit-background-size: cover;
+  background-size: cover;
+  opacity: .3;
+  -webkit-animation:spin-bis 10s linear infinite;
+  -moz-animation:spin-bis 10s linear infinite;
+  animation:spin-bis 10s linear infinite;
+}
+
+@-moz-keyframes spin-bis { 100% { -moz-transform: rotate(-360deg); } }
+@-webkit-keyframes spin-bis { 100% { -webkit-transform: rotate(-360deg); } }
+@keyframes spin-bis { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }
+
+.med2-planet{
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: 200px;
+  margin-left: 200px;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.inner-planet{
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  left: -17%;
+  top: -17%;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+#landing .buttons{
+  position: absolute;
+  top: 25px;
+  right: 50px;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#landing .buttons div a{
+  color: #fff;
+  text-decoration: none;
+}
+
+#landing .buttons .about, #landing .buttons .how-to{
+  display: inline-block;
+}
+
+#landing .buttons .how-to{
+  margin-left: 50px;
+}
+
+#landing .buttons .how-to::after{
+  content: "";
+  position: absolute;
+  border-right: 2px solid #fff;
+  border-left: 2px solid #fff;
+  left: -10px;
+  width: 70px;
+  height: 100%;
+  transition: all .5s ease;
+}
+
+#landing .buttons .how-to:hover::after{
+  content: "";
+  position: absolute;
+  border-right: 2px solid #fff;
+  border-left: 2px solid #fff;
+  left: 93px;
+  width: 127px;
+  height: 100%;
+  transition: all .5s ease;
+}
+
+#landing .start{
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+}
+
+#landing .start a{
+  color: #fff;
+  text-decoration: none;
+}
+
+
+#landing .start-contain{
+  position: absolute;
+  width: 100%;
+  bottom: 220px;
+  text-align: center;
+}
