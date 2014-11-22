@@ -20,7 +20,7 @@
     "win": 100000,
     "teams": ["alpha", "beta", "gamma"],
     "map": {
-      "size": 4
+      "size": 3
     }
   }
 }
