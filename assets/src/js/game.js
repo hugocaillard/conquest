@@ -57,10 +57,10 @@ var game = {
           game.currentSpecs = JSON.stringify(game.faction);
         }
         if (game.player.faction !== game.currentFaction ||
-            JSON.stringify(game.faction) !== game.currentSpecs) {
+            JSON.stringify(game.player) !== game.currentSpecs) {
           panels.setPlayerSpecs(game.player.faction, game.faction);
           game.currentFaction = game.player.faction;
-          game.currentSpecs = JSON.stringify(game.faction);
+          game.currentSpecs = JSON.stringify(game.player);
         }
       }
       else { // No player's data to display
