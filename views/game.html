@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <title>Conquest</title>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300|Montserrat:400,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
 
   <script src="/socket.io/socket.io.js" defer></script>
-  <script src="app.js" defer></script>
+  <script src="/app.js" defer></script>
 </head>
 <body>
   <div id="board" class="board"></div>
@@ -40,20 +40,17 @@
 
 
   <!-- OVERLAYS -->
-  <div class="overlays alpha" id="overlays">
+  <div class="overlays" id="overlays">
     <div class="flash" id="flash">
       <p class="spawning">Click on a tile to spawn</p>
     </div>
 
-    <div class="choose-faction" id="choose-faction">
-    <div class="respawn-msg" id="respawn-msg">
-      <p class="respawning">Select a class to respawn</p>
-    </div>
+    <div class="choose-faction alpha" id="choose-faction">
       <div id="soldier">
         <h3>Soldier</h3>
-        <p class="level">LVL <span></span></p>
-        <div class="soldier-inner">
-          <img src="../../imgs/soldier_white.png">
+        <h3 class="level">Level <span></span></h3>
+        <div class="inner">
+          <img src="/imgs/soldier_white.png">
           <p class="life">Life grade <span></span></p>
           <p class="damages">Strength grade <span></span></p>
           <p class="capture">Capture grade <span></span></p>
@@ -62,9 +59,9 @@
       </div>
       <div id="engineer">
         <h3>Engineer</h3>
-        <p class="level">LVL <span></span></p>
-        <div class="engineer-inner">
-          <img src="../../imgs/engineer_white.png">
+        <h3 class="level">Level <span></span></h3>
+        <div class="inner">
+          <img src="/imgs/engineer_white.png">
           <p class="life">Life grade <span></span></p>
           <p class="damages">Strength grade <span></span></p>
           <p class="capture">Capture grade <span></span></p>
@@ -73,9 +70,9 @@
       </div>
       <div id="medic">
         <h3>Medic</h3>
-        <p class="level">LVL <span></span></p>
-        <div class="medic-inner">
-          <img src="../../imgs/medic_white.png">
+        <h3 class="level">Level <span></span></h3>
+        <div class="inner">
+          <img src="/imgs/medic_white.png">
           <p class="life">Life grade <span></span></p>
           <p class="damages">Strength grade <span></span></p>
           <p class="capture">Capture grade <span></span></p>
@@ -95,7 +92,7 @@
 
       <div class="first-infos-wrapper">
         <span id="player-name">Wadzy</span>
-        <span id="player-class">Solider</span>
+        <span id="player-class">Soldier</span>
         <div class="sector-deco">/////////////////////////////////////</div>
         <div id="icon-class"></div>
         <div class="level-wrapper">
@@ -122,8 +119,7 @@
                 <button>upgrade</button>
               </div>
             </div>
-            <div class="skill-description">
-The health level determines the amount of life points that own your character. Remember to improve your health to better withstand during fights phases.
+            <div class="skill-description">The health level determines the amount of life points that own your character. Remember to improve your health to better withstand during fights phases.
             </div>
           </div>
           <div class="skill-row">
@@ -135,8 +131,7 @@ The health level determines the amount of life points that own your character. R
                 <button>upgrade</button>
               </div>
             </div>
-            <div class="skill-description">
-The strength level determines the amount of damages that deal your character. The more strength you will have, the easier the fight will be !
+            <div class="skill-description">The strength level determines the amount of damages that deal your character. The more strength you will have, the easier the fight will be !
             </div>
           </div>
           <div class="skill-row">
@@ -148,8 +143,7 @@ The strength level determines the amount of damages that deal your character. Th
                 <button>upgrade</button>
               </div>
             </div>
-            <div class="skill-description">
-The capture level determines the effectiveness of your character to quickly capture areas of the map. The better your capture grade is the faster you will conquer.
+            <div class="skill-description">The capture level determines the effectiveness of your character to quickly capture areas of the map. The better your capture grade is the faster you will conquer.
             </div>
           </div>
           <div class="skill-row">
@@ -161,8 +155,7 @@ The capture level determines the effectiveness of your character to quickly capt
                 <button>upgrade</button>
               </div>
             </div>
-            <div class="skill-description">
-The heal level determines the number of hit points that your character gets every second. The higher the heal is, the higher your chance to survive will be.
+            <div class="skill-description">The heal level determines the number of hit points that your character gets every second. The higher the heal is, the higher your chance to survive will be.
             </div>
           </div>
         </div>
