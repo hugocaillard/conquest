@@ -9,6 +9,7 @@ var flashMessages = require('./UI/flashMessages.js');
 var panels        = require('./UI/panels.js');
 
 var game = {
+  isReady: false,
   player: {},
   faction: {}, // the current, selected faction
   tileToSpawn: 0,
@@ -35,6 +36,12 @@ var game = {
     else if (_.byId('board-admin')) {
       mapData.init('board-admin');
     }
+  },
+
+  ready: function(team) {
+    console.log(team);
+    if (_.byId('board'))
+      panels.setTeam(team);
   },
 
   tick: function(d) {
@@ -84,6 +91,11 @@ var game = {
       if (game.teamScore !== d.team.score) {
         game.teamScore = d.team.score;
         _.byId('score').innerHTML = game.teamScore;
+      }
+
+      if (!game.isReady) {
+        game.isReady = true;
+        game.ready(game.player.team);
       }
     }
   },

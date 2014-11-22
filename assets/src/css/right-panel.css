@@ -104,6 +104,11 @@
   width: 100%;
   height: 165px;
 }
+
+  .right-panel.alpha .stats-container {box-shadow: 0 2px 0 #dd4b39;}
+  .right-panel.beta  .stats-container {box-shadow: 0 2px 0 #7ab800;}
+  .right-panel.gamma .stats-container {box-shadow: 0 2px 0 #4183c4;}
+
 .tile-stats>div{
   float: left;
   text-align: center;

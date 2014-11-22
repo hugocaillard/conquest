@@ -1,7 +1,7 @@
 var _ = require('../tools.js');
 
 var panels = {
-  init: function() {
+  init: function(team) {
     var self = this;
     // player panel DOM elements
     self.player         = _.byId('player');
@@ -39,6 +39,10 @@ var panels = {
     self.scoreAlpha = _.byId('#scoreAlpha');
     self.scoreBeta  = _.byId('#scoreBeta');
     self.scoreGamma = _.byId('#scoreGamma');
+  },
+
+  setTeam: function(team) {
+    _.$$('.right-panel').classList.add(team);
   },
 
 
