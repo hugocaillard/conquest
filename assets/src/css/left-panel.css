@@ -1,3 +1,35 @@
+#left-panel {
+  top: 0;
+  left: 0px;
+  bottom: 0;
+  background-color: #161616;
+  z-index: 2;
+}
+
+#tab-name {
+  padding: 21px;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 14px;
+}
+
+#logout {
+  position: relative;
+  width: 61px;
+  height: 61px;
+  background-color: #065bc4;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.top-section-container {
+  border-bottom: 2px solid #065bc4;
+}
+
+
 /* TEMP: player data - temporary style in the bottom left corner */
 .player {
   width: 200px;
@@ -42,27 +74,6 @@
     }
 
 
-#left-panel {
-  display: none;
-  top: 0;
-  left: 0px;
-  bottom: 0;
-  background-color: #11181d;
-  z-index: 2;
-}
-
-#tab-name {
-  width: 100%;
-  text-align: center;
-  padding: 20px;
-  text-transform: uppercase;
-  color: #fff;
-  font-family: 'Montserrat', sans-serif;
-  border-bottom: 2px solid #036ef3;
-}
-
-
-
       /*
       * Player info tab
       * Name
@@ -72,92 +83,158 @@
 
 #player-infos .first-infos-wrapper {
   text-align: left;
-  margin: 15px;
   position: relative;
-  background: url("./imgs/space.jpg");
-}
-
-#player-infos .first-infos-wrapper #player-name {
+  background: url("./imgs/hex_grid_blue.jpg") 50%;
+  -webkit-background-size: cover;
+  background-size: cover;
+  padding: 15px;
   color: #fff;
-  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
 }
 
-#player-infos .first-infos-wrapper #player-name::after {
-  content: "-";
-  color: #036ef3;
-  font-size: 18px;
-  margin-left: 5px;
-}
+  #player-infos .first-infos-wrapper #player-name {
+    color: #fff;
+    font-size: 18px;
+  }
 
-#player-infos .first-infos-wrapper #player-class {
-  color: #036ef3;
-  font-size: 18px;
+  #player-infos .first-infos-wrapper #player-class {
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    float: right;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+  }
+
+    #player-infos .first-infos-wrapper #player-class::after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: blue;
+      right: 0px;
+      top: -5px;
+      z-index: -1;
+    }
+
+  #player-infos .first-infos-wrapper #icon-class {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(3,110,243,.5);
+    margin-top: 15px;
+    margin: 0 auto;
+    right: 0;
+    position: relative;
+  }
+
+  #player-infos .first-infos-wrapper .level-wrapper {
+    text-align: center;
+  }
+
+  #player-infos .first-infos-wrapper .xp-wrapper {
+    width: 80%;
+    display: inline-block;
+  }
+
+  #player-infos .first-infos-wrapper .level {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 16px;
+    text-align: right;
+  }
+
+  #player-infos .first-infos-wrapper #xp-progress {
+    height: 3px;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #74797d;
+  }
+
+    #player-infos .first-infos-wrapper #xp-progress span {
+      position: relative;
+      width: 67%;
+      background-color: #036ef3;
+      display: block;
+      height: 100%;
+      border-radius: 5px;
+    }
+
+  #player-infos .first-infos-wrapper #number-level {
+    display: inline-block;
+    color: #fff;
+    font-size: 40px;
+    vertical-align: bottom;
+    position: relative;
+    top: 7px;
+    margin-left: 5px;
+  }
+
+#player-infos .skills .skills-title-wrapper {
+  color: #fff;
+  padding: 10px;
+  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
+  background: #222222;
+  margin-bottom: 25px;
 }
 
-#player-infos .first-infos-wrapper #icon-class {
-  width: 140px;
-  height: 140px;
-  margin: 0 auto;
-  background-color: rgba(3,110,243,.5);
-  margin-top: 15px;
-  position: relative;
-}
+  #player-infos .skills .skills-title-wrapper #skill-points {
+    color: #036ef3;
+    font-family: 'Montserrat', sans-serif;
+    float: right;
+    text-transform: none;
+    font-size: 14px;
+  }
 
-#player-infos .first-infos-wrapper #icon-class #refresh-button {
-  width: 50px;
-  height: 50px;
-  margin: 0 auto;
-  background-color: rgba(3,110,243,.7);
-  margin-top: 15px;
-  position: absolute;
-  right: -25px;
-  top: 25px;
-}
+   #player-infos .skills .skill-container {
+    color: #3c3c3c;
+    font-family: 'Montserrat', sans-serif;
+  }
 
-#player-infos .first-infos-wrapper .level-wrapper {
-  text-align: center;
-}
+    #player-infos .skills .skill-container .skill-row {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #000;
+    }
 
-#player-infos .first-infos-wrapper .xp-wrapper {
-  width: 80%;
-  display: inline-block;
-}
+    #player-infos .skills .skill-container .skill-row .skill-name-container {
+      position: relative;
+      margin-bottom: 10px;
+      margin-top: 10px;
+    }
 
-#player-infos .first-infos-wrapper .level {
-  color: #fff;
-  font-size: 20px;
-  margin-top: 25px;
-  text-align: right;
-}
+    #player-infos .skills .skill-container .skill-row .skill-name {
+      color: #fff;
+      padding: 10px;
+      font-size: 14px;
+      text-transform: uppercase;
+      padding-left: 30px;
+    }
 
-#player-infos .first-infos-wrapper #xp-progress {
-  height: 10px;
-  margin: 0 auto;
-  border-radius: 5px;
-  background-color: #74797d;
-}
+    #player-infos .skills .skill-container .skill-row .right-part {
+      position: absolute;
+      right: 30px;
+      top: -5px;
+    }
 
-#player-infos .first-infos-wrapper #xp-progress span {
-  position: relative;
-  width: 67%;
-  background-color: #036ef3;
-  display: block;
-  height: 100%;
-  border-radius: 5px;
-}
+    #player-infos .skills .skill-container .skill-row #life-grade {
+      color: #fff;
+      padding: 10px;
+      text-transform: uppercase;
+    }
 
-#player-infos .first-infos-wrapper #number-level {
-  display: inline-block;
-  color: #fff;
-  font-size: 40px;
-  vertical-align: bottom;
-  position: relative;
-  top: 7px;
-  margin-left: 5px;
-}
+    #player-infos .skills .skill-container .skill-row button {
+      color: #fff;
+      padding: 5px;
+      background-color: transparent;
+      border: 1px solid #fff;
+      border-radius: 3px;
+      font-size: 10px
+    }
 
-#player-infos .skills .title-skills {
-  color: #fff;
-  text-transform: uppercase;
-}
+    #player-infos .skills .skill-container .skill-row .skill-description {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 12px;
+      padding: 20px;
+      padding-top: 0;
+    }

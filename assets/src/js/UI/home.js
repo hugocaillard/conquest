@@ -3,16 +3,11 @@ var _ = require('../tools.js');
 
 var home = {
   init: function() {
-    console.log('home');
     this.setParticles();
-    this.displayLoginForm();
-    this.removeLoginForm();
-    this.displaySigninForm();
-    this.signinToLogin();
+    this.setEventListeners();
   },
 
   setParticles: function() {
-    console.log(particles);
     particlesJS('particles-js', {
       particles: {
         color: '#fff',
@@ -61,45 +56,35 @@ var home = {
     });
   },
 
-  displayLoginForm: function() {
-    var startButton = _.$('.start');
-    startButton[0].addEventListener('click', function(e) {
-      _.$('.login')[0].classList.add('show');
-      _.$('.cancel')[0].classList.add('show');
-      _.$('.start')[0].classList.remove('show');
-      _.$('.cta-signin')[0].classList.add('show');
+  setEventListeners: function() {
+    _.$$('.start').addEventListener('click', function(e) {
+      _.$$('.login').classList.add('show');
+      _.$$('.cancel').classList.add('show');
+      this.classList.remove('show');
+      _.$$('.cta-signin').classList.add('show');
     });
-  },
 
-  removeLoginForm: function() {
-    var cancelButton = _.$('.cancel');
-    cancelButton[0].addEventListener('click', function(e) {
-      _.$('.login')[0].classList.remove('show');
-      _.$('.cancel')[0].classList.remove('show');
-      _.$('.start')[0].classList.add('show');
-      _.$('.register')[0].classList.remove('show');
-      _.$('.cta-login')[0].classList.remove('show');
-      _.$('.cta-signin')[0].classList.remove('show');
+    _.$$('.cancel').addEventListener('click', function(e) {
+      _.$$('.login').classList.remove('show');
+      _.$$('.cancel').classList.remove('show');
+      _.$$('.start').classList.add('show');
+      _.$$('.register').classList.remove('show');
+      _.$$('.cta-login').classList.remove('show');
+      _.$$('.cta-signin').classList.remove('show');
     });
-  },
 
-  displaySigninForm: function() {
-    var signinButton = _.$('.cta-signin');
-    signinButton[0].addEventListener('click', function(e) {
-      _.$('.login')[0].classList.remove('show');
-      _.$('.register')[0].classList.add('show');
-      signinButton[0].classList.remove('show');
-      _.$('.cta-login')[0].classList.add('show');
+    _.$$('.cta-signin').addEventListener('click', function(e) {
+      _.$$('.login').classList.remove('show');
+      _.$$('.register').classList.add('show');
+      this.classList.remove('show');
+      _.$$('.cta-login').classList.add('show');
     });
-  },
 
-  signinToLogin: function() {
-    var loginButton = _.$('.cta-login');
-      loginButton[0].addEventListener('click', function(e) {
-      _.$('.login')[0].classList.add('show');
-      _.$('.register')[0].classList.remove('show');
-      loginButton[0].classList.remove('show');
-      _.$('.cta-signin')[0].classList.add('show');
+    _.$$('.cta-login').addEventListener('click', function(e) {
+      _.$$('.login').classList.add('show');
+      _.$$('.register').classList.remove('show');
+      this.classList.remove('show');
+      _.$$('.cta-signin').classList.add('show');
     });
   }
 }

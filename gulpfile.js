@@ -1,5 +1,6 @@
 var map = require('map-stream');
 var gulp = require('gulp');
+var autoprefixer = require('gulp-autoprefixer');
 var Duo = require('duo');
 var livereload = require('gulp-livereload');
 
@@ -27,6 +28,7 @@ gulp.task('js', function() {
 gulp.task('css', function() {
   gulp.src('assets/src/css/style.css')
     .pipe(duo())
+    .pipe(autoprefixer())
     .pipe(gulp.dest('assets/public'))
     .pipe(livereload());
 });
@@ -42,6 +44,7 @@ gulp.task('js-prod', function() {
 gulp.task('css-prod', function() {
   gulp.src('assets/src/css/style.css')
     .pipe(duo())
+    .pipe(autoprefixer())
     .pipe(gulp.dest('assets/public'))
 });
 
