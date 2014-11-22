@@ -18,6 +18,7 @@ var panels = {
     self.tile          = _.byId('tile');
     self.sector        = _.byId('tile-sector');
     self.captState     = _.byId('capt-state');
+    self.captProgress  = _.byId('capt-progress');
     self.soldiersStats  = {
       alpha: _.$$('#tile-soldiers>.alpha'),
       beta : _.$$('#tile-soldiers>.beta'),
@@ -127,14 +128,15 @@ var panels = {
   setScoreDisplay: function(team, score) {
     var self = this;
     if (team) {
-      if (!self.captState.classList.contains(team)) {
-        self.captState.classList.remove('alpha', 'beta', 'gamma');
-        self.captState.classList.add(team);
+      if (!self.captProgress.classList.contains(team)) {
+        self.captProgress.classList.remove('alpha', 'beta', 'gamma');
+        self.captProgress.classList.add(team);
       }
     }
     else {
-      self.captState.classList.remove('alpha', 'beta', 'gamma');
+      self.captProgress.classList.remove('alpha', 'beta', 'gamma');
     }
+    self.captProgress.style.width = score+'%';
     self.captState.innerHTML = score;
   },
 

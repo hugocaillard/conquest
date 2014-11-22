@@ -6,7 +6,7 @@ var sockets       = require('./sockets.js');
 
 var chooseFaction = require('./UI/chooseFaction.js');
 var flashMessages = require('./UI/flashMessages.js');
-var panels = require('./UI/panels.js');
+var panels        = require('./UI/panels.js');
 
 var game = {
   player: {},
