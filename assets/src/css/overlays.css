@@ -11,7 +11,8 @@
   .overlays>div.show {
     display: block;
     opacity: .8;
-    z-index: 2;
+    z-index: 4;
+    text-transform: uppercase;
   }
   .overlays>div.show:hover {
     opacity: 1;
@@ -31,30 +32,48 @@
 .choose-faction {
   display: none;
   position: absolute;
-  top: 50%;
-  left: 10%;
-  width: 80%;
+  top: 35%;
+  left: 25%;
+  width: 50%;
   height: 230px;
   margin-top: -115px;
-  background-color: #ddd;
-  color: #555;
+  color: #FFF;
   opacity: 0;
   transition: opacity .3s ease-in;
 }
-  .choose-faction>div {
+.choose-faction>.respawn-msg p {
+  font-size: 18px;
+  margin: 45px 0;
+}
+  .choose-faction>#soldier, .choose-faction>#engineer, .choose-faction>#medic {
     float: left;
     width: 33.333%;
     height: 100%;
-    border-left: solid 1px black;
     text-align: center;
-    background-color: transparent;
     cursor: pointer;
     transition: all .15s ease-in;
   }
-    .choose-faction>div:hover {
-      color: #333;
-      background-color: #eee;
-    }
+  .alpha #soldier>.soldier-inner, .alpha #engineer>.engineer-inner, .alpha #medic>.medic-inner {
+    background: url('../../imgs/spawn/respaw_blue.png') no-repeat center;
+    height: 232px;
+    font-size: 12px;
+    padding-top: 12px;
+  }
     .choose-faction>div:first-child {
       border:none;
     }
+    .choose-faction img {
+      height: 30px;
+      position: relative;
+      right: 1px;
+      margin-bottom: 26px;
+    }
+    .respawn-msg {
+      text-align: center;
+    }
+    .choose-faction h3, .choose-faction .level {
+      margin: 0.5em;
+      font-size: 18px;
+    }
+
+    
