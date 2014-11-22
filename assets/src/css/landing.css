@@ -179,3 +179,13 @@
   -moz-transform: translateX(0px);
   transform: translateX(0px);
 }
+
+/******
+*
+Dev particle z-index
+*
+*******/
+
+#particles-js{
+  display: none;
+}
