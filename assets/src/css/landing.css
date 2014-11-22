@@ -142,6 +142,7 @@
   width: 100%;
   bottom: 75px;
   text-align: center;
+  z-index: 3;
 }
 
 .login-section {
@@ -312,24 +313,4 @@
   -webkit-transform: translateX(0px);
   -moz-transform: translateX(0px);
   transform: translateX(0px);
-}
-
-/******
-*
-Dev particle z-index
-*
-*******/
-
-#particles-js{
-  display: none;
-}
-
-
-
-
-
-.hide{
-  display: none;
-  opacity: 0;
-  transition: all 1s ease;
 }
