@@ -84,10 +84,19 @@
 
   <!-- PANELS -->
   <div id="left-panel" class="panel">
+    <div class="tabs-section">
+      <div class="tab" id="player-tab"></div>
+      <div class="tab" id="team-tab"></div>
+      <div class="tab" id="infos-tab"></div>
+      <div class="tab" id="hide-panel-tab"></div>
+    </div>
     <div class="top-section-container">
       <div id="logout"></div>
       <div id="tab-name">Player Review</div>
     </div>
+
+  <!--Player infos-->
+
     <div id="player-infos">
 
       <div class="first-infos-wrapper">
@@ -160,9 +169,88 @@
           </div>
         </div>
       </div>
+
+    <!--Team infos-->
+
+      <div id="team-infos">
+
+      <div class="first-infos-wrapper">
+        <span id="player-name">Wadzy</span>
+        <span id="player-class">Solider</span>
+        <div class="sector-deco">/////////////////////////////////////</div>
+        <div id="icon-class"></div>
+        <div class="level-wrapper">
+          <div class="xp-wrapper">
+            <div class="level">Level</div>
+            <div id="xp-progress"><span></span></div>
+          </div>
+          <div id="number-level">7</div>
+        </div>
+      </div>
+
+      <div class="skills">
+        <div class="skills-title-wrapper">
+          <span class="title-skills">Skills :</span>
+          <span id="skill-points">5 points remaning</span>
+        </div>
+        <div class="skill-container">
+          <div class="skill-row">
+            <div class="skill-name-container">
+              <span class="skill-name">Life</span>
+              <div class="right-part">
+                <span>grade</span>
+                <span id="life-grade">7</span>
+                <button>upgrade</button>
+              </div>
+            </div>
+            <div class="skill-description">
+The health level determines the amount of life points that own your character. Remember to improve your health to better withstand during fights phases.
+            </div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name-container">
+              <span class="skill-name">Strength</span>
+              <div class="right-part">
+                <span>grade</span>
+                <span id="life-grade">7</span>
+                <button>upgrade</button>
+              </div>
+            </div>
+            <div class="skill-description">
+The strength level determines the amount of damages that deal your character. The more strength you will have, the easier the fight will be !
+            </div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name-container">
+              <span class="skill-name">Capture</span>
+              <div class="right-part">
+                <span>grade</span>
+                <span id="life-grade">7</span>
+                <button>upgrade</button>
+              </div>
+            </div>
+            <div class="skill-description">
+The capture level determines the effectiveness of your character to quickly capture areas of the map. The better your capture grade is the faster you will conquer.
+            </div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name-container">
+              <span class="skill-name">Heal</span>
+              <div class="right-part">
+                <span>grade</span>
+                <span id="life-grade">7</span>
+                <button>upgrade</button>
+              </div>
+            </div>
+            <div class="skill-description">
+The heal level determines the number of hit points that your character gets every second. The higher the heal is, the higher your chance to survive will be.
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
+</div>
   <div class="panel right-panel" id="right-panel">
     <div class="sector-info">
       <div class="block1">
