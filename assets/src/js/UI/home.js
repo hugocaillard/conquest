@@ -5,6 +5,10 @@ var home = {
   init: function() {
     console.log('home');
     this.setParticles();
+    this.displayLoginForm();
+    this.removeLoginForm();
+    this.displaySigninForm();
+    this.signinToLogin();
   },
 
   setParticles: function() {
@@ -54,6 +58,48 @@ var home = {
       },
       /* Retina Display Support */
       retina_detect: true
+    });
+  },
+
+  displayLoginForm: function() {
+    var startButton = _.$('.start');
+    startButton[0].addEventListener('click', function(e) {
+      _.$('.login')[0].classList.add('show');
+      _.$('.cancel')[0].classList.add('show');
+      _.$('.start')[0].classList.remove('show');
+      _.$('.cta-signin')[0].classList.add('show');
+    });
+  },
+
+  removeLoginForm: function() {
+    var cancelButton = _.$('.cancel');
+    cancelButton[0].addEventListener('click', function(e) {
+      _.$('.login')[0].classList.remove('show');
+      _.$('.cancel')[0].classList.remove('show');
+      _.$('.start')[0].classList.add('show');
+      _.$('.register')[0].classList.remove('show');
+      _.$('.cta-login')[0].classList.remove('show');
+      _.$('.cta-signin')[0].classList.remove('show');
+    });
+  },
+
+  displaySigninForm: function() {
+    var signinButton = _.$('.cta-signin');
+    signinButton[0].addEventListener('click', function(e) {
+      _.$('.login')[0].classList.remove('show');
+      _.$('.register')[0].classList.add('show');
+      signinButton[0].classList.remove('show');
+      _.$('.cta-login')[0].classList.add('show');
+    });
+  },
+
+  signinToLogin: function() {
+    var loginButton = _.$('.cta-login');
+      loginButton[0].addEventListener('click', function(e) {
+      _.$('.login')[0].classList.add('show');
+      _.$('.register')[0].classList.remove('show');
+      loginButton[0].classList.remove('show');
+      _.$('.cta-signin')[0].classList.add('show');
     });
   }
 }
