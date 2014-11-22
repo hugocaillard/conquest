@@ -1,0 +1,231 @@
+#right-panel {
+	top: 0;
+	right: 0px;
+	bottom: 0;
+	background-color: #121212;
+	z-index: 2;
+	font-family: 'Montserrat', sans-serif;
+	color: #FFF;
+}
+#sector-info {
+	background-color: blue;
+	padding-bottom: 26px;
+}
+.block1 {
+	padding: 20px 30px 0 30px;
+}
+#sector-name {
+	font-family: 'Open Sans', sans-serif;
+	text-transform: uppercase;
+	font-weight: 100;
+	font-size: 24px;
+}
+#case-num {
+	font-size: 24px;
+}
+.sector-deco {
+	font-size: 12px;
+	letter-spacing: 2px;
+}
+#icon-team, #icon-class {
+	width: 52px;
+	height: 42px;
+	margin: 0 auto;
+	background-color: rgba(3,110,243,.7);
+	margin-top: 15px;
+	position: absolute;;
+	top: 12px;
+}
+#icon-team {	
+	right: 30px;
+}
+#icon-class {
+	right: 77px;
+	margin-right: 10px;
+
+}
+#deploy-turret {
+	width: 64px;
+	height: 75px;
+	margin: 0 auto;
+	background-color: rgba(3,110,243,.7);
+	margin-top: 62px;
+}
+#sector-info .capture-wrapper {
+	text-align: center;
+}
+#sector-info .score-cap-wrapper {
+	width: 60%;
+	display: inline-block;
+}
+#sector-info .score-cap {
+	color: #fff;
+ 	font-size: 24px;
+ 	line-height: 48px;
+	margin-top: 20px;
+	text-align: right;
+}
+#capture-progress {
+	height: 5px;
+	margin: 0 auto;
+	border-radius: 5px;
+	background-color: #74797d;
+}
+#capture-progress span {
+	position: relative;
+	width: 52%;
+	background-color: #036ef3;
+	display: block;
+	height: 100%;
+	border-radius: 5px;
+}
+#percent-capture {
+	display: inline-block;
+	color: #fff;
+	font-size: 45px;
+	vertical-align: bottom;
+	position: relative;
+	top: 7px;
+	margin-left: 5px;
+}
+#percent-capture span {
+	font-size: 24px;
+	font-weight: 400;
+}
+#players-on-it {
+	margin-bottom: -40px;
+}
+#players-on-it .players-classes, #players-on-it .players-blue, #players-on-it .players-red, #players-on-it .players-green {
+	width: 25%;
+	display: inline-block;
+	margin-right: -4px;
+	height: 165px;
+}
+#players-on-it .players-blue, #players-on-it .players-red, #players-on-it .players-green {
+	position: relative;
+	top: -40px;
+}
+#players-on-it .players-classes {
+	background-color: #121212;
+}
+.players-classes .solider-class, .players-classes .medic-class, .players-classes .engineer-class {
+	height: 33.33%
+}
+.players-classes .solider-class div, .players-classes .medic-class div, .players-classes .engineer-class div {
+	width: 32px;
+	height: 25px;
+	top: 50%;
+	margin-top: -6px;
+	position: relative;
+	left: 50%;
+	background-color: rgba(3,110,243,.7);
+	margin-left: -16px;
+}
+.players-blue #soldier-blue, .players-blue #medic-blue, .players-blue #engineer-blue,
+.players-red #soldier-red, .players-red #medic-red, .players-red #engineer-red,
+.players-green #soldier-green, .players-green #medic-green, .players-green #engineer-green {
+	height: 33.33%;
+	text-align: center;
+}
+.players-blue #soldier-blue div, .players-blue #medic-blue div, .players-blue #engineer-blue div,
+.players-red #soldier-red div, .players-red #medic-red div, .players-red #engineer-red div,
+.players-green #soldier-green div, .players-green #medic-green div, .players-green #engineer-green div {
+	position: relative;
+	top: 35%
+}
+#players-on-it .players-blue {
+	background-color: #0D3063;
+	-webkit-box-shadow: inset 2px 2px 4px 0px rgba(0, 0, 0, 0.3);
+}
+#players-on-it .players-red {
+	background-color: #49161D;
+	-webkit-box-shadow: inset 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
+}
+#players-on-it .players-green {
+	background-color: #1D442A;
+	-webkit-box-shadow: inset 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
+}
+#right-panel .separator {
+	height: 3px;
+	background-color: #0752C1;
+}
+#chat #text-area {
+	margin: 10px 12px 10px 32px;
+	font-size: 12px;
+	overflow: auto;
+	height: 397px;
+}
+#chat #text-area #text-area-container {
+	width: 96%;
+}
+#chat .separator {
+	height: 1px;
+	margin: 0 auto;
+	background-color: #1f1f1f;
+	margin: 13px 0;
+}
+#blue-action-happen #action-team {
+	text-transform: uppercase;
+	color: #0272fc;
+	margin-right: 2px;
+}
+#green-action-happen #action-team {
+	text-transform: uppercase;
+	color: #50b04c;
+	margin-right: 2px;
+}
+#red-action-happen #action-team {
+	text-transform: uppercase;
+	color: #df1b28;
+	margin-right: 2px;
+}
+#blue-action-happen, #green-action-happen, #red-action-happen {
+	color: #444444;
+}
+#action-coordinated {
+	color: #FFF;
+	margin-left: 2px;
+}
+#blue-msg #msg-username {
+	color:#0272fc;
+	text-transform: uppercase;
+	margin-right: 2px;
+}
+#green-msg #msg-username {
+	color:#50b04c;
+	text-transform: uppercase;
+	margin-right: 2px;
+}
+#red-msg #msg-username {
+	color:#df1b28;
+	text-transform: uppercase;
+	margin-right: 2px;
+}
+#msg-txt {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 100;
+}
+#chat input {
+	background-color: #1D1D1D;
+	border: none;
+	width: 100%;
+	height: 40px;
+	font-family: 'Open Sans', sans-serif;
+	color: #444444;
+	padding-left: 32px;
+	padding-right: 32px;
+	-webkit-box-shadow: inset 2px 2px 4px 0px rgba(0, 0, 0, 0.3);
+}
+#chat ::-webkit-input-placeholder {
+	color: #444444;
+	margin: 10px 32px;
+
+}
+
+
+
+
+
+
+
+
