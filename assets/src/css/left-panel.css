@@ -7,7 +7,7 @@
 }
 
 #tab-name {
-  padding: 21px;
+  padding: 15px;
   text-transform: uppercase;
   color: #fff;
   font-family: 'Montserrat', sans-serif;
@@ -18,8 +18,8 @@
 
 #logout {
   position: relative;
-  width: 61px;
-  height: 61px;
+  width: 48px;
+  height: 48px;
   background-color: #065bc4;
   display: inline-block;
   vertical-align: top;
@@ -27,6 +27,24 @@
 
 .top-section-container {
   border-bottom: 2px solid #065bc4;
+}
+
+/*****
+*
+Tab section left panel
+*
+*****/
+
+.tabs-section {
+  position: absolute;
+  right: -48px;
+  top: 48px;
+}
+
+.tabs-section .tab {
+  width: 48px;
+  height: 48px;
+  background: #065bc4;
 }
 
 
@@ -81,6 +99,10 @@
       * Abilities
       */
 
+#player-infos{
+  display: none;
+}
+
 #player-infos .first-infos-wrapper {
   text-align: left;
   position: relative;
@@ -112,7 +134,7 @@
       position: absolute;
       width: 50px;
       height: 50px;
-      background-color: blue;
+      background-color: #065bc4;
       right: 0px;
       top: -5px;
       z-index: -1;
@@ -238,3 +260,13 @@
       padding: 20px;
       padding-top: 0;
     }
+
+
+
+    /*
+    * Team info tab
+    */
+
+#team-infos{
+  display: block;
+}
