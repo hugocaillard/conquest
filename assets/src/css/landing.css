@@ -1,12 +1,10 @@
 .landing {
   background: url("./imgs/background-landing.jpg");
-  -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
   text-align: center;
   width: 100%;
   height: 100%;
 }
-
 .planet {
   width: 300px;
   height: 300px;
@@ -16,12 +14,10 @@
   margin-left: -150px;
   margin-top: -150px;
   background: url("./imgs/planet.png");
-  -webkit-background-size: cover;
   background-size: cover;
   background-position: 50% 50%;
   z-index: 4;
 }
-
 .planet .title {
   width: 750px;
   height: 100px;
@@ -29,10 +25,8 @@
   top: 35%;
   left: -75%;
   background: url("./imgs/conquest.png");
-  -webkit-background-size: cover;
   background-size: cover;
 }
-
 .outer-planet {
   width: 400px;
   height: 400px;
@@ -40,17 +34,11 @@
   left: -17%;
   top: -17%;
   background: url("./imgs/outer-planet.png");
-  -webkit-background-size: cover;
   background-size: cover;
   opacity: .3;
-  -webkit-animation:spin 10s linear infinite;
-  -moz-animation:spin 10s linear infinite;
   animation:spin 10s linear infinite;
 }
-
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+@keyframes spin { 100% { transform:rotate(360deg); } }
 
 .med-planet {
   width: 350px;
@@ -61,17 +49,11 @@
   margin-left: -175px;
   margin-top: -175px;
   background: url("./imgs/med-planet.png");
-  -webkit-background-size: cover;
   background-size: cover;
   opacity: .3;
-  -webkit-animation:spin-bis 10s linear infinite;
-  -moz-animation:spin-bis 10s linear infinite;
   animation:spin-bis 10s linear infinite;
 }
-
-@-moz-keyframes spin-bis { 100% { -moz-transform: rotate(-360deg); } }
-@-webkit-keyframes spin-bis { 100% { -webkit-transform: rotate(-360deg); } }
-@keyframes spin-bis { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }
+@keyframes spin-bis { 100% { transform:rotate(-360deg); } }
 
 .med2-planet {
   width: 400px;
@@ -81,17 +63,14 @@
   top: 50%;
   margin-top: 200px;
   margin-left: 200px;
-  -webkit-background-size: cover;
   background-size: cover;
 }
-
 .inner-planet {
   width: 400px;
   height: 400px;
   position: absolute;
   left: -17%;
   top: -17%;
-  -webkit-background-size: cover;
   background-size: cover;
 }
 
@@ -154,39 +133,36 @@
   display: inline-block;
   z-index: 10000;
 }
-
   .login-section .register {
     display: none;
   }
-
   .login-section .cancel-contain a {
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
   }
-
   .login-section .login, .login-section .cancel{
     display: none;
     opacity: 0;
     transition: all 1s ease;
   }
-
-  .login-section .login, .login-section .cta-signin, .login-section .cta-login {
+  .login-section .login,
+  .login-section .cta-signin,
+  .login-section .cta-login {
     display: none;
     opacity: 0;
     transition: all 1s ease;
   }
-
   .login-section .show{
     display: block;
     opacity: 1;
     transition: all 1s ease;
   }
 
-
-
-  .login-section input[type=text], .login-section input[type=password], .login-section input[type=email] {
+  .login-section input[type=text],
+  .login-section input[type=password],
+  .login-section input[type=email] {
     background: transparent;
     padding: 7px 7px 7px 50px;
     border: 2px solid rgba(255,255,255, .8);
@@ -194,15 +170,15 @@
     color: #fff;
     font-family: 'Montserrat', sans-serif;
   }
-
-    .login-section input[type=text]:focus, .login-section .login input[type=password]:focus, .login-section .login input[type=email]:focus {
+    .login-section input[type=text]:focus,
+    .login-section .login input[type=password]:focus,
+    .login-section .login input[type=email]:focus {
       background: transparent;
       padding: 7px 7px 7px 50px;
       border: 2px solid rgba(255,255,255,.6);
       border-radius: 3px;
       color: #fff;
     }
-
     .login-section input[type=submit] {
       background: transparent;
       outline: none;
@@ -211,15 +187,13 @@
       color: #fff;
       text-transform: uppercase;
     }
-
     .form-separator{
       color: #fff;
       text-transform: uppercase;
       margin-bottom: 15px;
       position: relative;
     }
-
-    .form-separator::after{
+    .form-separator:after{
       content: "";
       position: absolute;
       left: -50px;
@@ -227,8 +201,7 @@
       width: 50%;
       border: 1px solid #fff;
     }
-
-    .form-separator::before{
+    .form-separator:before{
       content: "";
       position: absolute;
       right: -50px;
@@ -236,7 +209,6 @@
       width: 50%;
       border: 1px solid #fff;
     }
-
     .social-button-connect {
       position: relative;
       width: 100%;
@@ -249,19 +221,11 @@
       color: #fff;
       font-size: 14px;
     }
-
     .social-button-connect:hover {
       opacity: 1;
     }
-
-    .facebook-connect {
-      background: #3b5998;
-    }
-
-    .twitter-connect {
-      background: #55acee;
-    }
-
+    .facebook-connect {background: #3b5998;}
+    .twitter-connect {background: #55acee;}
     .social-button-connect a{
       text-decoration: none;
       color: #fff;
@@ -279,16 +243,12 @@
 .start-contain a::after {
   display: inline-block;
   opacity: 0;
-  -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
-  -moz-transition: -moz-transform 0.3s, opacity 0.2s;
   transition: transform 0.3s, opacity 0.2s;
 }
 
 .start-contain a::before, .buttons a::before {
   margin-right: 10px;
   content: '[';
-  -webkit-transform: translateX(20px);
-  -moz-transform: translateX(20px);
   transform: translateX(20px);
 }
 
@@ -296,8 +256,6 @@
 .start-contain a::after {
   margin-left: 10px;
   content: ']';
-  -webkit-transform: translateX(-20px);
-  -moz-transform: translateX(-20px);
   transform: translateX(-20px);
 }
 
@@ -310,7 +268,5 @@
 .start-contain a:focus::before,
 .start-contain a:focus::after {
   opacity: 1;
-  -webkit-transform: translateX(0px);
-  -moz-transform: translateX(0px);
   transform: translateX(0px);
 }
