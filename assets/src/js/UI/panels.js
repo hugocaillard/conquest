@@ -3,7 +3,7 @@ var _ = require('../tools.js');
 var panels = {
   init: function() {
     var self = this;
-    // player panel DOM
+    // player panel DOM elements
     self.player         = _.byId('player');
     self.playerFaction  = _.byId('faction');
     self.playerLevel    = _.$$('#level>.value');
@@ -14,14 +14,36 @@ var panels = {
     self.playerHeal     = _.$$('#heal-pts>.value');
     self.playerUpgrades = _.$('#player>div>.upgrade');
 
-    // scores DOM element
+    // tile panel DOM elements
+    self.tile          = _.byId('tile');
+    self.sector        = _.byId('tile-sector');
+    self.captState     = _.byId('capt-state');
+    self.soldiersStats  = {
+      alpha: _.$$('#tile-soldiers>.alpha'),
+      beta : _.$$('#tile-soldiers>.beta'),
+      gamma: _.$$('#tile-soldiers>.gamma')
+    };
+    self.engineersStats = {
+      alpha: _.$$('#tile-engineers>.alpha'),
+      beta : _.$$('#tile-engineers>.beta'),
+      gamma: _.$$('#tile-engineers>.gamma')
+    };
+    self.medicsStats    = {
+      alpha: _.$$('#tile-medics>.alpha'),
+      beta : _.$$('#tile-medics>.beta'),
+      gamma: _.$$('#tile-medics>.gamma')
+    };
+
+    // scores DOM elements
     self.scoreAlpha = _.byId('#scoreAlpha');
     self.scoreBeta  = _.byId('#scoreBeta');
     self.scoreGamma = _.byId('#scoreGamma');
   },
 
 
-  // ––– Player Spec function
+  /**
+    * Player Spec functions
+  */
   setPlayerLife: function(d) {
     this.playerLife.innerHTML = d;
   },
@@ -54,7 +76,72 @@ var panels = {
     });
   },
 
-  // ––– Scores functions
+  /**
+    * Tiles data functions
+  */
+  setTileStats: function(d) {
+    var self = this;
+    self.sector.innerHTML = d.name;
+    self.setFactionsStats(d);
+    if (d.scores.alpha)
+      self.setScoreDisplay('alpha', d.scores.alpha);
+    else if (d.scores.beta)
+      self.setScoreDisplay('beta', d.scores.beta);
+    else if (d.scores.gamma)
+      self.setScoreDisplay('gamma', d.scores.gamma);
+    else
+      self.setScoreDisplay(null, 0);
+  },
+
+  setFactionsStats: function(d) {
+    var self = this;
+    var count = {
+      alpha: {
+        soldiers: 0,
+        engineers: 0,
+        medics: 0
+      },
+      beta: {
+        soldiers: 0,
+        engineers: 0,
+        medics: 0
+      },
+      gamma: {
+        soldiers: 0,
+        engineers: 0,
+        medics: 0
+      },
+    };
+    for (var team in d.players) {
+      for (var player in d.players[team]) {
+             if (d.players[team][player] === 'soldier')   count[team].soldiers++;
+        else if (d.players[team][player] === 'medic')     count[team].medics++;
+        else if (d.players[team][player] === 'engineer')  count[team].engineers ++;
+      }
+      self.soldiersStats[team].innerHTML  = count[team].soldiers;
+      self.engineersStats[team].innerHTML = count[team].engineers;
+      self.medicsStats[team].innerHTML    = count[team].medics;
+    }
+  },
+
+  setScoreDisplay: function(team, score) {
+    var self = this;
+    if (team) {
+      if (!self.captState.classList.contains(team)) {
+        self.captState.classList.remove('alpha', 'beta', 'gamma');
+        self.captState.classList.add(team);
+      }
+    }
+    else {
+      self.captState.classList.remove('alpha', 'beta', 'gamma');
+    }
+    self.captState.innerHTML = score;
+  },
+
+
+  /**
+    * Scores functions
+  */
   updateScores: function(d) {
 
   }

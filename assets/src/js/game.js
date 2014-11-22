@@ -12,9 +12,11 @@ var game = {
   player: {},
   faction: {}, // the current, selected faction
   tileToSpawn: 0,
-  previousLife: 0,
-  previousFaction: '',
-  previousSpecs: '',
+  currentLife: 0,
+  currentFaction: '',
+  currentSpecs: '',
+  currentTile: null,
+  currentTileStats: '',
 
   init: function() {
     var self = this;
@@ -32,7 +34,6 @@ var game = {
     }
     else if (_.byId('board-admin')) {
       mapData.init('board-admin');
-      console.log('hey')
     }
   },
 
@@ -44,24 +45,43 @@ var game = {
       game.player = d.team.players[game.playerName];
       map.showPlayer(game.player);
 
-      // Update UI
+      /**
+        * Update UI
+      */
+      // PLAYER SPECS
       if (game.player.faction && game.player.position !== null) {
         game.faction = game.player.factions[game.player.faction];
-        if (game.faction.life != game.previousLife) {
+        if (game.faction.life !== game.currentLife) {
           panels.setPlayerLife(game.faction.life);
-          game.previousLife = game.faction.life;
+          game.currentLife = game.faction.life;
+          game.currentSpecs = JSON.stringify(game.faction);
         }
-        if (game.player.faction != game.previousFaction ||
-            JSON.stringify(game.faction) != game.previousSpecs) {
+        if (game.player.faction !== game.currentFaction ||
+            JSON.stringify(game.faction) !== game.currentSpecs) {
           panels.setPlayerSpecs(game.player.faction, game.faction);
-          game.previousFaction = game.player.faction;
-          game.previousSpecs = JSON.stringify(game.faction);
+          game.currentFaction = game.player.faction;
+          game.currentSpecs = JSON.stringify(game.faction);
         }
       }
-      else {
+      else { // No player's data to display
         panels.hidePlayerPanel();
       }
-      if (game.teamScore != d.team.score) {
+
+      // TILES DATA
+      if (game.player.position !== null) {
+        if (game.player.position !== game.currentPosition) {
+          panels.setTileStats(game.map[game.player.position]);
+          game.currentPosition = game.player.position;
+          game.currentTileStats = JSON.stringify(game.map[game.player.position]);
+        }
+        else if (game.currentTileStats !== JSON.stringify(game.map[game.player.position])) {
+          panels.setTileStats(game.map[game.player.position]);
+          game.currentTileStats = JSON.stringify(game.map[game.player.position]);
+        }
+      }
+
+      //  SCORES
+      if (game.teamScore !== d.team.score) {
         game.teamScore = d.team.score;
         _.byId('score').innerHTML = game.teamScore;
       }

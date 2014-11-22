@@ -1,0 +1,24 @@
+/* TEMP: tiles data - temporary style in the top right corner */
+.tile {
+  width: 200px;
+  position: absolute;
+  top: 10px;right: 10px;
+  text-transform: uppercase;
+  color: white;
+  z-index: 3;
+  display: none;
+}
+  .tile.show {
+    display: block;
+  }
+  .tile-stats>div {
+    width: 25%;
+    float: left;
+    text-align: center;
+  }
+  .tile-stats>div:first-child {
+    text-align: left;
+  }
+  .tile .alpha {color: #DD4B39;}
+  .tile .beta {color: #7AB800;}
+  .tile .gamma {color: #4183C4;}
