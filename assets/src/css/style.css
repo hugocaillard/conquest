@@ -22,7 +22,7 @@ html, body {
 @import './admin.css';
 
 .board {
-  background-color: #181818;
+  background-color: #0f1010;
   overflow: hidden;
   position: fixed;
   top: 0;
