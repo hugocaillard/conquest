@@ -26,32 +26,51 @@
       <div class="inner-planet"></div>
     </div>
 
-   <section class="login">
-      <h2>Login</h2>
-      <form action="/users/login" method="post" class="ajax">
-        <input type="text" name="username" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="checkbox" data-action="showPassword">
-        <label for="showPassword"><small>Show password</small></label>
-        <input type="submit" value="login">
-      </form>
-    </section>
 
-     <div class="start-contain">
-      <div class="start"><a href="">Start</a></div>
+
+    <div class="login-section">
+
+      <section class="login">
+        <form action="/users/login" method="post" class="ajax">
+          <input type="text" name="username" placeholder="Enter your username">
+          <input type="password" name="password" placeholder="Password">
+          <!-- <input type="checkbox" data-action="showPassword">
+          <label for="showPassword"><small>Show password</small></label> -->
+          <input type="submit" value="Validate">
+        </form>
+        <div class="form-separator">or</div>
+        <div class="social-connect">
+          <div class="facebook-connect social-button-connect">
+            <a href="">Log in with Facebook</a>
+          </div>
+          <div class="twitter-connect social-button-connect">
+            <a href="">Log in with Twitter</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="register">
+      <form action="/users/register" method="post" class="ajax">
+         <input type="text" name="username" placeholder="Username">
+         <input type="email" name="email" placeholder="email">
+         <input type="password" name="password" placeholder="Password">
+         <!-- <input type="checkbox" data-action="showPassword">
+         <label for="showPassword"><small>Show password</small></label> -->
+         <input type="submit" value="register">
+       </form>
+      </section>
+      <div class="cancel-contain">
+        <div class="cancel"><a href="#cancel">X Cancel</a></div>
+        <div class="cta-signin"><a href="#cancel">or Signin</a></div>
+        <div class="cta-login"><a href="#cancel">or Login</a></div>
+      </div>
     </div>
 
-    <section class="register">
-      <h2>Register</h2>
-      <form action="/users/register" method="post" class="ajax">
-        <input type="text" name="username" placeholder="Username">
-        <input type="email" name="email" placeholder="email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="checkbox" data-action="showPassword">
-        <label for="showPassword"><small>Show password</small></label>
-        <input type="submit" value="register">
-      </form>
-    </section>
+    <div class="start-contain">
+      <div class="start show"><a href="#start">Start</a></div>
+    </div>
+
+
   </div>
 </body>
 </html>

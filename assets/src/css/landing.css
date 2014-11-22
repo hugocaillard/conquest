@@ -1,4 +1,4 @@
-.landing{
+.landing {
   background: url("./imgs/background-landing.jpg");
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -7,7 +7,7 @@
   height: 100%;
 }
 
-.planet{
+.planet {
   width: 300px;
   height: 300px;
   position: absolute;
@@ -22,7 +22,7 @@
   z-index: 4;
 }
 
-.planet .title{
+.planet .title {
   width: 750px;
   height: 100px;
   position: absolute;
@@ -33,7 +33,7 @@
   background-size: cover;
 }
 
-.outer-planet{
+.outer-planet {
   width: 400px;
   height: 400px;
   position: absolute;
@@ -52,7 +52,7 @@
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
-.med-planet{
+.med-planet {
   width: 350px;
   height: 350px;
   position: absolute;
@@ -73,7 +73,7 @@
 @-webkit-keyframes spin-bis { 100% { -webkit-transform: rotate(-360deg); } }
 @keyframes spin-bis { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }
 
-.med2-planet{
+.med2-planet {
   width: 400px;
   height: 400px;
   position: absolute;
@@ -85,7 +85,7 @@
   background-size: cover;
 }
 
-.inner-planet{
+.inner-planet {
   width: 400px;
   height: 400px;
   position: absolute;
@@ -95,7 +95,7 @@
   background-size: cover;
 }
 
-.landing .buttons{
+.landing .buttons {
   position: absolute;
   top: 25px;
   right: 50px;
@@ -107,37 +107,164 @@
   z-index: 3;
 }
 
-.landing .buttons a{
+.landing .buttons a {
   color: #fff;
   text-decoration: none;
 }
 
-.landing .buttons .about, .landing .buttons .how-to{
+.landing .buttons .about, .landing .buttons .how-to {
   display: inline-block;
 }
 
-.landing .buttons .how-to{
+.landing .buttons .how-to {
   margin-left: 50px;
 }
 
-.landing .start{
+.landing .start {
   color: #fff;
+  display: none;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
 }
 
-.landing .start a{
+.landing .start.show{
+  display: inline-block;
+}
+
+.landing .start a {
   color: #fff;
   text-decoration: none;
 }
 
 
-.landing .start-contain{
+.landing .start-contain {
   position: absolute;
   width: 100%;
-  bottom: 220px;
+  bottom: 75px;
   text-align: center;
 }
+
+.login-section {
+  display: inline-block;
+  position: absolute;
+  bottom: 75px;
+  width: 240px;
+  margin-left: -120px;
+  display: inline-block;
+  z-index: 10000;
+}
+
+  .login-section .register {
+    display: none;
+  }
+
+  .login-section .cancel-contain a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .login-section .login, .login-section .cancel{
+    display: none;
+    opacity: 0;
+    transition: all 1s ease;
+  }
+
+  .login-section .login, .login-section .cta-signin, .login-section .cta-login {
+    display: none;
+    opacity: 0;
+    transition: all 1s ease;
+  }
+
+  .login-section .show{
+    display: block;
+    opacity: 1;
+    transition: all 1s ease;
+  }
+
+
+
+  .login-section input[type=text], .login-section input[type=password], .login-section input[type=email] {
+    background: transparent;
+    padding: 7px 7px 7px 50px;
+    border: 2px solid rgba(255,255,255, .8);
+    border-radius: 3px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+    .login-section input[type=text]:focus, .login-section .login input[type=password]:focus, .login-section .login input[type=email]:focus {
+      background: transparent;
+      padding: 7px 7px 7px 50px;
+      border: 2px solid rgba(255,255,255,.6);
+      border-radius: 3px;
+      color: #fff;
+    }
+
+    .login-section input[type=submit] {
+      background: transparent;
+      outline: none;
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    .form-separator{
+      color: #fff;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    .form-separator::after{
+      content: "";
+      position: absolute;
+      left: -50px;
+      top: 6px;
+      width: 50%;
+      border: 1px solid #fff;
+    }
+
+    .form-separator::before{
+      content: "";
+      position: absolute;
+      right: -50px;
+      top: 6px;
+      width: 50%;
+      border: 1px solid #fff;
+    }
+
+    .social-button-connect {
+      position: relative;
+      width: 100%;
+      padding: 10px 10px 10px 30px;
+      background: #3b5998;
+      border-radius: 3px;
+      opacity: .8;
+      margin-bottom: 15px;
+      font-family: 'Montserrat', sans-serif;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .social-button-connect:hover {
+      opacity: 1;
+    }
+
+    .facebook-connect {
+      background: #3b5998;
+    }
+
+    .twitter-connect {
+      background: #55acee;
+    }
+
+    .social-button-connect a{
+      text-decoration: none;
+      color: #fff;
+    }
 
 #particles-js{
   position: absolute;
@@ -146,7 +273,9 @@
 }
 
 .buttons a::before,
-.buttons a::after {
+.buttons a::after,
+.start-contain a::before,
+.start-contain a::after {
   display: inline-block;
   opacity: 0;
   -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
@@ -154,7 +283,7 @@
   transition: transform 0.3s, opacity 0.2s;
 }
 
-.buttons a::before {
+.start-contain a::before, .buttons a::before {
   margin-right: 10px;
   content: '[';
   -webkit-transform: translateX(20px);
@@ -162,7 +291,8 @@
   transform: translateX(20px);
 }
 
-.buttons a::after {
+.buttons a::after,
+.start-contain a::after {
   margin-left: 10px;
   content: ']';
   -webkit-transform: translateX(-20px);
@@ -173,7 +303,11 @@
 .buttons a:hover::before,
 .buttons a:hover::after,
 .buttons a:focus::before,
-.buttons a:focus::after {
+.buttons a:focus::after,
+.start-contain a:hover::before,
+.start-contain a:hover::after,
+.start-contain a:focus::before,
+.start-contain a:focus::after {
   opacity: 1;
   -webkit-transform: translateX(0px);
   -moz-transform: translateX(0px);
@@ -188,4 +322,14 @@ Dev particle z-index
 
 #particles-js{
   display: none;
+}
+
+
+
+
+
+.hide{
+  display: none;
+  opacity: 0;
+  transition: all 1s ease;
 }
