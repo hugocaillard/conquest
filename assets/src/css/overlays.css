@@ -47,12 +47,14 @@
     transition: all .15s ease-in;
   }
   .choose-faction .inner  {
-    background: url('imgs/spawn/blue_respawn.png') no-repeat center;
     background-size: 203px 225px;
     height: 232px;
     font-size: 12px;
     padding-top: 12px;
   }
+    .choose-faction.alpha .inner {background: url('./imgs/spawn/blue_respawn.png') no-repeat center;}
+    .choose-faction.beta  .inner {background: url('./imgs/spawn/green_respawn.png') no-repeat center;}
+    .choose-faction.gamma .inner {background: url('./imgs/spawn/red_respawn.png') no-repeat center;}
     .choose-faction img {
       height: 30px;
       position: relative;

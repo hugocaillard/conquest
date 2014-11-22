@@ -43,6 +43,7 @@ var panels = {
 
   setTeam: function(team) {
     _.$$('.right-panel').classList.add(team);
+    _.$$('.choose-faction').classList.add(team);
   },
 
 
