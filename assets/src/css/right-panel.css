@@ -134,16 +134,17 @@
   * CHAT
 */
 .chat {
-  position: relative;
+  position: absolute;
+  top: 471px; bottom: 40px;
+  left: 0; right: 0;
 }
 .chat .messages {
   position: absolute;
-  top: 0; bottom: 40px;
+  top: 0; bottom: 0;
   left: 0; right: 0;
-  overflow: scroll;
-  position: relative;
   margin: 0 20px;
   font-size: 12px;
+  overflow: scroll;
 }
 
 .message {

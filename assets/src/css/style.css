@@ -22,8 +22,6 @@ html, body {
 @import './landing.css';
 @import './admin.css';
 
-
-
 .board {
   background-color: #181818;
   overflow: hidden;
