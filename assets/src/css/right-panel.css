@@ -10,7 +10,8 @@
   * SECTOR STATS
 */
 .sector-info {
-  background-color: #888;
+  background: url('./imgs/game/planete_bg.png') no-repeat center;
+  background-size: 500px;
   padding-bottom: 26px;
 }
   .sector-info .capture-wrapper {
@@ -22,9 +23,9 @@
   }
   .sector-info .score-cap {
     color: #fff;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 36px;
-    margin-top: 20px;
+    margin-top: 32px;
     text-align: right;
   }
 .block1 {
@@ -34,33 +35,42 @@
   font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
   font-weight: 100;
-  font-size: 24px;
+  font-size: 20px;
 }
 .sector-deco {
   font-family: 'Open Sans', sans-serif;
   font-weight: 100;
-  font-size: 12px;
+  font-size: 10px;
 }
 #icon-team, #icon-class {
   width: 52px;
   height: 42px;
-  margin: 15px auto 0;
-  background-color: rgba(3,110,243,.7);
   position: absolute;;
-  top: 12px;
+  top: 20px;
 }
 #icon-team {
   right: 30px;
+  background: url('./imgs/game/neutral_control.png') no-repeat center;
+  /* 
+  background: url('./imgs/game/green_team_symbol.png') no-repeat center;
+  background: url('./imgs/game/red_team_symbol.png.png') no-repeat center;
+  background: url('./imgs/game/blue_team_symbol..png') no-repeat center;
+  */
+  background-size: 40px;
 }
 #icon-class {
   right: 77px;
-  margin-right: 10px;
+  background: url('./imgs/game/figth.png') no-repeat center;
+  background-size: 34px;
 }
 .deploy-turret {
   width: 64px;
   height: 75px;
-  margin: 62px auto 0;
-  background-color: rgba(3,110,243,.7);
+  margin: 50px auto 0;
+  background: url('./imgs/game/turret.png') no-repeat center top;
+  background-size: 64px;
+  text-transform: uppercase;
+  padding: 44px 0 0 0;
 }
 
 .capture-progress {
@@ -85,16 +95,16 @@
   width: 80px;
   display: inline-block;
   position: relative;
-  top: 9px;
+  top: 6px;
   vertical-align: bottom;
   color: #fff;
-  font-size: 40px;
-  margin-left: 5px;
+  font-size: 36px;
+  margin-left: 2px;
   text-align: right;
 }
   .percent-capture:after {
     content: '%';
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 400;
   }
 
@@ -117,6 +127,18 @@
   .tile-stats>div:first-child {
     background-color: transparent;
   }
+  .stats-container .tile-stats:first-child>div:first-child {
+    background: url('./imgs/game/soldier_grey.png') no-repeat center;
+    background-size: 20px;
+  } 
+  .stats-container .tile-stats:nth-child(2)>div:first-child {
+    background: url('./imgs/game/engineer_grey.png') no-repeat center;
+    background-size: 30px;
+  } 
+  .stats-container .tile-stats:nth-child(3)>div:first-child {
+    background: url('./imgs/game/medic_grey.png') no-repeat center;
+    background-size: 25px;
+  } 
   .tile-stats>div.alpha {background-color: #49161D;}
   .tile-stats>div.beta  {background-color: #1d442a;}
   .tile-stats>div.gamma {background-color: #0d3063;}
