@@ -32,48 +32,38 @@
 .choose-faction {
   display: none;
   position: absolute;
-  top: 35%;
+  top: 20%;
   left: 25%;
   width: 50%;
-  height: 230px;
-  margin-top: -115px;
   color: #FFF;
   opacity: 0;
   transition: opacity .3s ease-in;
 }
-.choose-faction>.respawn-msg p {
-  font-size: 18px;
-  margin: 45px 0;
-}
-  .choose-faction>#soldier, .choose-faction>#engineer, .choose-faction>#medic {
+  .choose-faction>div {
     float: left;
     width: 33.333%;
-    height: 100%;
     text-align: center;
     cursor: pointer;
     transition: all .15s ease-in;
   }
-  .alpha #soldier>.soldier-inner, .alpha #engineer>.engineer-inner, .alpha #medic>.medic-inner {
-    background: url('../../imgs/spawn/respaw_blue.png') no-repeat center;
+  .choose-faction .inner  {
+    background-size: 203px 225px;
     height: 232px;
     font-size: 12px;
     padding-top: 12px;
   }
-    .choose-faction>div:first-child {
-      border:none;
-    }
+    .choose-faction.alpha .inner {background: url('./imgs/spawn/blue_respawn.png') no-repeat center;}
+    .choose-faction.beta  .inner {background: url('./imgs/spawn/green_respawn.png') no-repeat center;}
+    .choose-faction.gamma .inner {background: url('./imgs/spawn/red_respawn.png') no-repeat center;}
     .choose-faction img {
       height: 30px;
       position: relative;
+      top: 12px;
       right: 1px;
       margin-bottom: 26px;
     }
-    .respawn-msg {
-      text-align: center;
-    }
-    .choose-faction h3, .choose-faction .level {
+    .choose-faction h3 {
       margin: 0.5em;
       font-size: 18px;
     }
 
-    

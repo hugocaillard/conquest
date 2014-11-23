@@ -16,11 +16,11 @@ var chooseFaction = {
     var factions = ['soldier', 'engineer', 'medic'];
     for (var faction in factions) {
       self[factions[faction]] = {
-        level:   _.$$('#'+ factions[faction] +'>.level>span'),
-        dmg:  _.$$('#'+ factions[faction] +'>.damages>span'),
-        maxLife: _.$$('#'+ factions[faction] +'>.life>span'),
-        capt: _.$$('#'+ factions[faction] +'>.capture>span'),
-        heal: _.$$('#'+ factions[faction] +'>.healing>span')
+        level:   _.$$('#'+ factions[faction] +' .level>span'),
+        dmg:  _.$$('#'+ factions[faction] +' .damages>span'),
+        maxLife: _.$$('#'+ factions[faction] +' .life>span'),
+        capt: _.$$('#'+ factions[faction] +' .capture>span'),
+        heal: _.$$('#'+ factions[faction] +' .healing>span')
       };
       _.byId(factions[faction]).addEventListener('click', game.setFaction, false);
     }
