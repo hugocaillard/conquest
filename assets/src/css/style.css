@@ -36,6 +36,7 @@ html, body {
 .panel{
   position: fixed;
   width: 300px;
+  transition: all 1s ease;
 }
 
 
