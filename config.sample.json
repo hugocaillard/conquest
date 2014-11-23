@@ -4,6 +4,10 @@
   "secret": "your secret",
   "mobilesecret": "another secret",
   "superadmin": "hugo@hugo.com",
+  "bitly": {
+    "username": "your bit.ly username",
+    "token": "bit.ly api key"
+  },
 
   "db": {
     "host": "localhost",
