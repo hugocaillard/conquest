@@ -25,7 +25,7 @@ var chooseFaction = {
         heal: _.$$('#'+ factions[faction] +' .healing>span')
       };
       _.byId(factions[faction]).addEventListener('click', game.setFaction, false);
-      _.byId(factions[faction]).addEventListener('mouseover', sounds.pFactionHover, true);
+      _.byId(factions[faction]).addEventListener('mouseover', sounds.pFactionHover, false);
     }
   },
 

@@ -71,6 +71,7 @@ app.post('/users/register', users.register);
 var admin = require(__dirname+'/lib/admin');
 app.post('/admin/users', admin.getUsers);
 app.post('/admin/users/update', admin.updateUser);
+app.post('/admin/users/delete', admin.deleteUser);
 
 
 // serve assets
@@ -84,6 +85,7 @@ app.get('/', views.home);
 app.get('/game', views.game);
 app.get('/admin', views.admin);
 app.get('/admin/map', views.adminMap);
+app.get('/mobile/:token', views.mobile);
 
 
 // sockets

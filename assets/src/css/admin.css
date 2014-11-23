@@ -23,7 +23,7 @@
   .admin-container tr:nth-child(2n) {
     background-color: #eee;
   }
-  .admin-container .send {
+  .admin-container .send, .admin-container .delete {
     border: solid 1px #999;
     text-align: center;
     opacity: .6;

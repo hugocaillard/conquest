@@ -28,7 +28,8 @@ var admin = {
       container.removeAttribute('id');
       childs = container.childNodes;
       for (var i=0;i<childs.length; i++) {
-        if (childs[i].getAttribute && childs[i].getAttribute('class') !== 'send') {
+        if (childs[i].getAttribute && childs[i].getAttribute('class') !== 'send' &&
+            childs[i].getAttribute('class') !== 'delete') {
           input = childs[i].childNodes[0];
           input.setAttribute('data-id', users[user]._id)
           input.value = users[user][input.getAttribute('class')];
@@ -36,6 +37,10 @@ var admin = {
         else if (childs[i].getAttribute && childs[i].getAttribute('class') === 'send') {
           childs[i].setAttribute('data-id', users[user]._id);
           childs[i].addEventListener('click', self.updateUser);
+        }
+        else if (childs[i].getAttribute && childs[i].getAttribute('class') === 'delete') {
+          childs[i].setAttribute('data-id', users[user]._id);
+          childs[i].addEventListener('click', self.deleteUser);
         }
       }
       self.usersResults.appendChild(container);
@@ -56,6 +61,13 @@ var admin = {
       }
     }
     _.post('/admin/users/update', d, function(data) {
+      console.log(data);
+    });
+  },
+
+  deleteUser: function() {
+    var id = this.getAttribute('data-id');
+    _.post('/admin/users/delete', {id: id}, function(data) {
       console.log(data);
     });
   }
