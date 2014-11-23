@@ -103,7 +103,7 @@ Tab section left panel
   display: none;
 }
 
-#player-infos .first-infos-wrapper {
+.infos .first-infos-wrapper {
   text-align: left;
   position: relative;
   background: url("./imgs/hex_grid_blue.jpg") 50%;
@@ -114,12 +114,12 @@ Tab section left panel
   font-family: 'Montserrat', sans-serif;
 }
 
-  #player-infos .first-infos-wrapper #player-name {
+  .infos .first-infos-wrapper #player-name {
     color: #fff;
     font-size: 18px;
   }
 
-  #player-infos .first-infos-wrapper #player-class {
+  .infos .first-infos-wrapper #player-class {
     color: #fff;
     font-size: 18px;
     text-transform: uppercase;
@@ -129,7 +129,7 @@ Tab section left panel
     z-index: 1;
   }
 
-    #player-infos .first-infos-wrapper #player-class::after {
+    .infos .first-infos-wrapper #player-class::after {
       content: "";
       position: absolute;
       width: 50px;
@@ -209,7 +209,7 @@ Tab section left panel
     font-size: 14px;
   }
 
-   #player-infos .skills .skill-container {
+  #player-infos .skills .skill-container {
     color: #3c3c3c;
     font-family: 'Montserrat', sans-serif;
   }
@@ -270,3 +270,130 @@ Tab section left panel
 #team-infos{
   display: block;
 }
+
+#team-infos .first-infos-wrapper .level-wrapper {
+  text-align: center;
+  margin-top: 100px;
+}
+
+#team-infos .first-infos-wrapper .score-left-wrapper {
+  width: 70%;
+  display: inline-block;
+}
+
+#team-infos .first-infos-wrapper .score {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 16px;
+  text-align: right;
+  position: relative;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
+#team-infos .first-infos-wrapper #score-left-progress {
+  height: 3px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #74797d;
+}
+
+  #team-infos .first-infos-wrapper #score-left-progress span {
+    position: relative;
+    width: 67%;
+    background-color: #036ef3;
+    display: block;
+    height: 100%;
+    border-radius: 5px;
+  }
+
+#team-infos .first-infos-wrapper #number-score {
+  display: inline-block;
+  color: #fff;
+  font-size: 40px;
+  vertical-align: bottom;
+  position: relative;
+  top: 7px;
+  margin-left: 5px;
+}
+
+.sectors-possessions .sectors-title-wrapper{
+  color: #fff;
+  padding: 10px;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  margin-bottom: 5px;
+  background: #222222;
+}
+
+.sectors-possessions .sectors-content .info-hover{
+  text-align: center;
+  color: #444444;
+}
+
+.players-team .players-team-title-wrapper{
+  color: #fff;
+  padding: 10px;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  margin-bottom: 5px;
+  background: #222222;
+  margin-top: 5px;
+}
+
+.players-team .players-team-title-wrapper #players-number {
+  float: right;
+  right: 20px;
+  position: relative;
+  bottom: 8px;
+  font-size: 28px;
+}
+
+#team-infos .players-team .teamates-types-container {
+  color: #3c3c3c;
+  font-family: 'Montserrat', sans-serif;
+}
+
+  #team-infos .players-team .teamates-types-container .teamates-type-row {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #000;
+    position: relative;
+  }
+
+  #team-infos .players-team .teamates-types-container .teamates-type-row .type-name-container {
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  #team-infos .players-team .teamates-types-container .teamates-type-row .type-name {
+    color: #fff;
+    padding: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-left: 30px;
+  }
+
+  #team-infos .players-team .teamates-types-container .teamates-type-row .right-part {
+    position: absolute;
+    right: 30px;
+    top: -5px;
+  }
+
+  #team-infos .players-team .teamates-types-container .teamates-type-row #soldier-number {
+    color: #fff;
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 20px;
+    position: relative;
+    top: 3px;
+  }
+
+  #team-infos .players-team .teamates-types-container .teamates-type-row .type-description {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    padding: 20px;
+    padding-top: 0;
+  }

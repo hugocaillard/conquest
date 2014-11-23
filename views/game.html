@@ -100,7 +100,7 @@
 
   <!--Player infos-->
 
-    <div id="player-infos">
+    <div id="player-infos" class="infos">
 
       <div class="first-infos-wrapper">
         <span id="player-name">Wadzy</span>
@@ -176,81 +176,69 @@ The heal level determines the number of hit points that your character gets ever
           </div>
         </div>
       </div>
+    </div>
 
     <!--Team infos-->
 
-      <div id="team-infos">
+      <div id="team-infos" class="infos">
 
       <div class="first-infos-wrapper">
         <span id="player-name">Wadzy</span>
-        <span id="player-class">Solider</span>
+        <span id="player-class"></span>
         <div class="sector-deco">/////////////////////////////////////</div>
-        <div id="icon-class"></div>
         <div class="level-wrapper">
-          <div class="xp-wrapper">
-            <div class="level">Level</div>
-            <div id="xp-progress"><span></span></div>
+          <div class="score-left-wrapper">
+            <div class="score">Score</div>
+            <div id="score-left-progress"><span></span></div>
           </div>
-          <div id="number-level">7</div>
+          <div id="number-score">52%</div>
         </div>
       </div>
 
-      <div class="skills">
-        <div class="skills-title-wrapper">
-          <span class="title-skills">Skills :</span>
-          <span id="skill-points">5 points remaning</span>
+      <div class="sectors-possessions">
+        <div class="sectors-title-wrapper">
+          <span class="title-sectors">Sector possessions</span>
         </div>
-        <div class="skill-container">
-          <div class="skill-row">
-            <div class="skill-name-container">
-              <span class="skill-name">Life</span>
+        <div class="sectors-content">
+          <div class="info-hover">Hover the graph to see details</div>
+        </div>
+      </div>
+      <div class="players-team">
+        <div class="players-team-title-wrapper">
+          <span class="title-players-team">Players in the team</span><span id="players-number">42</span>
+        </div>
+        <div class="teamates-types-container">
+          <div class="teamates-type-row">
+            <div class="type-name-container">
+              <span class="type-name">Soldiers</span>
               <div class="right-part">
-                <span>grade</span>
-                <span id="life-grade">7</span>
-                <button>upgrade</button>
+                <span id="soldier-number">14</span>
               </div>
             </div>
-            <div class="skill-description">
-The health level determines the amount of life points that own your character. Remember to improve your health to better withstand during fights phases.
+            <div class="type-description">
+              Soldiers deal the greatest damages. They are very efficient during fights but don’t capture sectors very quickly.
             </div>
           </div>
-          <div class="skill-row">
-            <div class="skill-name-container">
-              <span class="skill-name">Strength</span>
+          <div class="teamates-type-row">
+            <div class="type-name-container">
+              <span class="type-name">Medic</span>
               <div class="right-part">
-                <span>grade</span>
-                <span id="life-grade">7</span>
-                <button>upgrade</button>
+                <span id="soldier-number">21</span>
               </div>
             </div>
-            <div class="skill-description">
-The strength level determines the amount of damages that deal your character. The more strength you will have, the easier the fight will be !
+            <div class="type-description">
+              Medics can heal other teamates. However it is the class that deals the less damages.
             </div>
           </div>
-          <div class="skill-row">
-            <div class="skill-name-container">
-              <span class="skill-name">Capture</span>
+          <div class="teamates-type-row">
+            <div class="type-name-container">
+              <span class="type-name">Engineers</span>
               <div class="right-part">
-                <span>grade</span>
-                <span id="life-grade">7</span>
-                <button>upgrade</button>
+                <span id="soldier-number">8</span>
               </div>
             </div>
-            <div class="skill-description">
-The capture level determines the effectiveness of your character to quickly capture areas of the map. The better your capture grade is the faster you will conquer.
-            </div>
-          </div>
-          <div class="skill-row">
-            <div class="skill-name-container">
-              <span class="skill-name">Heal</span>
-              <div class="right-part">
-                <span>grade</span>
-                <span id="life-grade">7</span>
-                <button>upgrade</button>
-              </div>
-            </div>
-            <div class="skill-description">
-The heal level determines the number of hit points that your character gets every second. The higher the heal is, the higher your chance to survive will be.
+            <div class="type-description">
+              Engineer can capture sectors faster than any other class. They don’t deal many damages but are essential for the victory.
             </div>
           </div>
         </div>
