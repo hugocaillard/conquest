@@ -23,7 +23,7 @@
   .sector-info .score-cap {
     color: #fff;
     font-size: 24px;
-    line-height: 48px;
+    line-height: 36px;
     margin-top: 20px;
     text-align: right;
   }
@@ -44,9 +44,8 @@
 #icon-team, #icon-class {
   width: 52px;
   height: 42px;
-  margin: 0 auto;
+  margin: 15px auto 0;
   background-color: rgba(3,110,243,.7);
-  margin-top: 15px;
   position: absolute;;
   top: 12px;
 }
@@ -57,12 +56,11 @@
   right: 77px;
   margin-right: 10px;
 }
-#deploy-turret {
+.deploy-turret {
   width: 64px;
   height: 75px;
-  margin: 0 auto;
+  margin: 62px auto 0;
   background-color: rgba(3,110,243,.7);
-  margin-top: 62px;
 }
 
 .capture-progress {
@@ -87,10 +85,10 @@
   width: 80px;
   display: inline-block;
   position: relative;
-  top: 7px;
+  top: 9px;
   vertical-align: bottom;
   color: #fff;
-  font-size: 45px;
+  font-size: 40px;
   margin-left: 5px;
   text-align: right;
 }
