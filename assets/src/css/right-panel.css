@@ -51,7 +51,7 @@
 #icon-team {
   right: 30px;
   background: url('./imgs/game/neutral_control.png') no-repeat center;
-  /* 
+  /*
   background: url('./imgs/game/green_team_symbol.png') no-repeat center;
   background: url('./imgs/game/red_team_symbol.png.png') no-repeat center;
   background: url('./imgs/game/blue_team_symbol..png') no-repeat center;
@@ -71,6 +71,7 @@
   background-size: 64px;
   text-transform: uppercase;
   padding: 44px 0 0 0;
+  cursor: pointer;
 }
 
 .capture-progress {
@@ -130,15 +131,15 @@
   .stats-container .tile-stats:first-child>div:first-child {
     background: url('./imgs/game/soldier_grey.png') no-repeat center;
     background-size: 20px;
-  } 
+  }
   .stats-container .tile-stats:nth-child(2)>div:first-child {
     background: url('./imgs/game/engineer_grey.png') no-repeat center;
     background-size: 30px;
-  } 
+  }
   .stats-container .tile-stats:nth-child(3)>div:first-child {
     background: url('./imgs/game/medic_grey.png') no-repeat center;
     background-size: 25px;
-  } 
+  }
   .tile-stats>div.alpha {background-color: #49161D;}
   .tile-stats>div.beta  {background-color: #1d442a;}
   .tile-stats>div.gamma {background-color: #0d3063;}

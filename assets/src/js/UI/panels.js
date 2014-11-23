@@ -5,6 +5,7 @@ var panels = {
     var self = this;
 
     self.leftPanel      = _.byId('left-panel');
+    self.connectTurret  = _.byId('connect-turret');
     // player panel DOM elements
     self.player         = _.byId('player');
     self.playerFaction  = _.byId('faction');
@@ -54,13 +55,13 @@ var panels = {
   setListeners: function() {
     var self = this;
     _.$$('#hide-panel-tab').addEventListener('click', function() {
-      if(self.leftPanel.classList.contains('hide-panel')){
-        this.classList.remove('rotate');
-        self.leftPanel.classList.remove('hide-panel');
-      } else {
-        this.classList.add('rotate');
-        self.leftPanel.classList.add('hide-panel');
-      }
+      this.classList.toggle('rotate');
+      self.leftPanel.classList.toggle('hide-panel');
+    });
+
+
+    _.$$('#deploy-turret').addEventListener('click', function() {
+      self.connectTurret.classList.toggle('show');
     });
   },
 
