@@ -3,6 +3,8 @@ var _ = require('../tools.js');
 var panels = {
   init: function(team) {
     var self = this;
+
+    self.leftPanel      = _.byId('left-panel');
     // player panel DOM elements
     self.player         = _.byId('player');
     self.playerFaction  = _.byId('faction');
@@ -39,6 +41,9 @@ var panels = {
     self.scoreAlpha = _.byId('#scoreAlpha');
     self.scoreBeta  = _.byId('#scoreBeta');
     self.scoreGamma = _.byId('#scoreGamma');
+
+    // animate left panel
+    self.setListeners();
   },
 
   setTeam: function(team) {
@@ -46,6 +51,18 @@ var panels = {
     _.$$('.choose-faction').classList.add(team);
   },
 
+  setListeners: function() {
+    var self = this;
+    _.$$('#hide-panel-tab').addEventListener('click', function() {
+      if(self.leftPanel.classList.contains('hide-panel')){
+        this.classList.remove('rotate');
+        self.leftPanel.classList.remove('hide-panel');
+      } else {
+        this.classList.add('rotate');
+        self.leftPanel.classList.add('hide-panel');
+      }
+    });
+  },
 
   /**
     * Player Spec functions
