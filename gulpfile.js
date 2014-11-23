@@ -37,15 +37,18 @@ gulp.task('css', function() {
  * PROD
 */
 gulp.task('js-prod', function() {
+  gulp.src('assets/src/js/admin/admin.js')
+    .pipe(duo())
+    .pipe(gulp.dest('assets/public'));
   gulp.src('assets/src/js/app.js')
     .pipe(duo())
-    .pipe(gulp.dest('assets/public'))
+    .pipe(gulp.dest('assets/public'));
 });
 gulp.task('css-prod', function() {
   gulp.src('assets/src/css/style.css')
     .pipe(duo())
     .pipe(autoprefixer())
-    .pipe(gulp.dest('assets/public'))
+    .pipe(gulp.dest('assets/public'));
 });
 
 
