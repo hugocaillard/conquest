@@ -20,7 +20,8 @@
   position: relative;
   width: 48px;
   height: 48px;
-  background-color: #065bc4;
+  background: url('./imgs/game/logout_active.png') 50% no-repeat, -webkit-linear-gradient(-45deg, #0272fc 0%,#0755b6 100%); /* Chrome10+,Safari5.1+ */
+  background-size: 30px,100%;
   display: inline-block;
   vertical-align: top;
 }
@@ -48,8 +49,22 @@ Tab section left panel
   .tabs-section .tab {
     width: 48px;
     height: 48px;
-    background: #065bc4;
+    background: url('./imgs/game/logout_active.png') 50% no-repeat, -webkit-linear-gradient(-45deg, #0272fc 0%,#0755b6 100%); /* Chrome10+,Safari5.1+ */
+    background-size: 30px,100%;
   }
+  .tabs-section .tab:first-child {
+    background: url('./imgs/game/player_active.png') 50% no-repeat, -webkit-linear-gradient(-45deg, #0272fc 0%,#0755b6 100%); /* Chrome10+,Safari5.1+ */
+    background-size: 20px,100%;
+  }
+  .tabs-section .tab:nth-child(2) {
+    background: url('./imgs/game/team_active.png') 50% no-repeat, -webkit-linear-gradient(-45deg, #0272fc 0%,#0755b6 100%); /* Chrome10+,Safari5.1+ */
+    background-size: 30px,100%;
+  }
+  .tabs-section .tab:nth-child(3) {
+    background: url('./imgs/game/aide_active.png') 50% no-repeat, -webkit-linear-gradient(-45deg, #0272fc 0%,#0755b6 100%); /* Chrome10+,Safari5.1+ */
+    background-size: 24px,100%;
+  }
+
 
   .tabs-section .tab:nth-child(4) {
     background: #161616;
@@ -120,9 +135,7 @@ Tab section left panel
       * Abilities
       */
 
-#player-infos{
-  display: none;
-}
+
 
 .infos .first-infos-wrapper {
   text-align: left;
@@ -155,7 +168,8 @@ Tab section left panel
       position: absolute;
       width: 50px;
       height: 50px;
-      background-color: #065bc4;
+      background: url('./imgs/game/red_team_symbol.png') no-repeat center;
+      background-size: 50px;
       right: 0px;
       top: -5px;
       z-index: -1;
@@ -238,6 +252,50 @@ Tab section left panel
     #player-infos .skills .skill-container .skill-row {
       margin-bottom: 20px;
       border-bottom: 1px solid #000;
+    }
+    #player-infos .skills .skill-container .skill-row:first-child::after {
+    content: "";
+    background: url('./imgs/game/life.png') no-repeat;
+    background-size: 30px;
+    opacity: 0.3;
+    position: absolute;
+    top: 319px;
+    left: 22px;
+    right: 0;
+    bottom: 0;
+    }
+    #player-infos .skills .skill-container .skill-row:nth-child(2)::after {
+    content: "";
+    background: url('./imgs/game/strength.png') no-repeat;
+    background-size: 30px;
+    opacity: 0.3;
+    position: absolute;
+    top: 457px;
+    left: 22px;
+    right: 0;
+    bottom: 0;
+    }
+    #player-infos .skills .skill-container .skill-row:nth-child(3)::after {
+    content: "";
+    background: url('./imgs/game/capture.png') no-repeat;
+    background-size: 30px;
+    opacity: 0.3;
+    position: absolute;
+    top: 595px;
+    left: 22px;
+    right: 0;
+    bottom: 0;
+    }
+    #player-infos .skills .skill-container .skill-row:nth-child(4)::after {
+    content: "";
+    background: url('./imgs/game/heal.png') no-repeat;
+    background-size: 40px;
+    opacity: 0.3;
+    position: absolute;
+    top: 728px;
+    left: 22px;
+    right: 0;
+    bottom: 0;
     }
 
     #player-infos .skills .skill-name-container {
@@ -360,7 +418,8 @@ Tab section left panel
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   margin-bottom: 5px;
-  background: #222222;
+  background: url('./imgs/game/big_team_icon.png') 25px no-repeat,#222222;
+  background-size: 40px, 100%;
   margin-top: 5px;
 }
 
@@ -371,7 +430,7 @@ Tab section left panel
   bottom: 8px;
   font-size: 28px;
 }
-
+#team-infos {display: none;}
 #team-infos .teamates-types-container {
   color: #3c3c3c;
   font-family: 'Montserrat', sans-serif;
@@ -381,7 +440,42 @@ Tab section left panel
     margin-bottom: 20px;
     border-bottom: 1px solid #000;
     position: relative;
+
   }
+  #team-infos .teamates-types-container .teamates-type-row:first-child::after{
+    background: url('./imgs/game/soldier_grey.png') no-repeat;
+    background-size: 20px;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    left: 22px;
+    right: 0;
+    bottom: 0;
+    content: "";
+  }
+  #team-infos .teamates-types-container .teamates-type-row:nth-child(2)::after{
+    background: url('./imgs/game/medic_grey.png') no-repeat;
+    background-size: 30px;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    left: 22px;
+    right: 0;
+    bottom: 0;
+    content: "";
+  }
+  #team-infos .teamates-types-container .teamates-type-row:nth-child(3)::after{
+    background: url('./imgs/game/engineer_grey.png') no-repeat;
+    background-size: 35px;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    left: 22px;
+    right: 0;
+    bottom: 0;
+    content: "";
+  }
+
 
   #team-infos .teamates-type-row .type-name-container {
     position: relative;
