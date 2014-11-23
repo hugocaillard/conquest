@@ -57,6 +57,7 @@ var home = {
 
   setEventListeners: function() {
     _.$$('.start').addEventListener('click', function(e) {
+      e.preventDefault();
       _.$$('.login').classList.add('show');
       _.$$('.cancel').classList.add('show');
       this.classList.remove('show');
@@ -65,6 +66,7 @@ var home = {
     });
 
     _.$$('.cancel').addEventListener('click', function(e) {
+      e.preventDefault();
       _.$$('.login').classList.remove('show');
       _.$$('.cancel').classList.remove('show');
       _.$$('.start').classList.add('show');
@@ -75,6 +77,7 @@ var home = {
     });
 
     _.$$('.cta-signin').addEventListener('click', function(e) {
+      e.preventDefault();
       _.$$('.login').classList.remove('show');
       _.$$('.register').classList.add('show');
       this.classList.remove('show');
@@ -82,6 +85,7 @@ var home = {
     });
 
     _.$$('.cta-login').addEventListener('click', function(e) {
+      e.preventDefault();
       _.$$('.login').classList.add('show');
       _.$$('.register').classList.remove('show');
       this.classList.remove('show');

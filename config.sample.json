@@ -2,7 +2,7 @@
   "development": true,
   "port": 3000,
   "secret": "your secret",
-  "mobile-token": "another secret",
+  "mobilesecret": "another secret",
   "superadmin": "hugo@hugo.com",
 
   "db": {
