@@ -7,6 +7,7 @@ var sockets       = require('./sockets.js');
 var chooseFaction = require('./UI/chooseFaction.js');
 var flashMessages = require('./UI/flashMessages.js');
 var panels        = require('./UI/panels.js');
+var sounds        = require('./UI/sounds.js');
 
 var game = {
   isReady: false,
@@ -31,6 +32,7 @@ var game = {
 
       chooseFaction.init();
       flashMessages.init();
+      sounds.init();
       panels.init();
     }
     else if (_.byId('board-admin')) {
@@ -39,7 +41,6 @@ var game = {
   },
 
   ready: function(team) {
-    console.log(team);
     if (_.byId('board'))
       panels.setTeam(team);
   },
@@ -114,6 +115,7 @@ var game = {
     sockets.setFaction(faction);
     if (chooseFaction.isVisible) chooseFaction.hide();
     if (flashMessages.isVisible) flashMessages.hide();
+    sounds.pFactionSelected();
   }
 }
 
