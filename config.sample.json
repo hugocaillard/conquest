@@ -9,6 +9,11 @@
     "token": "bit.ly api key"
   },
 
+  "yo": {
+    "username" : "your yo username",
+    "token" : "yo api key"
+  },
+
   "db": {
     "host": "localhost",
     "port": 27017,
