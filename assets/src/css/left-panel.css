@@ -41,11 +41,18 @@ Tab section left panel
   top: 48px;
 }
 
-.tabs-section .tab {
-  width: 48px;
-  height: 48px;
-  background: #065bc4;
-}
+  .tabs-section .tab {
+    width: 48px;
+    height: 48px;
+    background: #065bc4;
+  }
+
+  .tabs-section .tab:nth-child(4) {
+    background: #161616;
+    color: #444444;
+    text-align: center;
+    font-size: 40px;
+  }
 
 
 /* TEMP: player data - temporary style in the bottom left corner */
@@ -397,3 +404,4 @@ Tab section left panel
     padding: 20px;
     padding-top: 0;
   }
+
