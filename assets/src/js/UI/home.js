@@ -12,8 +12,8 @@ var home = {
       particles: {
         color: '#fff',
         shape: 'circle', // "circle", "edge" or "triangle"
-        opacity: .3,
-        size: 4,
+        opacity: .2,
+        size: 2,
         size_random: true,
         nb: 150,
         line_linked: {
@@ -30,7 +30,7 @@ var home = {
         },
         anim: {
           enable: true,
-          speed: 1
+          speed: 2
         }
       },
       interactivity: {
@@ -38,7 +38,7 @@ var home = {
         mouse: {
           distance: 250
         },
-        detect_on: 'canvas', // "canvas" or "window"
+        detect_on: 'window', // "canvas" or "window"
         mode: 'grab',
         line_linked: {
           opacity: .3
@@ -46,12 +46,11 @@ var home = {
         events: {
           onclick: {
             enable: true,
-            mode: 'push', // "push" or "remove" (particles)
-            nb: 4
+            mode: 'remove', // "push" or "remove" (particles)
+            nb: 1
           }
         }
       },
-      /* Retina Display Support */
       retina_detect: true
     });
   },
@@ -62,6 +61,7 @@ var home = {
       _.$$('.cancel').classList.add('show');
       this.classList.remove('show');
       _.$$('.cta-signin').classList.add('show');
+      _.$$('h1').classList.add('up');
     });
 
     _.$$('.cancel').addEventListener('click', function(e) {
@@ -71,6 +71,7 @@ var home = {
       _.$$('.register').classList.remove('show');
       _.$$('.cta-login').classList.remove('show');
       _.$$('.cta-signin').classList.remove('show');
+      _.$$('h1').classList.remove('up');
     });
 
     _.$$('.cta-signin').addEventListener('click', function(e) {

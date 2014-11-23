@@ -10,12 +10,8 @@
 .overlays>div {z-index: -1;}
   .overlays>div.show {
     display: block;
-    opacity: .8;
     z-index: 4;
     text-transform: uppercase;
-  }
-  .overlays>div.show:hover {
-    opacity: 1;
   }
 
 /* FLASH MESSAGE */
@@ -36,8 +32,6 @@
   left: 25%;
   width: 50%;
   color: #FFF;
-  opacity: 0;
-  transition: opacity .3s ease-in;
 }
   .choose-faction>div {
     float: left;
@@ -51,10 +45,21 @@
     height: 232px;
     font-size: 12px;
     padding-top: 12px;
+    opacity: .8;
   }
-    .choose-faction.alpha .inner {background: url('./imgs/spawn/blue_respawn.png') no-repeat center;}
+    .choose-faction .inner:hover  {
+      opacity: 1;
+    }
+    .choose-faction .inner span  {
+      font-size: 16px;
+      padding-left: 4px;
+    }
+    .choose-faction .inner:hover span  {
+      text-shadow: 2px 2px #000;
+    }
+    .choose-faction.alpha .inner {background: url('./imgs/spawn/red_respawn.png') no-repeat center;}
     .choose-faction.beta  .inner {background: url('./imgs/spawn/green_respawn.png') no-repeat center;}
-    .choose-faction.gamma .inner {background: url('./imgs/spawn/red_respawn.png') no-repeat center;}
+    .choose-faction.gamma .inner {background: url('./imgs/spawn/blue_respawn.png') no-repeat center;}
     .choose-faction img {
       height: 30px;
       position: relative;

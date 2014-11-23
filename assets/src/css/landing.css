@@ -18,15 +18,26 @@
   background-position: 50% 50%;
   z-index: 4;
 }
-.planet .title {
+h1 {
   width: 750px;
   height: 100px;
   position: absolute;
-  top: 35%;
-  left: -75%;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -375px;
   background: url("./imgs/conquest.png");
   background-size: cover;
+  z-index: 5;
+  cursor: default;
+  color: transparent;
+  transition: all .2s ease-in;
 }
+  h1.up {
+    top: 10%;
+    margin-top: 0;
+  }
+
 .outer-planet {
   width: 400px;
   height: 400px;
@@ -36,7 +47,7 @@
   background: url("./imgs/outer-planet.png");
   background-size: cover;
   opacity: .3;
-  animation:spin 10s linear infinite;
+  animation:spin 40s linear infinite;
 }
 @keyframes spin { 100% { transform:rotate(360deg); } }
 
@@ -51,7 +62,7 @@
   background: url("./imgs/med-planet.png");
   background-size: cover;
   opacity: .3;
-  animation:spin-bis 10s linear infinite;
+  animation:spin-bis 20s linear infinite;
 }
 @keyframes spin-bis { 100% { transform:rotate(-360deg); } }
 
@@ -72,6 +83,10 @@
   left: -17%;
   top: -17%;
   background-size: cover;
+}
+
+form {
+  color: #fff;
 }
 
 .landing .buttons {
