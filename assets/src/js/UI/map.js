@@ -15,16 +15,16 @@ var map = {
     self.player = player;
     if (player.position !== null) {
       if (self.currentPos !== null)
-        self.currentPos.element.back().stroke({'width': 1, 'color': '#181818'});
+        self.currentPos.element.back().first().stroke({'width': 1, 'color': '#111'});
 
       var tile = mapData.board[player.position];
-      tile.element.front().stroke({'width': 5, 'color': '#fff'});
+      tile.element.front().first().stroke({'width': 4, 'color': '#fff'});
 
       self.currentPos = tile;
     }
     else {
       if (self.currentPos !== null)
-        self.currentPos.element.back().stroke({'width': 1, 'color': '#181818'});
+        self.currentPos.element.back().first().stroke({'width': 1, 'color': '#181818'});
       if (player.faction === null)
         flashMessages.show('Welcome.<br>Click on a tile owned by your team to spawn');
       else
@@ -36,6 +36,7 @@ var map = {
   tileClick: function(e) {
     e.preventDefault();
     var el = e.target || e.toElement;
+    el = el.parentNode;
     var index = parseInt(el.id);
 
     // spawn
@@ -60,41 +61,59 @@ var map = {
   visibleTiles: [],
   updateMap: function(map) {
     var self = this;
+    var children = null;
     (function(visibleTiles) {
       for (var i=0;i<visibleTiles.length;i++) {
-        if (map[visibleTiles[i]] === undefined)
-           mapData.board[visibleTiles[i]].element.fill('#333');
+        if (map[visibleTiles[i]] === undefined) {
+          mapData.board[visibleTiles[i]].element.first().fill('#1d1e1d');
+        }
+        children = mapData.board[visibleTiles[i]].element.children();
+        if (children[1].style('opacity') == 1) children[1].style('opacity', 0);
+        if (children[2].style('opacity') == 1) children[2].style('opacity', 0);
+        if (children[3].style('opacity') == 1) children[3].style('opacity', 0);
       }
     })(self.visibleTiles);
 
     self.visibleTiles = [];
-
     for (var tile in map) {
       self.visibleTiles.push(map[tile].index);
+      // colors the map
       if (map[tile].ownedBy === "alpha")
-        mapData.board[map[tile].index].element.fill('#DD4B39');
+        mapData.board[map[tile].index].element.first().fill('#bf2318');
       else if (map[tile].ownedBy === "beta")
-        mapData.board[map[tile].index].element.fill('#7AB800');
+        mapData.board[map[tile].index].element.first().fill('#459d42');
       else if (map[tile].ownedBy === "gamma")
-        mapData.board[map[tile].index].element.fill('#4183C4');
+        mapData.board[map[tile].index].element.first().fill('#2a5faa');
       else
-        mapData.board[map[tile].index].element.fill('#bbb');
+        mapData.board[map[tile].index].element.first().fill('#bbb');
+      // display players dots
+      children = mapData.board[map[tile].index].element.children();
+      if (Object.keys(map[tile].players.alpha).length)
+        children[1].style({opacity: 1});
+      if (Object.keys(map[tile].players.beta).length)
+        children[2].style({opacity: 1});
+      if (Object.keys(map[tile].players.gamma).length)
+        children[2].style({opacity: 1});
     }
   },
 
   /**
     * INITAL MAPPING
   */
-  drawMap: function() {
+  drawMap: function(median) {
     var self = this;
 
     /** SVG.JS */
     var boardContainer = SVG(mapData.boardName);
     var tiles   = boardContainer.group();
     var hexagon = null;
+    var nested  = null;
     var coords  = null;
     var t       = null;
+    var circle  = null;
+    var circleRadius = 4;
 
+    var delta = (median/2)-(circleRadius/2);
 
     var colors = {'alpha': '#DD4B39', 'beta': '#7AB800', 'gamma': '#4183C4'};
     for(var i=0;i<mapData.board.length;i++) {
@@ -108,15 +127,30 @@ var map = {
                t.angles[5].x+','+t.angles[5].y;
 
 
-      hexagon = tiles.polygon(coords)
-                  .fill('#333')
-                  .stroke({width: 1, color: '#181818'});
+      nested  = tiles.nested();
+      hexagon = nested.polygon(coords)
+                  .fill('#1d1e1d')
+                  .stroke({width: 1, color: '#111'});
 
-      hexagon.attr('id', i);
-      hexagon.attr('name', t.id);
-      hexagon.attr('data-rank', i);
-      mapData.board[i].element = hexagon;
-      hexagon.on('click', self.tileClick);
+
+      circle = nested.circle(circleRadius) // alha
+                      .fill('#e74238')
+                      .style({'opacity': 0})
+                      .move(t.angles[5].x+delta+1.5,t.angles[5].y+delta-1.4);
+      circle = nested.circle(circleRadius) // beta
+                      .fill('#77b829')
+                      .style({'opacity': 0})
+                      .move(t.angles[3].x-(delta*2),t.angles[3].y+delta-3.7);
+      circle = nested.circle(circleRadius) // gamma
+                      .fill('#4e82c2')
+                      .style({'opacity': 0})
+                      .move(t.angles[1].x-delta+5.5,t.angles[1].y-(delta*2)-1.1);
+
+      nested.attr('id', i);
+      nested.attr('name', t.id);
+      nested.attr('data-rank', i);
+      mapData.board[i].element = nested;
+      nested.on('click', self.tileClick);
     }
 
     // center the map

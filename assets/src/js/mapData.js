@@ -189,7 +189,7 @@ var mapData = {
     self.setMapData();
 
     var map = require('./UI/map.js');
-    map.drawMap();
+    map.drawMap(self.median);
     console.log("Map generated in %s ms.", Date.now()-start);
 
     // The map is ready, let's init the sockets
