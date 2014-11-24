@@ -68,16 +68,48 @@
     }
 
 /* CONNECT TURRET */
+div.close-turret {
+  background: url('./imgs/game/close.png') no-repeat center;
+  background-size: 20px;
+  width: 20px;
+  height: 20px;
+  float: right;
+}
 div.connect-turret {
   position: absolute;
   left: 50%;
-  width: 300px;
-  margin-left: -150px;
+  width: 600px;
+  height: 450px;
+  margin-left: -300px;
   color: white;
-  background-color: black;
+  text-align: center;
+  font-size: 14px;
+  padding: 88px 45px;
+  top: 20%
 }
-.bitly {
-  font-family: 'Open Sans', sans-serif;
-  text-transform: none;
+.alpha div.connect-turret {background: url('./imgs/game/bg_popin_red.png');background-size: 600px;}
+.beta div.connect-turret {background: url('./imgs/game/bg_popin_green.png');background-size: 600px;}
+.gamma div.connect-turret {background: url('./imgs/game/bg_popin_blue.png');background-size: 600px;}
+.connect-turret>p {
+  margin-top: 38px;
+}
+.qrcode {
+  width: 41%;
+  float:left;
+  margin-top: 26px;
+}
+.or {
+  width: 18%;
+  margin: 0 auto;
+  position: relative;
+  top: 100px;
+  font-size: 22px;
+}
+div.bitly {
+  width: 41%;
+  float: right;
+}
+p.bitly {
+  margin-top: 28px;
 }
 
