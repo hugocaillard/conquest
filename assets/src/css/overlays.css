@@ -57,15 +57,18 @@
     .choose-faction .inner:hover span  {
       text-shadow: 2px 2px #000;
     }
-    .choose-faction.alpha .inner {background: url('./imgs/spawn/red_respawn.png') no-repeat center;}
-    .choose-faction.beta  .inner {background: url('./imgs/spawn/green_respawn.png') no-repeat center;}
-    .choose-faction.gamma .inner {background: url('./imgs/spawn/blue_respawn.png') no-repeat center;}
+    .choose-faction .inner p {
+      margin: 5px;
+    }
+    .choose-faction.alpha .inner {background: url('./imgs/spawn/red_respawn.png') no-repeat center;background-size: 200px;}
+    .choose-faction.beta  .inner {background: url('./imgs/spawn/green_respawn.png') no-repeat center;background-size: 200px;}
+    .choose-faction.gamma .inner {background: url('./imgs/spawn/blue_respawn.png') no-repeat center;background-size: 200px;}
     .choose-faction img {
       height: 30px;
       position: relative;
       top: 12px;
       right: 1px;
-      margin-bottom: 26px;
+      margin-bottom: 37px;
     }
     .choose-faction h3 {
       margin: 0.5em;

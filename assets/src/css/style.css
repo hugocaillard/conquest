@@ -20,6 +20,7 @@ html, body {
 @import './right-panel.css';
 @import './left-panel.css';
 @import './landing.css';
+@import './top-panel.css';
 @import './admin.css';
 
 .board {

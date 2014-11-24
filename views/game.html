@@ -11,6 +11,16 @@
 </head>
 <body>
   <div id="board" class="board"></div>
+  <div class="top-panel">
+    <div class="time" id="duration">
+      00:15:23
+    </div>
+    <div class="score">
+      <div class="score-bar"><span id="score-alpha"></span></div>
+      <div class="score-bar"><span id="score-beta"></span></div>
+      <div class="score-bar"><span id="score-gamma"></span></div>
+    </div>
+  </div>
   <div class="score">Score: <span id="score">0</span></div>
 
 
@@ -95,12 +105,12 @@
   </div>
 
   <!-- PANELS -->
-  <div id="left-panel" class="panel">
+  <div id="left-panel" class="panel alpha">
     <div class="tabs-section">
       <div class="tab" id="player-tab"></div>
       <div class="tab" id="team-tab"></div>
       <div class="tab" id="infos-tab"></div>
-      <div class="tab" id="hide-panel-tab"><span><</span></div>
+      <div class="tab" id="hide-panel-tab"><span></span></div>
     </div>
     <div class="top-section-container">
       <div id="logout"></div>
@@ -255,9 +265,9 @@
     <div class="sector-info">
       <div class="block1">
         <div class="sector-name">Sector <span id="tile-sector">0</span></div>
-        <div id="icons-team-class">
+        <div id="icons-team-fight">
           <div id="icon-team"></div>
-          <div id="icon-class"></div>
+          <div id="icon-fight"></div>
         </div>
         <div class="sector-deco">/////////////////////////////////////</div>
       </div>

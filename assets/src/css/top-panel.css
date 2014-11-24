@@ -1,0 +1,65 @@
+.top-panel {
+  position: fixed;
+  top: 0;
+  left: 300px;
+  right: 300px;
+  height: 48px;
+  background-color: #222222;
+  z-index: 2;
+}
+
+  .top-panel .time {
+    display: inline-block;
+    width: 20%;
+    height: 100%;
+    position: relative;
+    vertical-align: top;
+    float: left;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+  }
+  .top-panel .score {
+    display: inline-block;
+    width: 80%;
+    height: 100%;
+    position: relative;
+    vertical-align: top;
+    float: left;
+    background: #161616;
+    top: 0;
+    padding-top: 16px;
+  }
+
+    .top-panel .score .score-bar {
+      width: 80%;
+      height: 5px;
+      margin: 0px auto;
+      background-color: #74797d;
+      opacity: .8;
+    }
+
+      .top-panel .score .score-bar span {
+        position: relative;
+        width: 67%;
+        height: 100%;
+        display: block;
+      }
+
+      .top-panel .score .score-bar span#score-alpha {
+        background: #bf2318;
+        width: 20%;
+      }
+
+      .top-panel .score .score-bar span#score-beta {
+        background: #50b04c;
+        width: 54%;
+      }
+
+      .top-panel .score .score-bar span#score-gamma {
+        background-color: #036ef3;
+        width: 28%;
+      }
