@@ -28,6 +28,7 @@
 
   "game": {
     "win": 1000,
+    "countdown": 0.1,
     "teams": ["alpha", "beta", "gamma"],
     "map": {
       "size": 4

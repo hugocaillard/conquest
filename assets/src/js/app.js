@@ -2,13 +2,6 @@
 
 var _ = require('./tools.js');
 
-var users = {
-  loginHandler: function(resData) {
-    console.log(resData);
-  }
-};
-
-
 document.addEventListener('DOMContentLoaded', function() {
   /**
     * send forms with ajax
@@ -49,7 +42,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (_.byId('board') || _.byId('board-admin')) {
     var game = require('./game.js');
-    game.init();
+    setTimeout(function() {
+      game.init();
+    }, 500);
   }
 
   if (!!_.byId('landing')) {

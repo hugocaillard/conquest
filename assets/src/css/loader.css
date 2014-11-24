@@ -1,0 +1,69 @@
+.loader-container {
+  position: absolute;
+  top: 0;bottom: 0;
+  left: 0;right: 0;
+  background-color: black;
+}
+  .loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -72px;
+    margin-left: -70px;
+    width: 144px;
+    height: 140px;
+    background-image: url('./imgs/loader.png');
+    background-position: 0 0;
+    transform: scale(0.5);
+    animation: loading .5s infinite;
+    animation-timing-function:steps(1);
+  }
+
+  @keyframes loading {
+    0%      {background-position: 0 0}
+    2.27%   {background-position: 0 -141px}
+    4.54%   {background-position: 0 -282px}
+    6.81%   {background-position: 0 -423px}
+    9.08%   {background-position: 0 -564px}
+    11.35%  {background-position: 0 -705px}
+    13.62%  {background-position: 0 -846px}
+    15.89%  {background-position: 0 -987px}
+    18.16%  {background-position: 0 -1128px}
+    20.43%  {background-position: 0 -1269px}
+    22.70%  {background-position: 0 -1410px}
+    24.97%  {background-position: 0 -1551px}
+    27.24%  {background-position: 0 -1692px}
+    29.51%  {background-position: 0 -1833px}
+    31.78%  {background-position: 0 -1974px}
+    34.05%  {background-position: -145px 0}
+    36.32%  {background-position: -145px -141px}
+    38.59%  {background-position: -145px -282px}
+    40.86%  {background-position: -145px -423px}
+    43.13%  {background-position: -145px -564px}
+    45.40%  {background-position: -145px -705px}
+    47.67%  {background-position: -145px -846px}
+    49.94%  {background-position: -145px -987px}
+    52.21%  {background-position: -145px -1128px}
+    54.48%  {background-position: -145px -1269px}
+    56.75%  {background-position: -145px -1410px}
+    59.02%  {background-position: -145px -1551px}
+    61.29%  {background-position: -145px -1692px}
+    63.56%  {background-position: -145px -1833px}
+    65.83%  {background-position: -145px -1974px}
+    68.10%  {background-position: -290px 0}
+    70.31%  {background-position: -290px -141px}
+    72.64%  {background-position: -290px -282px}
+    74.91%  {background-position: -290px -423px}
+    77.18%  {background-position: -290px -564px}
+    79.45%  {background-position: -290px -705px}
+    81.72%  {background-position: -290px -846px}
+    83.99%  {background-position: -290px -987px}
+    86.26%  {background-position: -290px -1128px}
+    88.53%  {background-position: -290px -1269px}
+    90.8%  {background-position: -290px -1410px}
+    93.07%  {background-position: -290px -1551px}
+    95.34%  {background-position: -290px -1692px}
+    97.61%  {background-position: -290px -1833px}
+    100.0%  {background-position: -290px -1974px}
+  }
+

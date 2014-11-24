@@ -45,14 +45,19 @@ var panels = {
     self.scoreGamma = _.byId('score-gamma');
 
     // time DOM
-    self.duration = _.byId('duration');
+    self.duration  = _.byId('duration');
+    self.countdown = _.byId('countdown');
 
     // animate left panel
     self.setListeners();
   },
 
-  setTeam: function(team) {
-    _.$$('.right-panel').classList.add(team);
+  setTeam: function(team, countdown) {
+    if (countdown) _.$$('.countdown').classList.add(team, 'show');
+    _.$$('.loader-container').classList.remove('show');
+    _.$$('#left-panel').classList.add(team);
+    _.$$('#left-panel').classList.add(team);
+    _.$$('#right-panel').classList.add(team);
     _.$$('.choose-faction').classList.add(team);
   },
 
@@ -73,6 +78,12 @@ var panels = {
     var self = this;
     var time = self.computeTime(tick*2/10);
     if (self.duration.innerHTML != time) self.duration.innerHTML = time;
+  },
+
+  setCountdown: function(count) {
+    var self = this;
+    var time = self.computeTime(count);
+    if (self.countdown.innerHTML != time) self.countdown.innerHTML = time;
   },
 
   computeTime: function(duration) {

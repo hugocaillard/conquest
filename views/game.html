@@ -23,8 +23,18 @@
 
   <!-- OVERLAYS -->
   <div class="overlays" id="overlays">
+    <div class="loader-container show">
+      <div class="loader" id="loader"></div>
+    </div>
     <div class="flash" id="flash">
       <p class="spawning">Click on a tile to spawn</p>
+    </div>
+
+    <div class="countdown">
+      <div class="count">
+        <p>The game starts in</p>
+        <p id="countdown">00:00:00</p>
+      </div>
     </div>
 
     <div class="choose-faction" id="choose-faction">
@@ -77,7 +87,7 @@
   </div>
 
   <!-- PANELS -->
-  <div id="left-panel" class="panel alpha">
+  <div id="left-panel" class="panel">
     <div class="tabs-section">
       <div class="tab" id="player-tab"></div>
       <div class="tab" id="team-tab"></div>

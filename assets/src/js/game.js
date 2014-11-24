@@ -12,6 +12,7 @@ var sounds        = require('./UI/sounds.js');
 
 var game = {
   isReady: false,
+  firstTick: true,
   player: {},
   faction: {}, // the current, selected faction
   tileToSpawn: 0,
@@ -40,10 +41,24 @@ var game = {
     }
   },
 
-  ready: function(team, bitly) {
+  ready: function(team, bitly, countdown) {
     if (_.byId('board')) {
-      panels.setTeam(team);
+      panels.setTeam(team, countdown);
       connectTurret.init(bitly);
+    }
+  },
+
+  countdown: function(d) {
+    console.log(d);
+    if (d.count) {
+      panels.setCountdown(d.count/1000);
+    }
+    if (d.team && d.team.players[game.playerName]) {
+      game.player = d.team.players[game.playerName];
+      if (!game.isReady) {
+        game.isReady = true;
+        game.ready(game.player.team, game.player.bitly, true);
+      }
     }
   },
 
@@ -102,6 +117,10 @@ var game = {
       if (!game.isReady) {
         game.isReady = true;
         game.ready(game.player.team, game.player.bitly);
+      }
+      if (game.firstTick) {
+        _.$$('.countdown').classList.remove('show');
+        game.firstTick = false;
       }
     }
   },

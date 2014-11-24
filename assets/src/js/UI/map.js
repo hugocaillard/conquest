@@ -93,7 +93,7 @@ var map = {
       if (Object.keys(map[tile].players.beta).length)
         children[2].style({opacity: 1});
       if (Object.keys(map[tile].players.gamma).length)
-        children[2].style({opacity: 1});
+        children[3].style({opacity: 1});
     }
   },
 
@@ -106,11 +106,11 @@ var map = {
     /** SVG.JS */
     var boardContainer = SVG(mapData.boardName);
     var tiles   = boardContainer.group();
-    var hexagon = null;
     var nested  = null;
+    var hexagon = null;
+    var circle  = null;
     var coords  = null;
     var t       = null;
-    var circle  = null;
     var circleRadius = 4;
 
     var delta = (median/2)-(circleRadius/2);

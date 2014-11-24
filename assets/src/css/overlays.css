@@ -1,3 +1,5 @@
+@import './loader.css';
+
 /* STYLES OF OVERLAYS */
 .overlays>div {z-index: -1;}
   .overlays>div.show {
@@ -81,3 +83,41 @@ div.connect-turret {
   text-transform: none;
 }
 
+/* COUNTDOWN */
+div.countdown {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  background-color: rgba(0,0,0,.95);
+  color: rgba(255,255,255,.9);
+}
+  .countdown .count {
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    margin-top: -100px;
+    left: 0; right: 0;
+    font-size: 60px;
+    text-align: center;
+  }
+
+  .countdown p {
+    margin: 0;
+  }
+  .countdown p:first-child {
+    font-size: 20px;
+    margin-top: 60px;
+  }
+
+  .countdown.alpha .count {
+    background: url('./imgs/spawn/red_respawn.png') no-repeat bottom center;
+    background-size: 200px;
+  }
+  .countdown.beta  .count {
+    background: url('./imgs/spawn/green_respawn.png') no-repeat center;
+    background-size: 200px;
+  }
+  .countdown.gamma .count {
+    background: url('./imgs/spawn/blue_respawn.png') no-repeat center;
+    background-size: 200px;
+  }
