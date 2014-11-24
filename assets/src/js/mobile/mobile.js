@@ -12,6 +12,10 @@ var mobile = {
       console.log(d);
     });
 
+    self.socket.on('update', function(d) {
+      console.log(d);
+    });
+
 
     _.byId('deploy').addEventListener('click', function() {
       self.socket.emit('deploy');
