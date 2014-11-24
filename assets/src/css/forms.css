@@ -1,6 +1,6 @@
 input {
   display: block;
-  width: 200px;
+  width: 100%;
   padding: 4px;
   margin-bottom: 6px;
   outline: none;
@@ -24,7 +24,3 @@ input {
     width: auto;
     margin-right: 2px;
   }
-
-.register, .login {
-  margin: 20px;
-}
