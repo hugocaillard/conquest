@@ -46,7 +46,7 @@ var home = {
         events: {
           onclick: {
             enable: true,
-            mode: 'remove', // "push" or "remove" (particles)
+            mode: 'push', // "push" or "remove" (particles)
             nb: 1
           }
         }
@@ -56,40 +56,35 @@ var home = {
   },
 
   setEventListeners: function() {
-    _.$$('.start').addEventListener('click', function(e) {
+    _.$$('.login-cta').addEventListener('click', function(e) {
       e.preventDefault();
       _.$$('.login').classList.add('show');
       _.$$('.cancel').classList.add('show');
+      _.$$('.signin-cta').classList.remove('show');
       this.classList.remove('show');
-      _.$$('.cta-signin').classList.add('show');
       _.$$('h1').classList.add('up');
+      _.$$('.login-section').classList.add('appear');
     });
 
     _.$$('.cancel').addEventListener('click', function(e) {
       e.preventDefault();
       _.$$('.login').classList.remove('show');
       _.$$('.cancel').classList.remove('show');
-      _.$$('.start').classList.add('show');
+      _.$$('.login-cta').classList.add('show');
+      _.$$('.signin-cta').classList.add('show');
       _.$$('.register').classList.remove('show');
-      _.$$('.cta-login').classList.remove('show');
-      _.$$('.cta-signin').classList.remove('show');
       _.$$('h1').classList.remove('up');
+      _.$$('.login-section').classList.remove('appear');
     });
 
-    _.$$('.cta-signin').addEventListener('click', function(e) {
+    _.$$('.signin-cta').addEventListener('click', function(e) {
       e.preventDefault();
-      _.$$('.login').classList.remove('show');
       _.$$('.register').classList.add('show');
+      _.$$('.cancel').classList.add('show');
       this.classList.remove('show');
-      _.$$('.cta-login').classList.add('show');
-    });
-
-    _.$$('.cta-login').addEventListener('click', function(e) {
-      e.preventDefault();
-      _.$$('.login').classList.add('show');
-      _.$$('.register').classList.remove('show');
-      this.classList.remove('show');
-      _.$$('.cta-signin').classList.add('show');
+      _.$$('.login-cta').classList.remove('show');
+      _.$$('h1').classList.add('up');
+      _.$$('.login-section').classList.add('appear');
     });
   }
 }

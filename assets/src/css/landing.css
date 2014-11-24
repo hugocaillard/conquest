@@ -6,13 +6,13 @@
   height: 100%;
 }
 .planet {
-  width: 300px;
-  height: 300px;
+  width: 500px;
+  height: 500px;
   position: absolute;
   left: 50%;
   top: 50%;
-  margin-left: -150px;
-  margin-top: -150px;
+  margin-left: -250px;
+  margin-top: -250px;
   background: url("./imgs/planet.png");
   background-size: cover;
   background-position: 50% 50%;
@@ -31,19 +31,21 @@ h1 {
   z-index: 5;
   cursor: default;
   color: transparent;
-  transition: all .2s ease-in;
+  transition: all .5s ease-in;
 }
   h1.up {
-    top: 10%;
+    top: 30%;
     margin-top: 0;
   }
 
 .outer-planet {
-  width: 400px;
-  height: 400px;
+  width: 570px;
+  height: 570px;
   position: absolute;
-  left: -17%;
-  top: -17%;
+  left: 50%;
+  top: 50%;
+  margin-left: -285px;
+  margin-top: -285px;
   background: url("./imgs/outer-planet.png");
   background-size: cover;
   opacity: .3;
@@ -52,37 +54,45 @@ h1 {
 @keyframes spin { 100% { transform:rotate(360deg); } }
 
 .med-planet {
-  width: 350px;
-  height: 350px;
+  width: 650px;
+  height: 650px;
   position: absolute;
   left: 50%;
   top: 50%;
-  margin-left: -175px;
-  margin-top: -175px;
+  margin-left: -325px;
+  margin-top: -325px;
   background: url("./imgs/med-planet.png");
   background-size: cover;
   opacity: .3;
-  animation:spin-bis 20s linear infinite;
+  animation:spin 20s linear infinite;
 }
 @keyframes spin-bis { 100% { transform:rotate(-360deg); } }
 
 .med2-planet {
-  width: 400px;
-  height: 400px;
+  width: 630px;
+  height: 630px;
   position: absolute;
   left: 50%;
   top: 50%;
-  margin-top: 200px;
-  margin-left: 200px;
+  margin-top: -315px;
+  margin-left: -315px;
+  background: url("./imgs/med-planet2.png");
   background-size: cover;
+  opacity: .7;
+  animation:spin-bis 20s linear infinite;
 }
 .inner-planet {
-  width: 400px;
-  height: 400px;
+  width: 530px;
+  height: 530px;
   position: absolute;
-  left: -17%;
-  top: -17%;
+  left: 50%;
+  top: 50%;
+  margin-left: -265px;
+  margin-top: -265px;
+  background: url("./imgs/inner-planet.png");
   background-size: cover;
+  opacity: .7;
+  animation:spin-bis 20s linear infinite;
 }
 
 form {
@@ -99,6 +109,7 @@ form {
   font-weight: bold;
   font-size: 14px;
   z-index: 3;
+  font-weight: normal;
 }
 
 .landing .buttons a {
@@ -111,7 +122,7 @@ form {
 }
 
 .landing .buttons .how-to {
-  margin-left: 50px;
+  margin-left: 25px;
 }
 
 .landing .start {
@@ -134,9 +145,9 @@ form {
 .landing .start-contain {
   position: absolute;
   width: 100%;
-  bottom: 75px;
+  bottom: 40px;
   text-align: center;
-  z-index: 3;
+  z-index: 5;
 }
 
 .login-section {
@@ -146,10 +157,20 @@ form {
   width: 240px;
   margin-left: -120px;
   display: inline-block;
-  z-index: 10000;
+  z-index: 4;
+  transition: all 1s ease;
+  opacity: 0;
 }
+  .login-section.appear {
+    opacity: 1;
+  }
   .login-section .register {
     display: none;
+    opacity: 0;
+  }
+  .login-section .register.show {
+    display: block;
+    opacity: 1;
   }
   .login-section .cancel-contain a {
     color: #fff;
@@ -158,19 +179,17 @@ form {
     font-family: 'Montserrat', sans-serif;
   }
   .login-section .login, .login-section .cancel{
-    display: none;
+    z-index: -1;
     opacity: 0;
     transition: all 1s ease;
   }
-  .login-section .login,
-  .login-section .cta-signin,
-  .login-section .cta-login {
-    display: none;
+  .login-section .login {
+    z-index: -1;
     opacity: 0;
     transition: all 1s ease;
   }
   .login-section .show{
-    display: block;
+    z-index: 4;
     opacity: 1;
     transition: all 1s ease;
   }
@@ -178,18 +197,38 @@ form {
   .login-section input[type=text],
   .login-section input[type=password],
   .login-section input[type=email] {
-    background: transparent;
-    padding: 7px 7px 7px 50px;
+    padding: 10px 7px 10px 50px;
     border: 2px solid rgba(255,255,255, .8);
     border-radius: 3px;
     color: #fff;
     font-family: 'Montserrat', sans-serif;
   }
+    .login-section input[type=text] {
+      background: url('./imgs/user.png') no-repeat, transparent;
+      background-position: 18px 11px, 0 0;
+      background-size: 15px 15px, 100% 100%;
+    }
+    .login-section input[type=password]{
+      background: url('./imgs/password.png') no-repeat, transparent;
+      background-position: 18px 8px, 0 0;
+      background-size: 13px 17px, 100% 100%;
+    }
+    /*.login-section .form-username {
+      background: url('./imgs/password.png');
+      background-size: 20px;
+      background-position: 10px 5px;
+    }
+    .login-section .form-password {
+      content: '';
+      position: absolute;
+      background: url('./imgs/password.png');
+      width: 20px;
+      height: 20px;
+      background-size: cover;
+    }*/
     .login-section input[type=text]:focus,
     .login-section .login input[type=password]:focus,
     .login-section .login input[type=email]:focus {
-      background: transparent;
-      padding: 7px 7px 7px 50px;
       border: 2px solid rgba(255,255,255,.6);
       border-radius: 3px;
       color: #fff;
@@ -211,28 +250,30 @@ form {
     .form-separator:after{
       content: "";
       position: absolute;
-      left: -50px;
-      top: 6px;
-      width: 50%;
-      border: 1px solid #fff;
+      left: 20px;
+      top: 9px;
+      width: 30%;
+      border-top: 1px solid #fff;
     }
     .form-separator:before{
       content: "";
       position: absolute;
-      right: -50px;
-      top: 6px;
-      width: 50%;
-      border: 1px solid #fff;
+      right: 20px;
+      top: 9px;
+      width: 30%;
+      border-top: 1px solid #fff;
     }
     .social-button-connect {
       position: relative;
+      display: block;
+      text-decoration: none;
       width: 100%;
       padding: 10px 10px 10px 30px;
       background: #3b5998;
       border-radius: 3px;
       opacity: .8;
       margin-bottom: 15px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Open Sans', sans-serif;
       color: #fff;
       font-size: 14px;
     }
@@ -240,7 +281,25 @@ form {
       opacity: 1;
     }
     .facebook-connect {background: #3b5998;}
+    .facebook-connect::before {
+      content: '';
+      position: absolute;
+      background: url('./imgs/facebook.png');
+      width: 10px;
+      background-size: cover;
+      height: 18px;
+      left: 25px;
+    }
     .twitter-connect {background: #55acee;}
+    .twitter-connect::before {
+      content: '';
+      position: absolute;
+      background: url('./imgs/twitter.png');
+      left: 21px;
+      background-size: cover;
+      width: 17px;
+      height: 15px;
+    }
     .social-button-connect a{
       text-decoration: none;
       color: #fff;
@@ -250,6 +309,33 @@ form {
   position: absolute;
   top: 0;bottom: 0;left: 0;right: 0;
   z-index: 2;
+}
+
+.login-cta {
+  display: none;
+}
+
+.login-cta.show {
+  display: block;
+}
+
+.login-cta a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.signin-cta {
+  margin-top: 25px;
+  display: none;
+}
+
+.signin-cta.show {
+  display: block;
+}
+
+.signin-cta a {
+  text-decoration: none;
+  color: #fff;
 }
 
 .buttons a::before,
