@@ -19,15 +19,15 @@
 #logout {
   position: relative;
   width: 48px;
-  height: 48px;  
+  height: 48px;
   display: inline-block;
   vertical-align: top;
 }
-.alpha #logout{background: url('./imgs/game/logout_active.png') 50% no-repeat, -webkit-linear-gradient(-45deg, #bf2318 0%,#811911 100%);background-size: 30px,100%;}
-.beta #logout {background: url('./imgs/game/logout_active.png') 50% no-repeat, -webkit-linear-gradient(-45deg, #50b04c 0%,#2e662c 100%);background-size: 30px,100%;}
-.gamma #logout{background: url('./imgs/game/logout_active.png') 50% no-repeat, -webkit-linear-gradient(-45deg, #0272fc 0%,#0755b6 100%);background-size: 30px,100%;}
+.alpha #logout{background: url('./imgs/game/logout_active.png') 50% no-repeat, linear-gradient(-45deg, #bf2318 0%,#811911 100%);background-size: 30px,100%;}
+.beta #logout {background: url('./imgs/game/logout_active.png') 50% no-repeat, linear-gradient(-45deg, #50b04c 0%,#2e662c 100%);background-size: 30px,100%;}
+.gamma #logout{background: url('./imgs/game/logout_active.png') 50% no-repeat, linear-gradient(-45deg, #0272fc 0%,#0755b6 100%);background-size: 30px,100%;}
 .top-section-container {
-  
+
 }
 .alpha .top-section-container {border-bottom: 2px solid #bf2318;}
 .beta .top-section-container {border-bottom: 2px solid #50b04c;}
@@ -52,17 +52,17 @@ Tab section left panel
     width: 48px;
     height: 48px;
   }
-  .alpha .tabs-section .tab:first-child {background: url('./imgs/game/player_active.png') 50% no-repeat, -webkit-linear-gradient(-45deg, #bf2318 0%,#811911 100%);background-size: 20px,100%;}
-  .beta .tabs-section .tab:first-child {background: url('./imgs/game/logout_active.png') 50% no-repeat, -webkit-linear-gradient(-45deg, #50b04c 0%,#2e662c 100%);background-size: 20px,100%;}
-  .gamma .tabs-section .tab:first-child {background: url('./imgs/game/logout_active.png') 50% no-repeat, -webkit-linear-gradient(-45deg, #0272fc 0%,#0755b6 100%);background-size: 20px,100%;}
-  
-  .alpha .tabs-section .tab:nth-child(2) {background: url('./imgs/game/team_active.png') 50% no-repeat, -webkit-linear-gradient(-45deg, #bf2318 0%,#811911 100%);background-size: 30px,100%;}
-  .beta .tabs-section .tab:nth-child(2) {background: url('./imgs/game/team_active.png') 50% no-repeat, -webkit-linear-gradient(-45deg, #50b04c 0%,#2e662c 100%);background-size: 30px,100%;}
-  .gamma .tabs-section .tab:nth-child(2) {background: url('./imgs/game/team_active.png') 50% no-repeat, -webkit-linear-gradient(-45deg, #0272fc 0%,#0755b6 100%);background-size: 30px,100%;}
-  
-  .alpha .tabs-section .tab:nth-child(3) {background: url('./imgs/game/aide_active.png') 50% no-repeat, -webkit-linear-gradient(-45deg, #bf2318 0%,#811911 100%);background-size: 24px,100%;}
-  .beta .tabs-section .tab:nth-child(3) {background: url('./imgs/game/aide_active.png') 50% no-repeat, -webkit-linear-gradient(-45deg, #50b04c 0%,#2e662c 100%);background-size: 24px,100%;}
-  .gamma .tabs-section .tab:nth-child(3) {background: url('./imgs/game/aide_active.png') 50% no-repeat, -webkit-linear-gradient(-45deg, #0272fc 0%,#0755b6 100%);background-size: 24px,100%;}
+  .alpha .tabs-section .tab:first-child {background: url('./imgs/game/player_active.png') 50% no-repeat, linear-gradient(-45deg, #bf2318 0%,#811911 100%);background-size: 20px,100%;}
+  .beta .tabs-section .tab:first-child {background: url('./imgs/game/logout_active.png') 50% no-repeat, linear-gradient(-45deg, #50b04c 0%,#2e662c 100%);background-size: 20px,100%;}
+  .gamma .tabs-section .tab:first-child {background: url('./imgs/game/logout_active.png') 50% no-repeat, linear-gradient(-45deg, #0272fc 0%,#0755b6 100%);background-size: 20px,100%;}
+
+  .alpha .tabs-section .tab:nth-child(2) {background: url('./imgs/game/team_active.png') 50% no-repeat, linear-gradient(-45deg, #bf2318 0%,#811911 100%);background-size: 30px,100%;}
+  .beta .tabs-section .tab:nth-child(2) {background: url('./imgs/game/team_active.png') 50% no-repeat, linear-gradient(-45deg, #50b04c 0%,#2e662c 100%);background-size: 30px,100%;}
+  .gamma .tabs-section .tab:nth-child(2) {background: url('./imgs/game/team_active.png') 50% no-repeat, linear-gradient(-45deg, #0272fc 0%,#0755b6 100%);background-size: 30px,100%;}
+
+  .alpha .tabs-section .tab:nth-child(3) {background: url('./imgs/game/aide_active.png') 50% no-repeat, linear-gradient(-45deg, #bf2318 0%,#811911 100%);background-size: 24px,100%;}
+  .beta .tabs-section .tab:nth-child(3) {background: url('./imgs/game/aide_active.png') 50% no-repeat, linear-gradient(-45deg, #50b04c 0%,#2e662c 100%);background-size: 24px,100%;}
+  .gamma .tabs-section .tab:nth-child(3) {background: url('./imgs/game/aide_active.png') 50% no-repeat, linear-gradient(-45deg, #0272fc 0%,#0755b6 100%);background-size: 24px,100%;}
 
 
 
@@ -77,8 +77,8 @@ Tab section left panel
   .tabs-section .tab:nth-child(4) span {
     background: url('./imgs/game/arrow.png') no-repeat center;
     background-size: 15px;
-    -webkit-transition: -webkit-transform 1s ease-in;
-    transition: transform 1s ease-in;
+    transition: transform .3s ease-in;
+    transition: transform .3s ease-in;
     display: block;
     width: 100%;
     height: 100%;
@@ -149,9 +149,9 @@ Tab section left panel
   color: #fff;
   font-family: 'Montserrat', sans-serif;
 }
-.alpha .infos .first-infos-wrapper {background: url("./imgs/hex_grid_red.png") 50%;-webkit-background-size: cover; background-size: cover;}
-.beta .infos .first-infos-wrapper{background: url("./imgs/hex_grid_green.png") 50%;-webkit-background-size: cover; background-size: cover;}
-.gamma .infos .first-infos-wrapper{background: url("./imgs/hex_grid_blue.png") 50%;-webkit-background-size: cover; background-size: cover;}
+.alpha .infos .first-infos-wrapper {background: url("./imgs/hex_grid_red.png") 50%;background-size: cover; background-size: cover;}
+.beta .infos .first-infos-wrapper{background: url("./imgs/hex_grid_green.png") 50%;background-size: cover; background-size: cover;}
+.gamma .infos .first-infos-wrapper{background: url("./imgs/hex_grid_blue.png") 50%;background-size: cover; background-size: cover;}
 
   .infos .first-infos-wrapper #player-name {
     color: #fff;
@@ -189,10 +189,6 @@ Tab section left panel
     right: 0;
     position: relative;
     top: 10px;
-    /*background: url('./imgs/game/soldier_white.png') no-repeat 50%;
-    background-size: 40px;*/
-    /*background: url('./imgs/game/medic_white.png') no-repeat 50%;
-    background-size: 55px;*/
     background: url('./imgs/game/engineer_white.png') no-repeat 50%;
     background-size: 55px;
 

@@ -39,9 +39,12 @@ var panels = {
     };
 
     // scores DOM elements
-    self.scoreAlpha = _.byId('#scoreAlpha');
-    self.scoreBeta  = _.byId('#scoreBeta');
-    self.scoreGamma = _.byId('#scoreGamma');
+    self.scoreAlpha = _.byId('score-alpha');
+    self.scoreBeta  = _.byId('score-beta');
+    self.scoreGamma = _.byId('score-gamma');
+
+    // time DOM
+    self.duration = _.byId('duration');
 
     // animate left panel
     self.setListeners();
@@ -63,6 +66,25 @@ var panels = {
     _.$$('#deploy-turret').addEventListener('click', function() {
       self.connectTurret.classList.toggle('show');
     });
+  },
+
+  setTick: function(tick) {
+    var self = this;
+    var time = self.computeTime(tick*2/10);
+    if (self.duration.innerHTML != time) self.duration.innerHTML = time;
+  },
+
+  computeTime: function(duration) {
+    var sec_num = parseInt(duration, 10); // don't forget the second param
+    var hours   = Math.floor(sec_num / 3600);
+    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+    if (hours   < 10) {hours   = "0"+hours;}
+    if (minutes < 10) {minutes = "0"+minutes;}
+    if (seconds < 10) {seconds = "0"+seconds;}
+    var time    = hours+':'+minutes+':'+seconds;
+    return time;
   },
 
   /**
@@ -167,8 +189,18 @@ var panels = {
   /**
     * Scores functions
   */
-  updateScores: function(d) {
+  updateScores: function(scores) {
+    var self = this;
+    var scoreA = scores.alpha/scores.toReach*100;
+    var scoreB = scores.beta/scores.toReach*100;
+    var scoreG = scores.gamma/scores.toReach*100;
 
+    if (self.scoreAlpha.style.width != scoreA && scoreA <= 100)
+      self.scoreAlpha.style.width = (scoreA <= 100) ? scoreA+'%' : '100%';
+    if (self.scoreBeta.style.width  != scoreB && scoreB <= 100)
+      self.scoreBeta.style.width  = (scoreB <= 100) ? scoreB+'%' : '100%';
+    if (self.scoreGamma.style.width != scoreG && scoreG <= 100)
+      self.scoreGamma.style.width = (scoreG <= 100) ? scoreG+'%' : '100%';
   }
 };
 

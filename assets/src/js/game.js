@@ -27,7 +27,6 @@ var game = {
     var mapData = require('./mapData.js');
 
     self.player = 0;
-    self.teamScore = 0;
     if (_.byId('board')) {
       mapData.init('board');
 
@@ -59,6 +58,9 @@ var game = {
       /**
         * Update UI
       */
+      if (d.ticks) {
+        panels.setTick(d.ticks);
+      }
       // PLAYER SPECS
       if (game.player.faction && game.player.position !== null) {
         game.faction = game.player.factions[game.player.faction];
@@ -92,11 +94,11 @@ var game = {
       }
 
       //  SCORES
-      if (game.teamScore !== d.team.score) {
-        game.teamScore = d.team.score;
-        _.byId('score').innerHTML = game.teamScore;
-      }
+      if (d.scores)
+        panels.updateScores(d.scores);
 
+
+      // on first tick
       if (!game.isReady) {
         game.isReady = true;
         game.ready(game.player.team, game.player.bitly);

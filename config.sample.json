@@ -27,7 +27,7 @@
   },
 
   "game": {
-    "win": 100000,
+    "win": 1000,
     "teams": ["alpha", "beta", "gamma"],
     "map": {
       "size": 4
