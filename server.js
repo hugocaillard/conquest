@@ -109,7 +109,5 @@ sockets.ready();
 
 
 // let's go
-if (config.development) {
-  server.listen(config.port);
-  console.log('[Info] Listening :3000'.green);
-}
+server.listen(config.port);
+console.log(('[Info] Listening :'+config.port).green);

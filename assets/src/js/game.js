@@ -41,10 +41,10 @@ var game = {
     }
   },
 
-  ready: function(team) {
+  ready: function(team, bitly) {
     if (_.byId('board')) {
       panels.setTeam(team);
-      connectTurret.init();
+      connectTurret.init(bitly);
     }
   },
 
@@ -99,7 +99,7 @@ var game = {
 
       if (!game.isReady) {
         game.isReady = true;
-        game.ready(game.player.team);
+        game.ready(game.player.team, game.player.bitly);
       }
     }
   },
