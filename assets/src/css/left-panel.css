@@ -206,6 +206,7 @@ Tab section left panel
     margin: 0 auto;
     border-radius: 5px;
     background-color: #74797d;
+    opacity: .8;
   }
 
     #xp-progress span {

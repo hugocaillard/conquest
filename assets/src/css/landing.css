@@ -183,6 +183,12 @@ form {
     opacity: 0;
     transition: all 1s ease;
   }
+  .login-section.appear .login {
+    display: block;
+  }
+  .login-section .login {
+    display: none;
+  }
   .login-section .login {
     z-index: -1;
     opacity: 0;
@@ -203,29 +209,21 @@ form {
     color: #fff;
     font-family: 'Montserrat', sans-serif;
   }
-    .login-section input[type=text] {
+    .login-section .form-username {
       background: url('./imgs/user.png') no-repeat, transparent;
       background-position: 18px 11px, 0 0;
       background-size: 15px 15px, 100% 100%;
     }
-    .login-section input[type=password]{
+    .login-section .form-password{
       background: url('./imgs/password.png') no-repeat, transparent;
       background-position: 18px 8px, 0 0;
       background-size: 13px 17px, 100% 100%;
     }
-    /*.login-section .form-username {
-      background: url('./imgs/password.png');
-      background-size: 20px;
-      background-position: 10px 5px;
+    .login-section .form-email{
+      background: url('./imgs/mail.png') no-repeat, transparent;
+      background-position: 17px 13px, 0 0;
+      background-size: 20px 11px, 100% 100%;
     }
-    .login-section .form-password {
-      content: '';
-      position: absolute;
-      background: url('./imgs/password.png');
-      width: 20px;
-      height: 20px;
-      background-size: cover;
-    }*/
     .login-section input[type=text]:focus,
     .login-section .login input[type=password]:focus,
     .login-section .login input[type=email]:focus {
@@ -233,13 +231,15 @@ form {
       border-radius: 3px;
       color: #fff;
     }
-    .login-section input[type=submit] {
+    .login-section button {
       background: transparent;
       outline: none;
       border: none;
       font-family: 'Montserrat', sans-serif;
       color: #fff;
       text-transform: uppercase;
+      font-size: 16px;
+      padding: 10px;
     }
     .form-separator{
       color: #fff;
@@ -280,7 +280,7 @@ form {
     .social-button-connect:hover {
       opacity: 1;
     }
-    .facebook-connect {background: #3b5998;}
+    .facebook-connect {background: #3b5998;margin-bottom: 5px;}
     .facebook-connect::before {
       content: '';
       position: absolute;
@@ -325,7 +325,7 @@ form {
 }
 
 .signin-cta {
-  margin-top: 25px;
+  margin-top: 15px;
   display: none;
 }
 
@@ -338,36 +338,53 @@ form {
   color: #fff;
 }
 
-.buttons a::before,
-.buttons a::after,
-.start-contain a::before,
-.start-contain a::after {
+.buttons a:before,
+.buttons a:after,
+.start-contain a:before,
+.start-contain a:after,
+.cancel-contain div a:before,
+.cancel-contain div a:after,
+.login-section button.submit:before,
+.login-section button.submit:after {
   display: inline-block;
   opacity: 0;
   transition: transform 0.3s, opacity 0.2s;
 }
 
-.start-contain a::before, .buttons a::before {
+.start-contain a:before,
+.buttons a:before,
+.cancel-contain div a:before,
+.login-section button.submit:before {
   margin-right: 10px;
   content: '[';
   transform: translateX(20px);
 }
 
-.buttons a::after,
-.start-contain a::after {
+.buttons a:after,
+.start-contain a:after,
+.cancel-contain div a:after,
+.login-section button.submit:after {
   margin-left: 10px;
   content: ']';
   transform: translateX(-20px);
 }
 
-.buttons a:hover::before,
-.buttons a:hover::after,
-.buttons a:focus::before,
-.buttons a:focus::after,
-.start-contain a:hover::before,
-.start-contain a:hover::after,
-.start-contain a:focus::before,
-.start-contain a:focus::after {
+.buttons a:hover:before,
+.buttons a:hover:after,
+.buttons a:focus:before,
+.buttons a:focus:after,
+.start-contain a:hover:before,
+.start-contain a:hover:after,
+.start-contain a:focus:before,
+.start-contain a:focus:after,
+.cancel-contain div a:hover:before,
+.cancel-contain div a:hover:after,
+.cancel-contain div a:focus:before,
+.login-section button.submit:focus:after,
+.login-section button.submit:hover:before,
+.login-section button.submit:hover:after,
+.login-section button.submit:focus:before,
+.login-section button.submit:focus:after {
   opacity: 1;
   transform: translateX(0px);
 }

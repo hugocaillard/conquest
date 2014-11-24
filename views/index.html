@@ -35,7 +35,7 @@
           <input class="form-password" type="password" name="password" placeholder="Password">
           <input type="checkbox" data-action="showPassword">
           <label for="showPassword"><small>Show password</small></label>
-          <input type="submit" value="Validate">
+          <button class="submit" type="submit">Log In</button>
         </form>
         <div class="form-separator">or</div>
         <div class="social-connect">
@@ -46,12 +46,12 @@
 
       <section class="register">
       <form action="/users/register" method="post" class="ajax">
-         <input type="text" name="username" placeholder="Username">
-         <input type="email" name="email" placeholder="email">
-         <input type="password" name="password" placeholder="Password">
+         <input class="form-username" type="text" name="username" placeholder="Username">
+         <input class="form-email" type="email" name="email" placeholder="email">
+         <input class="form-password" type="password" name="password" placeholder="Password">
          <input type="checkbox" data-action="showPassword">
          <label for="showPassword"><small>Show password</small></label>
-         <input type="submit" value="register">
+         <button class="submit" type="submit">Sign Up</button>
        </form>
       </section>
       <div class="cancel-contain">
@@ -60,8 +60,8 @@
     </div>
 
     <div class="start-contain">
-      <div class="login-cta show"><a href="#login">Login</a></div>
-      <div class="signin-cta show"><a href="#signin">Signin</a></div>
+      <div class="login-cta show"><a href="#login">Log In</a></div>
+      <div class="signin-cta show"><a href="#signin">Sign In</a></div>
     </div>
 
   </div>
