@@ -29,7 +29,7 @@
     text-align: right;
   }
 .block1 {
-  padding: 20px 30px 0 30px;
+  padding: 20px 20px 0 20px;
 }
 .sector-name {
   font-family: 'Open Sans', sans-serif;
@@ -42,14 +42,14 @@
   font-weight: 100;
   font-size: 10px;
 }
-#icon-team, #icon-class {
+#icon-team, #icon-fight {
   width: 52px;
   height: 42px;
   position: absolute;;
   top: 20px;
 }
 #icon-team {
-  right: 30px;
+  right: 14px;
   background: url('./imgs/game/neutral_control.png') no-repeat center;
   /*
   background: url('./imgs/game/green_team_symbol.png') no-repeat center;
@@ -58,8 +58,8 @@
   */
   background-size: 40px;
 }
-#icon-class {
-  right: 77px;
+#icon-fight {
+  right: 65px;
   background: url('./imgs/game/figth.png') no-repeat center;
   background-size: 34px;
 }
@@ -88,9 +88,9 @@
     height: 100%;
     border-radius: 5px;
   }
-    .capture-progress>.alpha {background-color: #dd4b39;}
-    .capture-progress>.beta  {background-color: #7ab800;}
-    .capture-progress>.gamma {background-color: #4183c4;}
+    .capture-progress>.alpha {background-color: #bf2318;}
+    .capture-progress>.beta  {background-color: #50b04c;}
+    .capture-progress>.gamma {background-color: #0272fc;}
 
 .percent-capture {
   width: 80px;
@@ -111,18 +111,18 @@
 
 .stats-container {
   width: 100%;
-  height: 165px;
+  height: 145px;
 }
 
-  .right-panel.alpha .stats-container {box-shadow: 0 2px 0 #dd4b39;}
-  .right-panel.beta  .stats-container {box-shadow: 0 2px 0 #7ab800;}
-  .right-panel.gamma .stats-container {box-shadow: 0 2px 0 #4183c4;}
+  .right-panel.alpha .stats-container {box-shadow: 0 2px 0 #bf2318;}
+  .right-panel.beta  .stats-container {box-shadow: 0 2px 0 #50b04c;}
+  .right-panel.gamma .stats-container {box-shadow: 0 2px 0 #0272fc;}
 
 .tile-stats>div{
   float: left;
   text-align: center;
   width: 25%;
-  height: 55px;
+  height: 48px;
   line-height: 55px;
 }
   .tile-stats>div:first-child {
@@ -130,22 +130,22 @@
   }
   .stats-container .tile-stats:first-child>div:first-child {
     background: url('./imgs/game/soldier_grey.png') no-repeat center;
-    background-size: 20px;
+    background-size: 16px;
   }
   .stats-container .tile-stats:nth-child(2)>div:first-child {
     background: url('./imgs/game/engineer_grey.png') no-repeat center;
-    background-size: 30px;
+    background-size: 25px;
   }
   .stats-container .tile-stats:nth-child(3)>div:first-child {
     background: url('./imgs/game/medic_grey.png') no-repeat center;
-    background-size: 25px;
+    background-size: 20px;
   }
   .tile-stats>div.alpha {background-color: #49161D;}
   .tile-stats>div.beta  {background-color: #1d442a;}
   .tile-stats>div.gamma {background-color: #0d3063;}
   .stats-container>.shadows {
     width: 75%;
-    height: 165px;
+    height: 145px;
     margin-left: 25%;
     box-shadow: inset 2px 2px 2px rgba(0,0,0,.3);
     position: relative;
@@ -156,7 +156,7 @@
 */
 .chat {
   position: absolute;
-  top: 471px; bottom: 40px;
+  top: 436px; bottom: 40px;
   left: 0; right: 0;
 }
 .chat .messages {
@@ -169,7 +169,7 @@
 }
 
 .message {
-  border-bottom: solid 1px #444;
+  border-bottom: solid 1px #1F1F1F;
   padding-bottom: 12px;
 }
   .message>.content {
