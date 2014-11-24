@@ -7,14 +7,15 @@ var panels = {
     self.leftPanel      = _.byId('left-panel');
     self.connectTurret  = _.byId('connect-turret');
     // player panel DOM elements
-    self.player         = _.byId('player');
-    self.playerFaction  = _.byId('faction');
-    self.playerLevel    = _.$$('#level>.value');
-    self.playerXP       = _.$$('#xp>.value');
-    self.playerLife     = _.$$('#life>.value');
-    self.playerDmg      = _.$$('#damages>.value');
-    self.playerCapt     = _.$$('#capt-pts>.value');
-    self.playerHeal     = _.$$('#heal-pts>.value');
+    self.player         = _.byId('player-infos');
+    self.playerFaction  = _.byId('player-class');
+    self.playerLevel    = _.byId('number-level');
+    self.playerSkills   = _.byId('skill-points');
+    self.playerXP       = _.$$('#xp-progress>span');
+    self.playerLife     = _.byId('life-grade');
+    self.playerDmg      = _.byId('dmg-grade');
+    self.playerCapt     = _.byId('capt-grade');
+    self.playerHeal     = _.byId('healing-grade');
     self.playerUpgrades = _.$('#player>div>.upgrade');
 
     // tile panel DOM elements
@@ -90,6 +91,10 @@ var panels = {
   /**
     * Player Spec functions
   */
+  showName: function(name) {
+    _.byId('player-name').innerHTML = name;
+  },
+
   setPlayerLife: function(d) {
     this.playerLife.innerHTML = d;
   },
@@ -100,15 +105,16 @@ var panels = {
       self.player.classList.add('show');
 
     self.playerFaction.innerHTML = faction;
+    self.playerSkills.innerHTML  = (d.skillPts>1) ? d.skillPts+' skill points remaining' : d.skillPts+' skill point remaining';
+    self.playerXP.style.width    = (d.xp/d.level)+'%';
     self.playerLevel.innerHTML   = d.level;
-    self.playerXP.innerHTML      = d.xp + '/'+ d.level*100;
     self.playerLife.innerHTML    = d.life + '/' + d.maxLife;
     self.playerDmg.innerHTML     = d.dmg;
     self.playerCapt.innerHTML    = d.capt;
     self.playerHeal.innerHTML    = d.heal;
 
-    if (d.skillPts && !self.playerUpgrades[0].classList.contains('show'));
-      self.showUpgradePlayer();
+    // if (d.skillPts && !self.playerUpgrades[0].classList.contains('show'));
+    //   self.showUpgradePlayer();
   },
 
   hidePlayerPanel: function() {

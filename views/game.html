@@ -19,32 +19,6 @@
       <div class="score-bar"><span id="score-gamma"></span></div>
     </div>
   </div>
-  <div class="score">Score: <span id="score">0</span></div>
-
-
-  <!--  TEMPORARY : should be move in the left panel
-        Mind the IDs for the JS   -->
-  <div class="player" id="player">
-    <div class="faction" id="faction"></div>
-    <div id="level">Level: <span class="value"></span></div>
-    <div id="xp">XP: <span class="value"></span></div>
-    <div id="life">Life:
-      <span class="value"></span>
-      <span class="upgrade">+</span>
-    </div>
-    <div id="damages">Damages:
-      <span class="value"></span>
-      <span class="upgrade">+</span>
-    </div>
-    <div id="capt-pts">Capture Points:
-      <span class="value"></span>
-      <span class="upgrade">+</span>
-    </div>
-    <div id="heal-pts">Healing Points:
-      <span class="value"></span>
-      <span class="upgrade">+</span>
-    </div>
-  </div>
 
 
   <!-- OVERLAYS -->
@@ -120,8 +94,8 @@
     <div id="player-infos" class="infos">
 
       <div class="first-infos-wrapper">
-        <span id="player-name">Wadzy</span>
-        <span id="player-class">Soldier</span>
+        <span id="player-name"></span>
+        <span id="player-class"></span>
         <div class="sector-deco">/////////////////////////////////////</div>
         <div id="icon-class"></div>
         <div class="level-wrapper">
@@ -129,26 +103,25 @@
             <div class="level">Level</div>
             <div id="xp-progress"><span></span></div>
           </div>
-          <div id="number-level">7</div>
+          <div id="number-level">0</div>
         </div>
       </div>
 
       <div class="skills">
         <div class="skills-title-wrapper">
           <span class="title-skills">Skills :</span>
-          <span id="skill-points">5 points remaning</span>
+          <span id="skill-points"></span>
         </div>
         <div class="skill-container">
           <div class="skill-row">
             <div class="skill-name-container">
               <span class="skill-name">Life</span>
               <div class="right-part">
-                <span>grade</span>
-                <span id="life-grade">7</span>
+                <span class="grade" id="life-grade">0</span>
                 <button>upgrade</button>
               </div>
             </div>
-            <div class="skill-description">The health level determines the amount of life points that own your character. Remember to improve your health to better withstand during fights phases.
+            <div class="skill-description">Amount of life points that owns your character. Remember to improve your health to better withstand during fights phases.
             </div>
           </div>
           <div class="skill-row">
@@ -156,11 +129,11 @@
               <span class="skill-name">Strength</span>
               <div class="right-part">
                 <span>grade</span>
-                <span id="life-grade">7</span>
+                <span class="grade" id="dmg-grade">0</span>
                 <button>upgrade</button>
               </div>
             </div>
-            <div class="skill-description">The strength level determines the amount of damages that deal your character. The more strength you will have, the easier the fight will be !
+            <div class="skill-description">Amount of damages that deals your character. The more strength you will have, the easier the fight will be !
             </div>
           </div>
           <div class="skill-row">
@@ -168,11 +141,11 @@
               <span class="skill-name">Capture</span>
               <div class="right-part">
                 <span>grade</span>
-                <span id="life-grade">7</span>
+                <span class="grade" id="capt-grade">0</span>
                 <button>upgrade</button>
               </div>
             </div>
-            <div class="skill-description">The capture level determines the effectiveness of your character to quickly capture areas of the map. The better your capture grade is the faster you will conquer.
+            <div class="skill-description">Effectiveness of your character to quickly capture areas of the map. The better your capture grade is the faster you will conquer.
             </div>
           </div>
           <div class="skill-row">
@@ -180,11 +153,11 @@
               <span class="skill-name">Heal</span>
               <div class="right-part">
                 <span>grade</span>
-                <span id="life-grade">7</span>
+                <span class="grade" id="healing-grade">0</span>
                 <button>upgrade</button>
               </div>
             </div>
-            <div class="skill-description">The heal level determines the number of hit points that your character gets every second. The higher the heal is, the higher your chance to survive will be.
+            <div class="skill-description">Number of heal points that your character gives every second. The higher the heal is, the higher your chance to survive will be.
             </div>
           </div>
         </div>

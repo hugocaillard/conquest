@@ -1,11 +1,3 @@
-.score {
-  position: absolute;
-  color: white;
-  z-index: 3;
-}
-  .score {top: 10px;left: 10px;}
-
-
 /* STYLES OF OVERLAYS */
 .overlays>div {z-index: -1;}
   .overlays>div.show {

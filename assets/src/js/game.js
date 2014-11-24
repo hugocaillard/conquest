@@ -108,6 +108,7 @@ var game = {
 
   joined: function(d) {
     game.playerName = d;
+    panels.showName(d);
   },
 
   setFaction: function(el) {
