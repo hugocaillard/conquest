@@ -39,6 +39,8 @@
     height: 232px;
     font-size: 12px;
     padding-top: 12px;
+    background: url('') no-repeat center;
+    background-size: 200px;
     opacity: .8;
   }
     .choose-faction .inner:hover  {
@@ -54,9 +56,9 @@
     .choose-faction .inner p {
       margin: 5px;
     }
-    .choose-faction.alpha .inner {background: url('./imgs/spawn/red_respawn.png') no-repeat center;background-size: 200px;}
-    .choose-faction.beta  .inner {background: url('./imgs/spawn/green_respawn.png') no-repeat center;background-size: 200px;}
-    .choose-faction.gamma .inner {background: url('./imgs/spawn/blue_respawn.png') no-repeat center;background-size: 200px;}
+    .choose-faction.alpha .inner {background-image: url('./imgs/spawn/red_respawn.png')}
+    .choose-faction.beta  .inner {background-image: url('./imgs/spawn/green_respawn.png')}
+    .choose-faction.gamma .inner {background-image: url('./imgs/spawn/blue_respawn.png')}
     .choose-faction img {
       height: 30px;
       position: relative;
@@ -70,18 +72,53 @@
     }
 
 /* CONNECT TURRET */
-div.connect-turret {
+.close-turret {
+  background: url('./imgs/game/close.png') no-repeat center;
+  background-size: 20px;
+  width: 20px;
+  height: 20px;
+  float: right;
+}
+.connect-turret {
   position: absolute;
   left: 50%;
-  width: 300px;
-  margin-left: -150px;
+  width: 600px;
+  height: 450px;
+  margin-left: -300px;
   color: white;
-  background-color: black;
+  text-align: center;
+  font-size: 14px;
+  padding: 88px 45px;
+  background: url('') no-repeat center;
+  background-size: 600px;
+  top: 20%
 }
-.bitly {
-  font-family: 'Open Sans', sans-serif;
-  text-transform: none;
+.connect-turret.alpha {background-image: url('./imgs/game/bg_popin_red.png');}
+.connect-turret.beta  {background-image: url('./imgs/game/bg_popin_green.png');}
+.connect-turret.gamma {background-image: url('./imgs/game/bg_popin_blue.png');}
+.connect-turret>p {
+  margin-top: 38px;
 }
+  .connect-turret .qrcode {
+    width: 41%;
+    float:left;
+  }
+  .connect-turret .or {
+    width: 18%;
+    margin: 0 auto;
+    position: relative;
+    top: 100px;
+    font-size: 22px;
+  }
+  .connect-turret div.bitly {
+    width: 41%;
+    float: right;
+  }
+  .connect-turret p.bitly {
+    font-size: 17px;
+    text-transform: none;
+    margin-top: 24px;
+  }
 
 /* COUNTDOWN */
 div.countdown {
@@ -99,6 +136,8 @@ div.countdown {
     left: 0; right: 0;
     font-size: 60px;
     text-align: center;
+    background: url('') no-repeat center;
+    background-size: 200px;
   }
 
   .countdown p {
@@ -110,14 +149,11 @@ div.countdown {
   }
 
   .countdown.alpha .count {
-    background: url('./imgs/spawn/red_respawn.png') no-repeat bottom center;
-    background-size: 200px;
+    background-image: url('./imgs/spawn/red_respawn.png');
   }
   .countdown.beta  .count {
-    background: url('./imgs/spawn/green_respawn.png') no-repeat center;
-    background-size: 200px;
+    background-image: url('./imgs/spawn/green_respawn.png');
   }
   .countdown.gamma .count {
-    background: url('./imgs/spawn/blue_respawn.png') no-repeat center;
-    background-size: 200px;
+    background-image: url('./imgs/spawn/blue_respawn.png');
   }

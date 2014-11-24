@@ -56,9 +56,9 @@ var panels = {
     if (countdown) _.$$('.countdown').classList.add(team, 'show');
     _.$$('.loader-container').classList.remove('show');
     _.$$('#left-panel').classList.add(team);
-    _.$$('#left-panel').classList.add(team);
     _.$$('#right-panel').classList.add(team);
     _.$$('.choose-faction').classList.add(team);
+    _.$$('.connect-turret').classList.add(team);
   },
 
   setListeners: function() {
@@ -70,6 +70,9 @@ var panels = {
 
 
     _.$$('#deploy-turret').addEventListener('click', function() {
+      self.connectTurret.classList.toggle('show');
+    });
+    _.$$('.close-turret').addEventListener('click', function() {
       self.connectTurret.classList.toggle('show');
     });
   },
