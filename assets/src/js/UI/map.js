@@ -153,18 +153,29 @@ var map = {
       nested.on('click', self.tileClick);
     }
 
-    // center the map
+    // center and resize the map
     tiles.move(_.getWindowWidth()/2, _.getWindowHeight()/2);
+    var scale = 1;
+    var deltaX=0,deltaY=0,newDeltaX=0,newDeltaY=0,tx=0,ty=0;
+    tx = tiles.x()-_.getWindowWidth()/2;
+    ty = tiles.y()-_.getWindowHeight()/2;
+    deltaX = tx/scale;
+    deltaY = ty/scale;
+    scale = 0.5;
+    newDeltaX = tx/scale;
+    newDeltaY = ty/scale;
+    tiles.scale(scale, scale);
+    tiles.dmove(deltaX - newDeltaX, deltaY - newDeltaY);
+
     window.addEventListener('resize', function() {
       tiles.move(_.getWindowWidth()/2, _.getWindowHeight()/2);
     });
-
-    self.setupMapInterractions(boardContainer, tiles);
+    self.setupMapInterractions(boardContainer, tiles, scale);
   },
 
-  setupMapInterractions: function(boardContainer, tiles) {
+  setupMapInterractions: function(boardContainer, tiles, scale) {
     var self = this;
-    var scale = 1;
+    var scale = scale;
 
     self.readyToMove = false;
     boardContainer.on('mousedown', function() {
@@ -190,19 +201,19 @@ var map = {
       if ((e.deltaY>0 && scale-e.deltaY/1000>.5) // zoom out
           || (e.deltaY<0 && scale-e.deltaY/1000<3)) { // zoom in
 
-        tx = tiles.x();
-        ty = tiles.y();
+        tx = tiles.x()-e.pageX;
+        ty = tiles.y()-e.pageY;
 
         // Get the current distance between the
         // pointer and the center of the map
-        deltaX = (tx-e.pageX)/scale;
-        deltaY = (ty-e.pageY)/scale;
+        deltaX = tx/scale;
+        deltaY = ty/scale;
 
-        scale -= (e.deltaY/1000);
+        scale -= e.deltaY/1000;
 
         // Get the new distance
-        newDeltaX = (tx-e.pageX)/scale;
-        newDeltaY = (ty-e.pageY)/scale;
+        newDeltaX = tx/scale;
+        newDeltaY = ty/scale;
 
         // Move the map so the newDeltas match with the old ones
         // TODO: move it to the "animation" function that rune in a RAF
