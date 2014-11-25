@@ -16,7 +16,8 @@ var flashMessage = {
     var self = this;
     var game = require('../game.js');
 
-    self.spawning.innerHTML =msg;
+    if (self.spawning.innerHTML != msg)
+      self.spawning.innerHTML = msg;
     self.flashMessage.classList.add('show');
     self.isVisible = true;
   },

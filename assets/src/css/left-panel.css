@@ -22,10 +22,11 @@
   height: 48px;
   display: inline-block;
   vertical-align: top;
+  background: url('./imgs/game/logout_active.png') 50% no-repeat,
+              linear-gradient(-45deg, #bf2318 0%,#811911 100%);
+  background-size: 30px,100%;
 }
-.alpha #logout{background: url('./imgs/game/logout_active.png') 50% no-repeat, linear-gradient(-45deg, #bf2318 0%,#811911 100%);background-size: 30px,100%;}
-.beta #logout {background: url('./imgs/game/logout_active.png') 50% no-repeat, linear-gradient(-45deg, #50b04c 0%,#2e662c 100%);background-size: 30px,100%;}
-.gamma #logout{background: url('./imgs/game/logout_active.png') 50% no-repeat, linear-gradient(-45deg, #0272fc 0%,#0755b6 100%);background-size: 30px,100%;}
+
 .top-section-container {
 
 }
@@ -48,45 +49,49 @@ Tab section left panel
   top: 48px;
 }
 
-  .tabs-section .tab {
+
+  .left-panel div.tab {
+    position: relative;
     width: 48px;
     height: 48px;
+    background: url('') no-repeat center;
+    background-size: 21px, 100%;
   }
-  .alpha .tabs-section .tab:first-child {background: url('./imgs/game/player_active.png') 50% no-repeat, linear-gradient(-45deg, #bf2318 0%,#811911 100%);background-size: 20px,100%;}
-  .beta .tabs-section .tab:first-child {background: url('./imgs/game/logout_active.png') 50% no-repeat, linear-gradient(-45deg, #50b04c 0%,#2e662c 100%);background-size: 20px,100%;}
-  .gamma .tabs-section .tab:first-child {background: url('./imgs/game/logout_active.png') 50% no-repeat, linear-gradient(-45deg, #0272fc 0%,#0755b6 100%);background-size: 20px,100%;}
+    .left-panel .tab:nth-child(1) {background-image: url('./imgs/game/player_active.png')}
+    .left-panel .tab:nth-child(2) {background-image: url('./imgs/game/team_active.png'); display: none;}
+    .left-panel .tab:nth-child(3) {background-image: url('./imgs/game/aide_active.png')}
+      .left-panel .tab:before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+      .left-panel.alpha .tab:before {background: linear-gradient(-45deg, #bf2318 0%,#811911 100%)}
+      .left-panel.beta .tab:before {background: linear-gradient(-45deg, #50b04c 0%,#2e662c 100%)}
+      .left-panel.gamma .tab:before {background: linear-gradient(-45deg, #0272fc 0%,#0755b6 100%)}
+      .tabs-section .tab:nth-child(3):before {background: none;}
 
-  .alpha .tabs-section .tab:nth-child(2) {background: url('./imgs/game/team_active.png') 50% no-repeat, linear-gradient(-45deg, #bf2318 0%,#811911 100%);background-size: 30px,100%;}
-  .beta .tabs-section .tab:nth-child(2) {background: url('./imgs/game/team_active.png') 50% no-repeat, linear-gradient(-45deg, #50b04c 0%,#2e662c 100%);background-size: 30px,100%;}
-  .gamma .tabs-section .tab:nth-child(2) {background: url('./imgs/game/team_active.png') 50% no-repeat, linear-gradient(-45deg, #0272fc 0%,#0755b6 100%);background-size: 30px,100%;}
-
-  .alpha .tabs-section .tab:nth-child(3) {background: url('./imgs/game/aide_active.png') 50% no-repeat, linear-gradient(-45deg, #bf2318 0%,#811911 100%);background-size: 24px,100%;}
-  .beta .tabs-section .tab:nth-child(3) {background: url('./imgs/game/aide_active.png') 50% no-repeat, linear-gradient(-45deg, #50b04c 0%,#2e662c 100%);background-size: 24px,100%;}
-  .gamma .tabs-section .tab:nth-child(3) {background: url('./imgs/game/aide_active.png') 50% no-repeat, linear-gradient(-45deg, #0272fc 0%,#0755b6 100%);background-size: 24px,100%;}
-
-
-
-  .tabs-section .tab:nth-child(4) {
-    color: #444444;
-    text-align: center;
-    font-size: 40px;
-    cursor: pointer;
-    transform: rotate(0);
-  }
-
-  .tabs-section .tab:nth-child(4) span {
-    background: url('./imgs/game/arrow.png') no-repeat center;
-    background-size: 15px;
-    transition: transform .3s ease-in;
-    transition: transform .3s ease-in;
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-
-  .tabs-section .tab:nth-child(4).rotate span {
-    transform: rotate(180deg);
-  }
+    .tabs-section .tab:nth-child(4) {
+      background: none;
+      color: #444;
+      text-align: center;
+      font-size: 40px;
+      cursor: pointer;
+      transform: rotate(0);
+    }
+      .tabs-section .tab:nth-child(4):before {background: none;}
+      .tabs-section .tab:nth-child(4) span {
+        background: url('./imgs/game/arrow.png') no-repeat center;
+        background-size: 15px;
+        display: block;
+        width: 100%;
+        height: 100%;
+        transition: transform .3s ease-in;
+      }
+        .tabs-section .tab:nth-child(4).rotate span {
+          transform: rotate(180deg);
+        }
 
 
 
@@ -103,17 +108,19 @@ Tab section left panel
   padding: 15px;
   color: #fff;
   font-family: 'Montserrat', sans-serif;
+  background: url("") no-repeat 50%;
+  background-size: cover;
 }
-.alpha .infos .first-infos-wrapper {background: url("./imgs/hex_grid_red.png") 50%;background-size: cover; background-size: cover;}
-.beta .infos .first-infos-wrapper{background: url("./imgs/hex_grid_green.png") 50%;background-size: cover; background-size: cover;}
-.gamma .infos .first-infos-wrapper{background: url("./imgs/hex_grid_blue.png") 50%;background-size: cover; background-size: cover;}
+  .alpha .first-infos-wrapper {background-image: url("./imgs/hex_grid_red.png");}
+  .beta  .first-infos-wrapper{background-image: url("./imgs/hex_grid_green.png");}
+  .gamma .first-infos-wrapper{background-image: url("./imgs/hex_grid_blue.png");}
 
-  .infos .first-infos-wrapper #player-name {
+  #player-name {
     color: #fff;
     font-size: 18px;
   }
 
-  .infos .first-infos-wrapper #player-class {
+  #player-class {
     color: #fff;
     font-size: 18px;
     text-transform: uppercase;
@@ -123,20 +130,22 @@ Tab section left panel
     z-index: 1;
   }
 
-    .infos .first-infos-wrapper #player-class::after {
+    #player-class:after {
       content: "";
       position: absolute;
       width: 50px;
       height: 50px;
       right: 0px;
       top: -5px;
+      background: url("./imgs/game/red_team_symbol.png") no-repeat center;
+      background-size: 50px;
       z-index: -1;
     }
-    .alpha .infos .first-infos-wrapper #player-class::after {background: url('./imgs/game/red_team_symbol.png') no-repeat center;background-size: 50px;}
-    .beta .infos .first-infos-wrapper #player-class::after{background: url('./imgs/game/green_team_symbol.png') no-repeat center;background-size: 50px;}
-    .gamma .infos .first-infos-wrapper #player-class::after{background: url('./imgs/game/blue_team_symbol.png') no-repeat center;background-size: 50px;}
+    .alpha #player-class:after {background-image: url("./imgs/game/red_team_symbol.png")}
+    .beta  #player-class:after{background-image: url("./imgs/game/green_team_symbol.png")}
+    .gamma #player-class:after{background-image: url("./imgs/game/blue_team_symbol.png")}
 
-  #player-infos .first-infos-wrapper #icon-class {
+  #icon-class {
     width: 100px;
     height: 100px;
     margin-top: 15px;
@@ -149,7 +158,7 @@ Tab section left panel
 
   }
 
-  #player-infos .first-infos-wrapper .level-wrapper {
+  #player-infos .level-wrapper {
     text-align: center;
   }
 
@@ -212,7 +221,7 @@ Tab section left panel
   .beta #skill-points {color:#50b04c;}
   .gamma #skill-points {color: #036ef3;}
 
-  #player-infos .skills .skill-container {
+  .skills .skill-container {
     color: #3c3c3c;
     font-family: 'Montserrat', sans-serif;
     overflow: scroll;
@@ -223,59 +232,51 @@ Tab section left panel
     bottom: 0;
   }
 
-    #player-infos .skill-container .skill-row {
+    .skill-row {
       margin-bottom: 20px;
       border-bottom: 1px solid #000;
+      background: url('') no-repeat 23px 3px;
     }
-    #player-infos .skill-container .skill-row:first-child {
-    content: "";
-    background: url('./imgs/game/life.png') 23px 3px no-repeat;
-    background-size: 50px;
-    margin-top: 14px;
-    }
-    #player-infos .skill-container .skill-row:nth-child(2) {
-    content: "";
-    background: url('./imgs/game/strength.png') 23px 6px no-repeat;
-    background-size: 30px;
-    }
-    #player-infos .skill-row:nth-child(3) {
-    content: "";
-    background: url('./imgs/game/capture.png') 23px 0px no-repeat;
-    background-size: 30px;
-    }
-    #player-infos .skill-row:nth-child(4) {
-    content: "";
-    background: url('./imgs/game/heal.png') 23px 0px no-repeat;
-    background-size: 40px;
-    }
-
-    #player-infos .skill-name-container {
+      .skill-row:first-child {
+        background-image: url('./imgs/game/life.png');
+        background-size: 50px;
+        margin-top: 14px;
+      }
+      .skill-row:nth-child(2) {
+        background-image: url('./imgs/game/strength.png');
+        background-size: 30px;
+      }
+      .skill-row:nth-child(3) {
+        background-image: url('./imgs/game/capture.png');
+        background-size: 30px;
+      }
+      .skill-row:nth-child(4) {
+        background-image: url('./imgs/game/heal.png');
+        background-size: 40px;
+      }
+    .skill-name-container {
       position: relative;
       padding-bottom: 10px;
       padding-top: 10px;
       margin-bottom: 14px;
     }
-
-    #player-infos .skill-row .skill-name {
+    .skill-row .skill-name {
       color: #fff;
       padding: 10px;
       font-size: 14px;
       text-transform: uppercase;
       padding-left: 40px;
     }
-
-    #player-infos .skill-row .right-part {
+    .skill-row .right-part {
       position: absolute;
       right: 30px;
       top: 9px;
     }
-
     .skill-container .grade {
       color: #fff;
       padding: 10px;
       text-transform: uppercase;
     }
-
     .skill-container .skill-row button {
       color: #fff;
       padding: 5px 8px;
@@ -286,7 +287,6 @@ Tab section left panel
       position: relative;
       bottom: 2px;
     }
-
     .skill-container .skill-row .skill-description {
       font-family: 'Open Sans', sans-serif;
       font-size: 12px;
@@ -390,67 +390,64 @@ Tab section left panel
   font-family: 'Montserrat', sans-serif;
 }
 
-  #team-infos .teamates-types-container .teamates-type-row {
+  .teamates-type-row {
     margin-bottom: 20px;
     border-bottom: 1px solid #000;
     position: relative;
 
   }
-  #team-infos .teamates-types-container .teamates-type-row:first-child::after{
-    background: url('./imgs/game/soldier_grey.png') no-repeat;
-    background-size: 20px;
-    opacity: 0.3;
-    position: absolute;
-    top: 0;
-    left: 22px;
-    right: 0;
-    bottom: 0;
-    content: "";
-  }
-  #team-infos .teamates-types-container .teamates-type-row:nth-child(2)::after{
-    background: url('./imgs/game/medic_grey.png') no-repeat;
-    background-size: 30px;
-    opacity: 0.3;
-    position: absolute;
-    top: 0;
-    left: 22px;
-    right: 0;
-    bottom: 0;
-    content: "";
-  }
-  #team-infos .teamates-types-container .teamates-type-row:nth-child(3)::after{
-    background: url('./imgs/game/engineer_grey.png') no-repeat;
-    background-size: 35px;
-    opacity: 0.3;
-    position: absolute;
-    top: 0;
-    left: 22px;
-    right: 0;
-    bottom: 0;
-    content: "";
-  }
+    .teamates-type-row:first-child:after{
+      background: url('./imgs/game/soldier_grey.png') no-repeat;
+      background-size: 20px;
+      opacity: 0.3;
+      position: absolute;
+      top: 0;
+      left: 22px;
+      right: 0;
+      bottom: 0;
+      content: "";
+    }
+    .teamates-type-row:nth-child(2):after{
+      background: url('./imgs/game/medic_grey.png') no-repeat;
+      background-size: 30px;
+      opacity: 0.3;
+      position: absolute;
+      top: 0;
+      left: 22px;
+      right: 0;
+      bottom: 0;
+      content: "";
+    }
+    .teamates-type-row:nth-child(3):after{
+      background: url('./imgs/game/engineer_grey.png') no-repeat;
+      background-size: 35px;
+      opacity: 0.3;
+      position: absolute;
+      top: 0;
+      left: 22px;
+      right: 0;
+      bottom: 0;
+      content: "";
+    }
 
 
-  #team-infos .teamates-type-row .type-name-container {
+  .teamates-type-row .type-name-container {
     position: relative;
     margin-bottom: 10px;
     margin-top: 10px;
   }
-
-  #team-infos .teamates-type-row .type-name {
+  .teamates-type-row .type-name {
     color: #fff;
     padding: 10px;
     font-size: 14px;
     text-transform: uppercase;
     padding-left: 30px;
   }
-
-  #team-infos .teamates-type-row .right-part {
+  .teamates-type-row .right-part {
     position: absolute;
     right: 30px;
     top: -5px;
   }
-
   #soldier-number {
     color: #fff;
     padding: 10px;
@@ -459,8 +456,7 @@ Tab section left panel
     position: relative;
     top: 3px;
   }
-
-  #team-infos .teamates-type-row .type-description {
+  .teamates-type-row .type-description {
     font-family: 'Open Sans', sans-serif;
     font-size: 12px;
     padding: 20px;
