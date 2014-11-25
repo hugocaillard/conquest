@@ -65,7 +65,7 @@ var map = {
     (function(visibleTiles) {
       for (var i=0;i<visibleTiles.length;i++) {
         if (map[visibleTiles[i]] === undefined) {
-          mapData.board[visibleTiles[i]].element.first().fill('#1d1e1d');
+          mapData.board[visibleTiles[i]].element.first().fill('#1d1d1e');
         }
         children = mapData.board[visibleTiles[i]].element.children();
         if (children[1].style('opacity') == 1) children[1].style('opacity', 0);
@@ -103,6 +103,12 @@ var map = {
   drawMap: function(median) {
     var self = this;
 
+    // /** GET BACKGROUND SVG */
+    // _.getFile('/imgs/game_bg.svg', function(d) {
+    //   _.byId('bg-container').innerHTML = d;
+    //   self.bg = _.$$('.bg-container>svg');
+    // });
+
     /** SVG.JS */
     var boardContainer = SVG(mapData.boardName);
     var tiles   = boardContainer.group();
@@ -129,7 +135,7 @@ var map = {
 
       nested  = tiles.nested();
       hexagon = nested.polygon(coords)
-                  .fill('#1d1e1d')
+                  .fill('#1d1d1e')
                   .stroke({width: 1, color: '#111'});
 
 
@@ -190,6 +196,7 @@ var map = {
       if (self.readyToMove) {
         var x = e.movementX || e.mozMovementX;
         var y = e.movementY || e.mozMovementY;
+        var bgL, bgT;
         window.requestAnimationFrame(function() {
           tiles.dmove(x/scale, y/scale);
         });

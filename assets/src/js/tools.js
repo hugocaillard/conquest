@@ -90,7 +90,24 @@ module.exports.get = function(url, cb) {
   };
 
   request.send();
-}
+};
+
+module.exports.getFile = function(url, cb) {
+  request = new XMLHttpRequest();
+  request.open('GET', url, true);
+
+  request.onload = function() {
+    if (request.status >= 200 && request.status < 400){
+      cb.call(this, request.responseText);
+    } else {
+      console.log('An error happened while getting %s.', url)
+    }
+  };
+  request.onerror = function() {
+    console.log('An error happened while getting %s.', url)
+  };
+  request.send();
+};
 
 /**
   * forms and data functions

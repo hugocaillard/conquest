@@ -1,7 +1,7 @@
 @import './loader.css';
 
 /* STYLES OF OVERLAYS */
-.overlays>div {z-index: -1;}
+.overlays>div {z-index: -1;display: none;}
   .overlays>div.show {
     display: block;
     z-index: 4;
