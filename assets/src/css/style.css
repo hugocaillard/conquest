@@ -33,11 +33,9 @@ html, body {
   height: 100%;
   z-index: 1;
 }
-
-.panel{
+.panel {
   position: fixed;
   width: 300px;
-  transition: all .3s ease;
 }
 
 

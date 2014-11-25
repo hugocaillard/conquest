@@ -1,10 +1,12 @@
-#left-panel {
+.left-panel {
   top: 0;
   left: 0px;
   bottom: 0;
   background-color: #161616;
   z-index: 2;
+  transition: left .4s ease-in-out;
 }
+  .left-panel.hide-panel {left: -300px}
 
 #tab-name {
   padding: 15px;
@@ -15,27 +17,36 @@
   vertical-align: top;
   font-size: 14px;
 }
-
 #logout {
   position: relative;
   width: 48px;
   height: 48px;
   display: inline-block;
   vertical-align: top;
-  background: url('./imgs/game/logout_active.png') 50% no-repeat,
-              linear-gradient(-45deg, #bf2318 0%,#811911 100%);
+  background: url('./imgs/game/logout_active.png') 50% no-repeat;
   background-size: 30px,100%;
+  cursor: pointer;
 }
+  #logout:hover {
+    background: url('./imgs/game/logout_active.png') 50% no-repeat,
+                linear-gradient(-45deg, #bf2318 0%,#811911 100%);
+  background-size: 30px,100%;
+  }
 
 .top-section-container {
+  position: relative;
+  left: 0;
+  z-index: 2;
+  transition: all .4s ease-in-out;
+}
+.left-panel.hide-panel .top-section-container {
+  left: 300px;
+  box-shadow: 0 2px 0 transparent;
+}
 
-}
-.alpha .top-section-container {border-bottom: 2px solid #bf2318;}
-.beta .top-section-container {border-bottom: 2px solid #50b04c;}
-.gamma .top-section-container {border-bottom: 2px solid #0272fc;}
-#left-panel.hide-panel {
-  left: -300px;
-}
+.alpha .top-section-container {box-shadow: 0 2px 0 #bf2318}
+.beta .top-section-container  {box-shadow: 0 2px 0 #50b04c}
+.gamma .top-section-container {box-shadow: 0 2px 0 #0272fc}
 
 /*****
 *
@@ -78,7 +89,8 @@ Tab section left panel
       text-align: center;
       font-size: 40px;
       cursor: pointer;
-      transform: rotate(0);
+      transform: rotateY(0);
+      transform-style: preserve-3d;
     }
       .tabs-section .tab:nth-child(4):before {background: none;}
       .tabs-section .tab:nth-child(4) span {
@@ -87,10 +99,10 @@ Tab section left panel
         display: block;
         width: 100%;
         height: 100%;
-        transition: transform .3s ease-in;
+        transition: transform .4s ease-in-out;
       }
         .tabs-section .tab:nth-child(4).rotate span {
-          transform: rotate(180deg);
+          transform: rotateY(180deg);
         }
 
 
