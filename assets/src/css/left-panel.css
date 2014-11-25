@@ -25,12 +25,12 @@
   vertical-align: top;
   background: url('./imgs/game/logout_active.png') 50% no-repeat;
   background-size: 30px,100%;
+  opacity: .9;
   cursor: pointer;
+  transition: opacity .4s;
 }
   #logout:hover {
-    background: url('./imgs/game/logout_active.png') 50% no-repeat,
-                linear-gradient(-45deg, #bf2318 0%,#811911 100%);
-  background-size: 30px,100%;
+    opacity: 1;
   }
 
 .top-section-container {
@@ -59,8 +59,6 @@ Tab section left panel
   right: -48px;
   top: 48px;
 }
-
-
   .left-panel div.tab {
     position: relative;
     width: 48px;
@@ -69,8 +67,14 @@ Tab section left panel
     background-size: 21px, 100%;
   }
     .left-panel .tab:nth-child(1) {background-image: url('./imgs/game/player_active.png')}
-    .left-panel .tab:nth-child(2) {background-image: url('./imgs/game/team_active.png'); display: none;}
-    .left-panel .tab:nth-child(3) {background-image: url('./imgs/game/aide_active.png')}
+    .left-panel .tab:nth-child(2) {
+      background-image: url('./imgs/game/team_active.png');
+      display: none;
+    }
+    .left-panel .tab:nth-child(3) {
+      background-image: url('./imgs/game/aide_active.png');
+      cursor: pointer;
+    }
       .left-panel .tab:before {
         position: absolute;
         content: "";
@@ -104,7 +108,6 @@ Tab section left panel
         .tabs-section .tab:nth-child(4).rotate span {
           transform: rotateY(180deg);
         }
-
 
 
 /*
@@ -141,7 +144,6 @@ Tab section left panel
     position: relative;
     z-index: 1;
   }
-
     #player-class:after {
       content: "";
       position: absolute;
@@ -157,7 +159,7 @@ Tab section left panel
     .beta  #player-class:after{background-image: url("./imgs/game/green_team_symbol.png")}
     .gamma #player-class:after{background-image: url("./imgs/game/blue_team_symbol.png")}
 
-  #icon-class {
+  .faction-icon {
     width: 100px;
     height: 100px;
     margin-top: 15px;
@@ -165,21 +167,23 @@ Tab section left panel
     right: 0;
     position: relative;
     top: 10px;
-    background: url('./imgs/game/engineer_white.png') no-repeat 50%;
+    background: url('') no-repeat 50%;
     background-size: 55px;
-
   }
-
-  #player-infos .level-wrapper {
+  .faction-icon.soldier{
+    background-image: url('./imgs/game/soldier_white.png');
+    background-size: 45px
+  }
+  .faction-icon.engineer {background-image: url('./imgs/game/engineer_white.png')}
+  .faction-icon.medic {background-image: url('./imgs/game/medic_white.png')}
+  .left-panel .level-wrapper {
     text-align: center;
   }
-
-  #player-infos .first-infos-wrapper .xp-wrapper {
+  .left-panel .xp-wrapper {
     width: 80%;
     display: inline-block;
   }
-
-  #player-infos .first-infos-wrapper .level {
+  .left-panel .level {
     color: #fff;
     margin-bottom: 10px;
     font-size: 16px;
@@ -214,7 +218,7 @@ Tab section left panel
     margin-left: 5px;
   }
 
-#player-infos .skills .skills-title-wrapper {
+.skills-title-wrapper {
   color: #fff;
   padding: 10px 25px;
   font-family: 'Montserrat', sans-serif;
@@ -299,7 +303,7 @@ Tab section left panel
       position: relative;
       bottom: 2px;
     }
-    .skill-container .skill-row .skill-description {
+    .skill-container .skill-description {
       font-family: 'Open Sans', sans-serif;
       font-size: 12px;
       padding: 20px;
@@ -316,17 +320,17 @@ Tab section left panel
   display: block;
 }
 
-#team-infos .first-infos-wrapper .level-wrapper {
+#team-infos .level-wrapper {
   text-align: center;
   margin-top: 100px;
 }
 
-#team-infos .first-infos-wrapper .score-left-wrapper {
+#team-infos .score-left-wrapper {
   width: 70%;
   display: inline-block;
 }
 
-#team-infos .first-infos-wrapper .score {
+#team-infos.first-infos-wrapper .score {
   color: #fff;
   margin-bottom: 10px;
   font-size: 16px;
@@ -343,7 +347,7 @@ Tab section left panel
   background-color: #74797d;
 }
 
-  #team-infos #score-left-progress span {
+  #score-left-progress span {
     position: relative;
     width: 67%;
     background-color: #036ef3;
@@ -362,7 +366,7 @@ Tab section left panel
   margin-left: 5px;
 }
 
-.sectors-possessions .sectors-title-wrapper{
+.sectors-possessions .sectors-title-wrapper {
   color: #fff;
   padding: 10px;
   text-transform: uppercase;
@@ -372,12 +376,12 @@ Tab section left panel
   background: #222222;
 }
 
-.sectors-possessions .sectors-content .info-hover{
+.sectors-possessions .sectors-content .info-hover {
   text-align: center;
   color: #444444;
 }
 
-.players-team .players-team-title-wrapper{
+.players-team .players-team-title-wrapper {
   color: #fff;
   padding: 10px;
   text-transform: uppercase;
@@ -441,7 +445,6 @@ Tab section left panel
       bottom: 0;
       content: "";
     }
-
 
   .teamates-type-row .type-name-container {
     position: relative;

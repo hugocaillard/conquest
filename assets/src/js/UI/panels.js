@@ -9,6 +9,7 @@ var panels = {
     // player panel DOM elements
     self.player         = _.byId('player-infos');
     self.playerFaction  = _.byId('player-class');
+    self.factionIcon    = _.byId('faction-icon');
     self.playerLevel    = _.byId('number-level');
     self.playerSkills   = _.byId('skill-points');
     self.playerXP       = _.$$('#xp-progress>span');
@@ -115,9 +116,12 @@ var panels = {
 
   setPlayerSpecs: function(faction, d) {
     var self = this;
-    if (!self.player.classList.contains('show'))
-      self.player.classList.add('show');
+    self.player.classList.add('show');
 
+    if (!self.factionIcon.contains(faction)) {
+      self.factionIcon.classList.remove('soldier', 'engineer', 'medic');
+      self.factionIcon.classList.add(faction);
+    }
     self.playerFaction.innerHTML = faction;
     self.playerSkills.innerHTML  = (d.skillPts>1) ? d.skillPts+' skill points remaining' : d.skillPts+' skill point remaining';
     self.playerXP.style.width    = (d.xp/d.level)+'%';
