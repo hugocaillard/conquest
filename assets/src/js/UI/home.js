@@ -86,6 +86,16 @@ var home = {
       _.$$('h1').classList.add('up');
       _.$$('.login-section').classList.add('appear');
     });
+
+    var inputUsername = _.byId('register-username')
+    var cleanUsername = function() {
+      if (this.value != this.value.replace(/[\/|&;$%@"'<>{}()+,]/g, ''))
+        this.value = this.value.replace(/[\/|&;$%@"'<>{}()+,]/g, '');
+    };
+
+    inputUsername.addEventListener('keypress', cleanUsername);
+    inputUsername.addEventListener('keyup', cleanUsername);
+    inputUsername.addEventListener('keydown', cleanUsername);
   }
 }
 
