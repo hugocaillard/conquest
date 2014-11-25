@@ -17,7 +17,7 @@
   vertical-align: top;
   font-size: 14px;
 }
-#logout {
+.logout {
   position: relative;
   width: 48px;
   height: 48px;
@@ -29,7 +29,7 @@
   cursor: pointer;
   transition: opacity .4s;
 }
-  #logout:hover {
+  .logout:hover {
     opacity: 1;
   }
 

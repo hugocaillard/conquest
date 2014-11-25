@@ -198,7 +198,7 @@ var map = {
 
     var deltaX=0,deltaY=0,newDeltaX=0,newDeltaY=0,tx=0,ty=0;
     boardContainer.on('wheel', function(e) {
-      if ((e.deltaY>0 && scale-e.deltaY/1000>.5) // zoom out
+      if ((e.deltaY>0 && scale-e.deltaY/1000>.35) // zoom out
           || (e.deltaY<0 && scale-e.deltaY/1000<3)) { // zoom in
 
         tx = tiles.x()-e.pageX;

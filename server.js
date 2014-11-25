@@ -67,6 +67,7 @@ app.use(router(app));
 var users = require(__dirname+'/lib/users');
 app.post('/users/login', users.login);
 app.post('/users/register', users.register);
+app.get('/logout', users.logout);
 
 var admin = require(__dirname+'/lib/admin');
 app.post('/admin/users', admin.getUsers);
