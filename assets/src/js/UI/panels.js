@@ -219,11 +219,11 @@ var panels = {
     var scoreB = scores.beta/scores.toReach*100;
     var scoreG = scores.gamma/scores.toReach*100;
 
-    if (self.scoreAlpha.style.width != scoreA && scoreA <= 100)
+    if (self.scoreAlpha.style.width != scoreA)
       self.scoreAlpha.style.width = (scoreA <= 100) ? scoreA+'%' : '100%';
-    if (self.scoreBeta.style.width  != scoreB && scoreB <= 100)
+    if (self.scoreBeta.style.width  != scoreB)
       self.scoreBeta.style.width  = (scoreB <= 100) ? scoreB+'%' : '100%';
-    if (self.scoreGamma.style.width != scoreG && scoreG <= 100)
+    if (self.scoreGamma.style.width != scoreG)
       self.scoreGamma.style.width = (scoreG <= 100) ? scoreG+'%' : '100%';
   }
 };
