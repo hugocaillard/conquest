@@ -13,6 +13,12 @@
     "username" : "your yo username",
     "token" : "yo api key"
   },
+  "twitter": {
+    "consumer_key"       : "",
+    "consumer_secret"    : "",
+    "access_token"       : "",
+    "access_token_secret": ""
+  },
   "mail": {
     "host": "mail.host.com",
     "user": "mail@domain.com",
