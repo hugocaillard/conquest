@@ -67,7 +67,7 @@ var panels = {
   setListeners: function() {
     var self = this;
     _.$$('#hide-panel-tab').addEventListener('click', function() {
-      self.classList.toggle('rotate');
+      this.classList.toggle('rotate');
       self.leftPanel.classList.toggle('hide-panel');
     });
 

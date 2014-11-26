@@ -172,7 +172,7 @@ var map = {
                      .rotate(-30)
                      .dmove(6.5, 6.5)
                      .style({'opacity': 0})
-                     .stroke({width: .5, color: '#000'})
+                     .stroke({width: 0})
                      .fill('#fff');
 
       nested.attr('id', i);
