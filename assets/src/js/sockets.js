@@ -33,6 +33,10 @@ var sockets = {
       position: game.tileToSpawn,
       faction: faction
     });
+  },
+
+  upgrade: function() {
+    sockets.socket.emit('upgrade', {skill: _.attr(this, 'data-skill')});
   }
 };
 

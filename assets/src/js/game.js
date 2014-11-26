@@ -21,6 +21,7 @@ var game = {
   currentSpecs: '',
   currentTile: null,
   currentTileStats: '',
+  currentTurretPos: null,
 
   init: function() {
     var self = this;
@@ -70,6 +71,11 @@ var game = {
       game.player = d.team.players[game.playerName];
       map.showPlayer(game.player);
 
+      if (game.player.turret && game.currentTurretPos != game.player.turret.position) {
+        map.showTurret(game.player.turret.position, game.currentTurretPos);
+        game.currentTurretPos = game.player.turret.position;
+      }
+
       /**
         * Update UI
       */
@@ -79,20 +85,20 @@ var game = {
       // PLAYER SPECS
       if (game.player.faction && game.player.position !== null) {
         game.faction = game.player.factions[game.player.faction];
-        if (game.faction.life !== game.currentLife) {
-          panels.setPlayerLife(game.faction.life);
-          game.currentLife = game.faction.life;
-          game.currentSpecs = JSON.stringify(game.faction);
-        }
         if (game.player.faction !== game.currentFaction ||
             JSON.stringify(game.player) !== game.currentSpecs) {
           panels.setPlayerSpecs(game.player.faction, game.faction);
           game.currentFaction = game.player.faction;
           game.currentSpecs = JSON.stringify(game.player);
+
+          if (game.faction.skillPts)
+            panels.showUpgradePlayer();
+          else
+            panels.hideUpgradePlayer();
         }
       }
       else { // No player's data to display
-        panels.hidePlayerPanel();
+        panels.setPlayerLife(0);
       }
 
       // TILES DATA
@@ -117,6 +123,9 @@ var game = {
       if (!game.isReady) {
         game.isReady = true;
         game.ready(game.player.team, game.player.bitly);
+        panels.setTileStats(game.map[game.spawn]);
+        game.currentTileStats = JSON.stringify(game.map[game.spawn]);
+        game.currentPosition = game.spawn
       }
       if (game.firstTick) {
         _.$$('.countdown').classList.remove('show');
@@ -126,8 +135,9 @@ var game = {
   },
 
   joined: function(d) {
-    game.playerName = d;
-    panels.showName(d);
+    game.playerName = d.username;
+    game.spawn = d.spawn;
+    panels.showName(d.username);
   },
 
   setFaction: function(el) {

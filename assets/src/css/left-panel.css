@@ -293,7 +293,7 @@ Tab section left panel
       padding: 10px;
       text-transform: uppercase;
     }
-    .skill-container .skill-row button {
+    .skill-row .upgrade {
       color: #fff;
       padding: 5px 8px;
       background-color: transparent;
@@ -302,7 +302,10 @@ Tab section left panel
       font-size: 10px;
       position: relative;
       bottom: 2px;
+      opacity: .1;
+      outline: none;
     }
+      .skill-row .upgrade.show {opacity: 1;cursor: pointer;}
     .skill-container .skill-description {
       font-family: 'Open Sans', sans-serif;
       font-size: 12px;

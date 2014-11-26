@@ -1,4 +1,5 @@
-var _ = require('../tools.js');
+var _      = require('../tools.js');
+var sockets = require('../sockets.js');
 
 var panels = {
   init: function(team) {
@@ -17,13 +18,14 @@ var panels = {
     self.playerDmg      = _.byId('dmg-grade');
     self.playerCapt     = _.byId('capt-grade');
     self.playerHeal     = _.byId('healing-grade');
-    self.playerUpgrades = _.$('#player>div>.upgrade');
+    self.playerUpgrades = _.$('.left-panel .upgrade');
 
     // tile panel DOM elements
     self.tile          = _.byId('tile');
     self.sector        = _.byId('tile-sector');
     self.captState     = _.byId('capt-state');
     self.captProgress  = _.byId('capt-progress');
+    self.sectorName   = _.$$('.right-panel .sector-name')
     self.soldiersStats  = {
       alpha: _.$$('#tile-soldiers>.alpha'),
       beta : _.$$('#tile-soldiers>.beta'),
@@ -65,7 +67,7 @@ var panels = {
   setListeners: function() {
     var self = this;
     _.$$('#hide-panel-tab').addEventListener('click', function() {
-      this.classList.toggle('rotate');
+      self.classList.toggle('rotate');
       self.leftPanel.classList.toggle('hide-panel');
     });
 
@@ -75,6 +77,10 @@ var panels = {
     });
     _.$$('.close-turret').addEventListener('click', function() {
       self.connectTurret.classList.toggle('show');
+    });
+
+    _.elLoop(self.playerUpgrades, function(el) {
+      el.addEventListener('click', sockets.upgrade);
     });
   },
 
@@ -111,7 +117,11 @@ var panels = {
   },
 
   setPlayerLife: function(d) {
-    this.playerLife.innerHTML = d;
+    var index = this.playerLife.innerHTML.indexOf('/');
+    if (index > -1 && this.playerLife.innerHTML[0] != 0) {
+      var lifeString =  this.playerLife.innerHTML.slice(index);
+      this.playerLife.innerHTML = d +lifeString;
+    }
   },
 
   setPlayerSpecs: function(faction, d) {
@@ -135,15 +145,17 @@ var panels = {
     //   self.showUpgradePlayer();
   },
 
-  hidePlayerPanel: function() {
-    if (this.player.classList.contains('show'))
-      this.player.classList.remove('show');
-  },
-
   showUpgradePlayer: function() {
-    _.elLoop(this.playerUpgrades, function(el) {
-      el.classList.add('show');
-    });
+    if (!this.playerUpgrades[0].classList.contains('show'))
+      _.elLoop(this.playerUpgrades, function(el) {
+        el.classList.add('show');
+      });
+  },
+  hideUpgradePlayer: function() {
+    if (this.playerUpgrades[0].classList.contains('show'))
+      _.elLoop(this.playerUpgrades, function(el) {
+        el.classList.remove('show');
+      });
   },
 
   /**
@@ -151,6 +163,10 @@ var panels = {
   */
   setTileStats: function(d) {
     var self = this;
+    if (d.name.indexOf(' ') > -1)
+      self.sectorName.classList.add('light');
+    else
+      self.sectorName.classList.remove('light');
     self.sector.innerHTML = d.name;
     self.setFactionsStats(d);
     if (d.scores.alpha)
