@@ -51,4 +51,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var home = require('./UI/home.js');
     home.init();
   }
+
+  if (!!_.byId('lobby')) {
+    var home = require('./UI/home.js');
+    home.setParticles();
+  }
 });
+
+

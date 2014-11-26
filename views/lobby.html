@@ -12,7 +12,68 @@
   <script src="/socket.io/socket.io.js" defer></script>
   <script src="app.js" defer></script>
 </head>
-  <div class="lobby">
+  <div id="particles-js"></div>
+
+  <div class="lobby" id="lobby">
+
+    <div class="buttons">
+      <a class="about" href="">About</a>
+      <a class="how-to" href="">How to play</a>
+    </div>
+
+    <div class="next-game">
+      <div class="title">Next game starting in</div>
+      <div id="time-till-game">03:24</div>
+      <div id="players-next-game">25 / 120 players</div>
+      <button id="lobby-join">Join</button>
+      <button id="lobby-spectate">Spectate</button>
+      <div class="title">Last game results</div>
+    </div>
+
+    <div class="game-history">
+      <div class="alpha">
+        <div class="winner-team">Alpha team won</div>
+        <div class="your-team alpha">Your team</div>
+        <div class="player-numbers">120 players</div>
+        <div class="game-time">52m 36s</div>
+        <button>Replay</button>
+      </div>
+      <div class="beta">
+        <div class="winner-team">Beta team win</div>
+        <div class="your-team beta">Your team</div>
+        <div class="player-numbers">120 players</div>
+        <div class="game-time">52m 36s</div>
+        <button>Replay</button>
+      </div>
+      <div class="gamma">
+        <div class="winner-team">Gamma team won</div>
+        <div class="your-team gamma">Your team</div>
+        <div class="player-numbers">120 players</div>
+        <div class="game-time">52m 36s</div>
+        <button>Replay</button>
+      </div>
+      <div class="alpha">
+        <div class="winner-team">Alpha team won</div>
+        <div class="your-team">Your team</div>
+        <div class="player-numbers">120 players</div>
+        <div class="game-time">52m 36s</div>
+        <button>Replay</button>
+      </div>
+      <div class="beta">
+        <div class="winner-team">Beta team win</div>
+        <div class="your-team">Your team</div>
+        <div class="player-numbers">120 players</div>
+        <div class="game-time">52m 36s</div>
+        <button>Replay</button>
+      </div>
+      <div class="gamma">
+        <div class="winner-team">Gamma team won</div>
+        <div class="your-team">Your team</div>
+        <div class="player-numbers">120 players</div>
+        <div class="game-time">52m 36s</div>
+        <button>Replay</button>
+      </div>
+    </div>
 
   </div>
 </body>
