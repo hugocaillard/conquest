@@ -50,7 +50,6 @@ var game = {
   },
 
   countdown: function(d) {
-    console.log(d);
     if (d.count) {
       panels.setCountdown(d.count/1000);
     }
