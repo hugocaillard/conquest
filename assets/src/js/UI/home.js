@@ -96,6 +96,13 @@ var home = {
     inputUsername.addEventListener('keypress', cleanUsername);
     inputUsername.addEventListener('keyup', cleanUsername);
     inputUsername.addEventListener('keydown', cleanUsername);
+  },
+
+  showMessage: function(msg) {
+    _.$$('h1').classList.remove('up');
+    _.$$('.login-section').remove();
+    _.byId('message').innerHTML = msg;
+    _.byId('message').classList.add('show');
   }
 }
 

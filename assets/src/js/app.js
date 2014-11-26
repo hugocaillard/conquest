@@ -21,6 +21,14 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         });
       }
+      if (data && method === 'post' && url === '/users/register') {
+        _.post(url, data, function(d) {
+          if (d.success === true) {
+            var home = require('./UI/home.js');
+            home.showMessage(d.message);
+          }
+        });
+      }
       else if (data && method === 'post')
         _.post(url, data);
     });
