@@ -1,4 +1,4 @@
-.landing {
+.landing, .lobby {
   background: url("./imgs/background-landing.jpg");
   background-size: 100% 100%;
   text-align: center;
@@ -99,7 +99,7 @@ form {
   color: #fff;
 }
 
-.landing .buttons {
+.landing .buttons, .lobby .buttons {
   position: absolute;
   top: 25px;
   right: 50px;
@@ -112,16 +112,16 @@ form {
   font-weight: normal;
 }
 
-.landing .buttons a {
+.landing .buttons a, .lobby .buttons a {
   color: #fff;
   text-decoration: none;
 }
 
-.landing .buttons .about, .landing .buttons .how-to {
+.landing .buttons .about, .landing .buttons .how-to, .lobby .buttons .about, .lobby .buttons .how-to {
   display: inline-block;
 }
 
-.landing .buttons .how-to {
+.landing .buttons .how-to, .lobby .buttons .how-to {
   margin-left: 25px;
 }
 
@@ -239,7 +239,10 @@ form {
       color: #fff;
       text-transform: uppercase;
       font-size: 16px;
-      padding: 10px;
+      padding: 6px;
+      border: 1px solid #fff;
+      margin-left: 13px;
+      border-radius: 5px;
     }
     .form-separator{
       color: #fff;
@@ -343,9 +346,7 @@ form {
 .start-contain a:before,
 .start-contain a:after,
 .cancel-contain div a:before,
-.cancel-contain div a:after,
-.login-section button.submit:before,
-.login-section button.submit:after {
+.cancel-contain div a:after {
   display: inline-block;
   opacity: 0;
   transition: transform 0.3s, opacity 0.2s;
@@ -353,8 +354,7 @@ form {
 
 .start-contain a:before,
 .buttons a:before,
-.cancel-contain div a:before,
-.login-section button.submit:before {
+.cancel-contain div a:before {
   margin-right: 10px;
   content: '[';
   transform: translateX(20px);
@@ -362,8 +362,7 @@ form {
 
 .buttons a:after,
 .start-contain a:after,
-.cancel-contain div a:after,
-.login-section button.submit:after {
+.cancel-contain div a:after {
   margin-left: 10px;
   content: ']';
   transform: translateX(-20px);
@@ -379,12 +378,16 @@ form {
 .start-contain a:focus:after,
 .cancel-contain div a:hover:before,
 .cancel-contain div a:hover:after,
-.cancel-contain div a:focus:before,
-.login-section button.submit:focus:after,
-.login-section button.submit:hover:before,
-.login-section button.submit:hover:after,
-.login-section button.submit:focus:before,
-.login-section button.submit:focus:after {
+.cancel-contain div a:focus:before {
   opacity: 1;
   transform: translateX(0px);
+}
+
+.login .submit{
+  transition: all .5s ease;
+}
+
+.login .submit:hover {
+  background-color: rgba(255,255,255,.5);
+  transition: all .5s ease;
 }
