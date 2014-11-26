@@ -64,6 +64,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var home = require('./UI/home.js');
     home.setParticles();
   }
+
+  if (!!_.byId('tuto')) {
+    var tuto = require('./UI/tuto.js');
+    tuto.init();
+  }
 });
 
 

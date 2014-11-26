@@ -38,7 +38,7 @@ h1 {
     margin-top: 0;
   }
 
-.message {
+h1+.message {
   width: 750px;
   height: 100px;
   position: absolute;
@@ -133,12 +133,10 @@ form {
   text-decoration: none;
 }
 
-.landing .buttons .about, .landing .buttons .how-to, .lobby .buttons .about, .lobby .buttons .how-to {
+.landing .buttons>a {
   display: inline-block;
-}
-
-.landing .buttons .how-to, .lobby .buttons .how-to {
   margin-left: 25px;
+  cursor: pointer;
 }
 
 .landing .start {
@@ -151,12 +149,10 @@ form {
 .landing .start.show{
   display: inline-block;
 }
-
 .landing .start a {
   color: #fff;
   text-decoration: none;
 }
-
 
 .landing .start-contain {
   position: absolute;
