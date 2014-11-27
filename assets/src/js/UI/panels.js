@@ -1,3 +1,5 @@
+'use strict';
+
 var _      = require('../tools.js');
 var sockets = require('../sockets.js');
 

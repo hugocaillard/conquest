@@ -1,3 +1,5 @@
+'use strict';
+
 var _ = require('../tools.js');
 var mapData = require('../mapData.js')
 var svg = require('wout/svg.js');

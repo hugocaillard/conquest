@@ -182,12 +182,11 @@
     color: #444;
   }
 
-.message .username {
-  font-family: 'Montserrat', sans-serif;
-}
-  .message.alpha .username {color:#df1b28;}
-  .message.beta  .username {color:#50b04c;}
-  .message.gamma .username {color:#0272fc;}
+.message .username {font-family: 'Montserrat', sans-serif}
+  .message .username:after {content: ": "}
+  .chat.alpha .username {color:#df1b28;}
+  .chat.beta  .username {color:#50b04c;}
+  .chat.gamma .username {color:#0272fc;}
 
 .message .team {
   text-transform: uppercase;

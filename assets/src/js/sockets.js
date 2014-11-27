@@ -1,3 +1,5 @@
+'use strict';
+
 var _ = require('./tools.js');
 
 /**
@@ -13,9 +15,12 @@ var sockets = {
     self.socket.on('flash', self.flash);
 
     var game = require('./game.js');
+    var chat = require('./chat.js');
+
     self.socket.on('joined', game.joined);
     self.socket.on('tick', game.tick);
     self.socket.on('countdown', game.countdown);
+    self.socket.on('newMsg', chat.displayMsg);
   },
 
   flash: function(resData) {
@@ -37,6 +42,10 @@ var sockets = {
 
   upgrade: function() {
     sockets.socket.emit('upgrade', {skill: _.attr(this, 'data-skill')});
+  },
+
+  chatMsg: function(msg) {
+    sockets.socket.emit('chatMsg', {msg: msg});
   }
 };
 

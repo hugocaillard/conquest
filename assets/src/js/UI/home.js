@@ -1,3 +1,5 @@
+'use strict';
+
 var particles = require('VincentGarreau/particles.js@1.0.3:/particles.js');
 var _ = require('../tools.js');
 
