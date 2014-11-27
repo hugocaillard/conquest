@@ -162,6 +162,26 @@ div.countdown {
   }
 
 
+/** RESULT VICTORY-DEFEAT */
+.result {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 513px;
+  height: 322px;
+  margin-top: -161px;
+  margin-left: -257px;
+  background-size: cover;
+}
+  .alpha .victory {background-image: url('./imgs/game/red_victory.png')}
+  .beta  .victory {background-image: url('./imgs/game/green_victory.png')}
+  .gamma .victory {background-image: url('./imgs/game/blue_victory.png')}
+
+  .alpha .defeat {background-image: url('./imgs/game/red_defeat.png')}
+  .beta  .defeat {background-image: url('./imgs/game/green_defeat.png')}
+  .gamma .defeat {background-image: url('./imgs/game/blue_defeat.png')}
+
+
 /** TUTO SLIDER */
 .tuto {
   position: absolute;

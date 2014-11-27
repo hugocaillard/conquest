@@ -16,12 +16,15 @@ var sockets = {
 
     var game = require('./game.js');
     var chat = require('./chat.js');
+    var panels = require('./UI/panels.js');
 
     self.socket.on('joined', game.joined);
     self.socket.on('tick', game.tick);
     self.socket.on('countdown', game.countdown);
     self.socket.on('newMsg', chat.displayMsg);
     self.socket.on('newJoinMsg', chat.displayMsg);
+    self.socket.on('victory', panels.displayVictory);
+    self.socket.on('defeat', panels.displayDefeat);
   },
 
   flash: function(resData) {
