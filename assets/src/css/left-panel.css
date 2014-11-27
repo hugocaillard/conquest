@@ -238,14 +238,14 @@ Tab section left panel
   .gamma #skill-points {color: #036ef3;}
 
   .skills .skill-container {
-    color: #3c3c3c;
-    font-family: 'Montserrat', sans-serif;
-    overflow: auto;
     position: absolute;
     top: 304px;
     left: 0;
     right: 0;
     bottom: 0;
+    overflow: auto;
+    color: #777;
+    font-family: 'Montserrat', sans-serif;
   }
 
     .skill-row {

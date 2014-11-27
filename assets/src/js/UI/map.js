@@ -116,11 +116,6 @@ var map = {
   drawMap: function(median) {
     var self = this;
 
-    // /** GET BACKGROUND SVG */
-    // _.getFile('/imgs/game_bg.svg', function(d) {
-    //   _.byId('bg-container').innerHTML = d;
-    //   self.bg = _.$$('.bg-container>svg');
-    // });
 
     /** SVG.JS */
     var boardContainer = SVG(mapData.boardName);

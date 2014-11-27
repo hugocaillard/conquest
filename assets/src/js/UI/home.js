@@ -13,7 +13,7 @@ var home = {
     particlesJS('particles-js', {
       particles: {
         color: '#fff',
-        shape: 'circle', // "circle", "edge" or "triangle"
+        shape: 'circle',
         opacity: .2,
         size: 2,
         size_random: true,
