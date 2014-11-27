@@ -12,10 +12,11 @@ var chat = {
     var self = this;
     self.input = _.byId('send-msg');
     self.template.remove();
+    self.template.removeAttribute('id');
 
     self.input.addEventListener('keypress', function(e) {
       if (this.value.length && (Date.now()-self.lastSend)>2200) {
-        if (event.keyCode == 13) {
+        if (e.keyCode == 13) {
           sockets.chatMsg(this.value);
           this.value = '';
           self.lastSend = Date.now();
@@ -27,9 +28,12 @@ var chat = {
 
   displayMsg: function(d) {
     var container = chat.template.cloneNode(true);
+    if (d.type && d.type == 'notice')
+      container.classList.add('notice');
     container.childNodes[1].innerHTML = d.username;
     container.childNodes[3].innerHTML = d.msg;
     chat.messages.appendChild(container);
+    self.messages.scrollTop = self.messages.scrollHeight;
   }
 }
 

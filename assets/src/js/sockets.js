@@ -21,6 +21,7 @@ var sockets = {
     self.socket.on('tick', game.tick);
     self.socket.on('countdown', game.countdown);
     self.socket.on('newMsg', chat.displayMsg);
+    self.socket.on('newJoinMsg', chat.displayMsg);
   },
 
   flash: function(resData) {
