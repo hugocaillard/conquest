@@ -10,13 +10,11 @@
     text-transform: uppercase;
     font-size: 24px;
   }
-
   #time-till-game {
     font-family: 'Open Sans', sans-serif;
     font-weight: lighter;
     font-size: 68px;
   }
-
   #players-next-game {
     text-transform: uppercase;
   }
@@ -34,13 +32,13 @@
     margin-right: 10px;
     border-radius: 5px;
   }
-
   #lobby-spectate {
     padding: 10px 10px;
-    border: 1px solid #ccc;
-    color: #ccc;
+    border: 1px solid #777;
+    color: #777;
     margin-left: 10px;
     border-radius: 5px;
+    cursor: default;
   }
 
 .game-history {
@@ -49,7 +47,7 @@
   margin-top: 25px;
 }
 
-  .game-history > div {
+  .game-history>div {
     width: 230px;
     display: inline-block;
     padding: 20px 30px;
@@ -62,19 +60,19 @@
     overflow: hidden;
   }
 
-  .game-history > div .your-team {
+  .game-history>div .your-team {
     display: none;margin-bottom: 10px;
   }
 
-  .game-history > div .winner-team {
+  .game-history>div .winner-team {
     margin-bottom: 20px;
   }
 
-  .game-history > div .game-time {
+  .game-history>div .game-time {
     margin-top: 10px;
   }
 
-  .game-history > div button {
+  .game-history>div button {
     background: transparent;
     padding: 5px 15px;
     border: 1px solid #fff;
@@ -83,7 +81,7 @@
     margin-bottom: 15px;
   }
 
-  .game-history > .alpha:before {
+  .game-history>.alpha:before {
     content: "";
     background: url('./imgs/game/red_team_symbol.png');
     width: 80px;
@@ -95,8 +93,7 @@
     left: -10px;
     z-index: -1;
   }
-
-  .game-history > .beta:before {
+  .game-history>.beta:before {
     content: "";
     background: url('./imgs/game/green_team_symbol.png');
     width: 80px;
@@ -108,8 +105,7 @@
     left: -10px;
     z-index: -1;
   }
-
-  .game-history > .gamma:before {
+  .game-history>.gamma:before {
     content: "";
     background: url('./imgs/game/blue_team_symbol.png');
     width: 80px;
@@ -121,12 +117,10 @@
     left: -10px;
     z-index: -1;
   }
-
   .game-history .your-team.alpha {
     display: block;
     position: relative;
   }
-
   .game-history .your-team.alpha:after {
     content: '';
     background: url('./imgs/game/red_team_symbol.png');
@@ -138,12 +132,10 @@
     top: 1px;
     right: 10px;
   }
-
   .game-history .your-team.beta {
     display: block;
     position: relative;
   }
-
   .game-history .your-team.beta:after {
     content: '';
     background: url('./imgs/game/green_team_symbol.png');
@@ -155,12 +147,10 @@
     top: 1px;
     right: 10px;
   }
-
   .game-history .your-team.gamma {
     display: block;
     position: relative;
   }
-
   .game-history .your-team.gamma:after {
     content: '';
     background: url('./imgs/game/blue_team_symbol.png');

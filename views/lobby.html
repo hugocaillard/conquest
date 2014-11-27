@@ -17,8 +17,9 @@
   <div class="lobby" id="lobby">
 
     <div class="buttons">
-      <a class="about" href="">About</a>
-      <a class="how-to" href="">How to play</a>
+      <a href="/" data-instant>Login/Signin</a>
+      <a href="" data-instant>About</a>
+      <a id="show-slide">How to play</a>
     </div>
 
     <div class="next-game">
@@ -75,6 +76,15 @@
       </div>
     </div>
 
+    <div class="overlays" id="overlays">
+      <div class="tuto" id="tuto">
+        <div class="img-container" id="img-container" data-index="1">
+          <div class="tuto-btn hide" id="previous-slide"><span>&lsaquo;</span> Previous</div>
+          <div class="tuto-btn" id="quit-slide">Play <span></span></div>
+          <div class="tuto-btn" id="next-slide">Next <span>&rsaquo;</span></div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </html>

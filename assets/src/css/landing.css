@@ -128,12 +128,9 @@ form {
   font-weight: normal;
 }
 
-.landing .buttons a, .lobby .buttons a {
+.landing .buttons>a, .lobby .buttons>a {
   color: #fff;
   text-decoration: none;
-}
-
-.landing .buttons>a {
   display: inline-block;
   margin-left: 25px;
   cursor: pointer;

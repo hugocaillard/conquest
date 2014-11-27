@@ -1,8 +1,18 @@
 'use strict';
 
 var _ = require('./tools.js');
+var instantClick = require('hugocaillard/instantclick@v3.0.2:/instantclick.js');
 
 document.addEventListener('DOMContentLoaded', function() {
+  instantClick.init(true);
+  instantClick.on('change', function() {
+    domReady()
+  });
+
+  domReady();
+});
+
+function domReady() {
   /**
     * send forms with ajax
   */
@@ -69,6 +79,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var tuto = require('./UI/tuto.js');
     tuto.init();
   }
-});
+}
 
 
