@@ -240,7 +240,7 @@ Tab section left panel
   .skills .skill-container {
     color: #3c3c3c;
     font-family: 'Montserrat', sans-serif;
-    overflow: scroll;
+    overflow: auto;
     position: absolute;
     top: 304px;
     left: 0;
