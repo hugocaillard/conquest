@@ -71,6 +71,8 @@ function domReady() {
   }
 
   if (!!_.byId('lobby')) {
+    var lobby = require('./lobby.js');
+    lobby.init();
     var home = require('./UI/home.js');
     home.setParticles();
   }

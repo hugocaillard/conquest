@@ -75,6 +75,10 @@ app.post('/admin/users', admin.getUsers);
 app.post('/admin/users/update', admin.updateUser);
 app.post('/admin/users/delete', admin.deleteUser);
 
+// lobby routes
+var lobby = require(__dirname+'/lib/game/lobby');
+app.get('/lobby/games', lobby.getGames);
+
 
 // serve assets
 var serve = require('koa-static');

@@ -28,61 +28,24 @@
   <div class="lobby" id="lobby">
 
     <div class="buttons">
-      <a href="/" data-instant>Login/Signin</a>
+      <a class="login" href="/" data-instant>Login/Signin</a>
       <a href="" data-instant>About</a>
       <a id="show-slide">How to play</a>
     </div>
 
     <div class="next-game">
-      <div class="title">Next game starting in</div>
-      <div id="time-till-game">03:24</div>
-      <div id="players-next-game">25 / 120 players</div>
+      <div class="title" id="title">Next game starting in</div>
+      <div id="players-next-game"></div>
       <button id="lobby-join">Join</button>
-      <button id="lobby-spectate">Spectate</button>
-      <div class="title">Last game results</div>
+      <button id="lobby-spectate" class="inactive">Spectate</button>
+      <div class="title">Last games results</div>
     </div>
 
     <div class="game-history">
-      <div class="alpha">
-        <div class="winner-team">Alpha team won</div>
-        <div class="your-team alpha">Your team</div>
-        <div class="player-numbers">120 players</div>
-        <div class="game-time">52m 36s</div>
-        <button>Replay</button>
-      </div>
-      <div class="beta">
-        <div class="winner-team">Beta team win</div>
-        <div class="your-team beta">Your team</div>
-        <div class="player-numbers">120 players</div>
-        <div class="game-time">52m 36s</div>
-        <button>Replay</button>
-      </div>
-      <div class="gamma">
-        <div class="winner-team">Gamma team won</div>
-        <div class="your-team gamma">Your team</div>
-        <div class="player-numbers">120 players</div>
-        <div class="game-time">52m 36s</div>
-        <button>Replay</button>
-      </div>
-      <div class="alpha">
-        <div class="winner-team">Alpha team won</div>
-        <div class="your-team">Your team</div>
-        <div class="player-numbers">120 players</div>
-        <div class="game-time">52m 36s</div>
-        <button>Replay</button>
-      </div>
-      <div class="beta">
-        <div class="winner-team">Beta team win</div>
-        <div class="your-team">Your team</div>
-        <div class="player-numbers">120 players</div>
-        <div class="game-time">52m 36s</div>
-        <button>Replay</button>
-      </div>
-      <div class="gamma">
-        <div class="winner-team">Gamma team won</div>
-        <div class="your-team">Your team</div>
-        <div class="player-numbers">120 players</div>
-        <div class="game-time">52m 36s</div>
+      <div id="template">
+        <div class="winner-team">No team won</div>
+        <div class="your-team">You didn't play</div>
+        <div class="player-numbers"></div>
         <button>Replay</button>
       </div>
     </div>

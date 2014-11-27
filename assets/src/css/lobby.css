@@ -1,11 +1,13 @@
+.lobby a.login {display: none;}
+.lobby a.login.show {display: inline-block;}
+
 .lobby .next-game {
   color: #fff;
   font-family: 'Montserrat', sans-serif;
-  padding-top: 25px;
+  padding-top: 90px;
   position: relative;
   z-index: 2;
 }
-
   .lobby .title {
     text-transform: uppercase;
     font-size: 18px;
@@ -22,23 +24,21 @@
   .lobby .next-game button {
     background-color: transparent;
     text-transform: uppercase;
-    margin-top: 10px;
-    margin-bottom: 25px;
-  }
-
-  #lobby-join {
-    padding: 10px 25px;
     border: 1px solid #fff;
-    margin-right: 10px;
     border-radius: 5px;
   }
-  #lobby-spectate {
-    padding: 10px 10px;
+  .lobby .next-game button.inactive {
     border: 1px solid #777;
     color: #777;
-    margin-left: 10px;
-    border-radius: 5px;
     cursor: default;
+  }
+  #lobby-join {
+    margin: 10px 0 25px 10px;
+    padding: 10px 25px;
+  }
+  #lobby-spectate {
+    margin: 0 10px 0 0;
+    padding: 10px 10px;
   }
 
 .game-history {
@@ -48,6 +48,7 @@
 
   .game-history>div {
     width: 230px;
+    height: 190px;
     display: inline-block;
     padding: 20px 30px;
     background: rgba(12,18,24,.7);
@@ -75,10 +76,12 @@
   .game-history>div button {
     background: transparent;
     padding: 5px 15px;
-    border: 1px solid #fff;
+    border: 1px solid #777;
     border-radius: 5px;
     margin-top: 30px;
     margin-bottom: 15px;
+    color: #777;
+    cursor: default;
   }
 
   .game-history>.alpha:before {
@@ -117,7 +120,7 @@
     left: -10px;
     z-index: -1;
   }
-  .game-history .your-team.alpha {
+  .game-history div.your-team {
     display: block;
     position: relative;
   }
@@ -132,10 +135,6 @@
     top: 1px;
     right: 10px;
   }
-  .game-history .your-team.beta {
-    display: block;
-    position: relative;
-  }
   .game-history .your-team.beta:after {
     content: '';
     background: url('./imgs/game/green_team_symbol.png');
@@ -146,10 +145,6 @@
     opacity: .5;
     top: 1px;
     right: 10px;
-  }
-  .game-history .your-team.gamma {
-    display: block;
-    position: relative;
   }
   .game-history .your-team.gamma:after {
     content: '';

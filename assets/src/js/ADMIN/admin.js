@@ -3,14 +3,11 @@
 var _ = require('../tools.js');
 
 var admin = {
+  searchUsers: _.byId('search-users'),
+  usersResults: _.byId('users-results'),
+  template: _.byId('template'),
   init: function() {
     var self = this;
-
-    self.searchUsers = _.byId('search-users');
-    self.usersResults = _.byId('users-results');
-
-
-    self.template = _.byId('template');
 
     self.searchUsers.addEventListener('keyup', function() {
       _.post('/admin/users', {userReq: self.searchUsers.value}, function(data) {
