@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 var _             = require('./tools.js');
 var map           = require('./UI/map.js');
