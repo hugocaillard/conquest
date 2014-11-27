@@ -5,6 +5,8 @@ var uglify       = require('gulp-uglify');
 var minifyCSS    = require('gulp-minify-css');
 var Duo          = require('duo');
 var livereload   = require('gulp-livereload');
+var imagemin     = require('gulp-imagemin');
+var pngquant     = require('imagemin-pngquant');
 
 /*
  * Watch
@@ -58,9 +60,23 @@ gulp.task('css-prod', function() {
 gulp.task('default', ['js', 'css', 'watch']);
 
 /*
- * Prod (temporary)
+ * Prod
 */
 gulp.task('prod', ['js-prod', 'css-prod']);
+
+/*
+ * image min
+*/
+gulp.task('image', function () {
+  return gulp.src('./assets/src/imgs/**/*')
+    .pipe(imagemin({
+      optimizationLevel: 5,
+      progressive: true,
+      svgoPlugins: [{removeViewBox: false}],
+      use: [pngquant()]
+    }))
+    .pipe(gulp.dest('./assets/public/imgs/'));
+});
 
 /*
  * Duo
