@@ -1,3 +1,5 @@
+'use strict';
+
 var particles = require('VincentGarreau/particles.js@1.0.3:/particles.js');
 var _ = require('../tools.js');
 
@@ -96,6 +98,13 @@ var home = {
     inputUsername.addEventListener('keypress', cleanUsername);
     inputUsername.addEventListener('keyup', cleanUsername);
     inputUsername.addEventListener('keydown', cleanUsername);
+  },
+
+  showMessage: function(msg) {
+    _.$$('h1').classList.remove('up');
+    _.$$('.login-section').remove();
+    _.byId('message').innerHTML = msg;
+    _.byId('message').classList.add('show');
   }
 }
 

@@ -1,8 +1,18 @@
 'use strict';
 
 var _ = require('./tools.js');
+var instantClick = require('hugocaillard/instantclick@v3.0.2:/instantclick.js');
 
 document.addEventListener('DOMContentLoaded', function() {
+  instantClick.init(true);
+  instantClick.on('change', function() {
+    domReady()
+  });
+
+  domReady();
+});
+
+function domReady() {
   /**
     * send forms with ajax
   */
@@ -18,6 +28,14 @@ document.addEventListener('DOMContentLoaded', function() {
         _.post(url, data, function(d) {
           if (d.logged === true) {
             window.location.href = '/game';
+          }
+        });
+      }
+      if (data && method === 'post' && url === '/users/register') {
+        _.post(url, data, function(d) {
+          if (d.success === true) {
+            var home = require('./UI/home.js');
+            home.showMessage(d.message);
           }
         });
       }
@@ -56,6 +74,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var home = require('./UI/home.js');
     home.setParticles();
   }
-});
+
+  if (!!_.byId('tuto')) {
+    var tuto = require('./UI/tuto.js');
+    tuto.init();
+  }
+}
 
 

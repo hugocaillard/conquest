@@ -81,6 +81,7 @@ ssl
 nbproject
 
 components
+assets/src/imgs/
 assets/public/app.js
 assets/public/admin.js
 assets/public/mobile.js

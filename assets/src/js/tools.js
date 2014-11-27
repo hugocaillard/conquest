@@ -1,3 +1,5 @@
+'use strict';
+
 // Our library of useful functions.
 
 /**
@@ -74,7 +76,7 @@ module.exports.post = function(url, data, cb) {
 };
 
 module.exports.get = function(url, cb) {
-  request = new XMLHttpRequest();
+  var request = new XMLHttpRequest();
   request.open('GET', url, true);
 
   request.onload = function() {

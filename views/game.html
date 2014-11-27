@@ -90,6 +90,18 @@
         <p class="bitly" id="bitly"></p>
       </div>
     </div>
+
+    <div class="tuto" id="tuto">
+      <div class="img-container" id="img-container" data-index="1">
+        <div class="tuto-btn hide" id="previous-slide"><span>&lsaquo;</span> Previous</div>
+        <div class="tuto-btn" id="quit-slide">Play <span></span></div>
+        <div class="tuto-btn" id="next-slide">Next <span>&rsaquo;</span></div>
+      </div>
+    </div>
+
+    <div class="result victory" id="victory"></div>
+
+    <div class="result defeat" id="defeat"></div>
   </div>
 
   <!-- PANELS -->
@@ -97,7 +109,7 @@
     <div class="tabs-section">
       <div class="tab" id="player-tab"></div>
       <div class="tab" id="team-tab"></div>
-      <div class="tab" id="infos-tab"></div>
+      <div class="tab" id="show-slide"></div>
       <div class="tab" id="hide-panel-tab"><span></span></div>
     </div>
     <div class="top-section-container">
@@ -290,14 +302,10 @@
     </div>
 
     <div class="chat">
-      <div class="messages">
-        <p class="message action beta">
-          <span class="username team">Beta team </span>
-          <span class="content">has captured sector <span class="bold">7-10</span></span>
-        </p>
-        <p class="message alpha">
-          <span class="username">Cohars: </span>
-          <span class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+      <div class="messages" id="messages">
+        <p class="message" id="template-message">
+          <span class="username"></span>
+          <span class="content"></span>
         </p>
       </div>
     </div>

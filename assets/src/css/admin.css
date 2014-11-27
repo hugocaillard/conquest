@@ -1,7 +1,13 @@
 .admin-container {
+  position: absolute;
+  top: 0; left: 0;
+  bottom: 0;right: 0;
   padding: 0 30px 200px;
   background-color: #fefefe;
 }
+  .admin-container h1 {
+    display: none;
+  }
   .admin-container table {
     width: 100%;
   }
@@ -14,11 +20,14 @@
     height: 30px;
     line-height: 30px;
     padding: 0 4px;
+    max-width: 90px;
+
   }
     .admin-container td>input {
       border: none;
       width: auto;
       background-color: transparent;
+      width: 100%;
     }
   .admin-container tr:nth-child(2n) {
     background-color: #eee;

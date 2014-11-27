@@ -3,6 +3,7 @@
 var _             = require('./tools.js');
 var map           = require('./UI/map.js');
 var sockets       = require('./sockets.js');
+var chat          = require('./chat.js');
 
 var chooseFaction = require('./UI/chooseFaction.js');
 var flashMessages = require('./UI/flashMessages.js');
@@ -36,6 +37,7 @@ var game = {
       flashMessages.init();
       sounds.init();
       panels.init();
+      chat.init();
     }
     else if (_.byId('board-admin')) {
       mapData.init('board-admin');
@@ -50,7 +52,6 @@ var game = {
   },
 
   countdown: function(d) {
-    console.log(d);
     if (d.count) {
       panels.setCountdown(d.count/1000);
     }

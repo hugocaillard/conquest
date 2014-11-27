@@ -15,13 +15,15 @@
 
   <div class="landing" id="landing">
     <div class="buttons">
-      <a class="about" href="">About</a>
-      <a class="how-to" href="">How to play</a>
+      <a href="/lobby" data-instant>Lobby</a>
+      <a class="about" href="" data-instant>About</a>
+      <a class="how-to" id="show-slide">How to play</a>
     </div>
 
     <div id="particles-js"></div>
 
     <h1 class="title">conquest</h1>
+    <p class="message" id="message"></p>
     <div class="planet">
       <div class="outer-planet"></div>
       <div class="med-planet"></div>
@@ -65,7 +67,16 @@
       <div class="login-cta show"><a href="#login">Log In</a></div>
       <div class="signin-cta show"><a href="#signin">Sign In</a></div>
     </div>
+  </div>
 
+  <div class="overlays" id="overlays">
+    <div class="tuto" id="tuto">
+      <div class="img-container" id="img-container" data-index="1">
+        <div class="tuto-btn hide" id="previous-slide"><span>&lsaquo;</span> Previous</div>
+        <div class="tuto-btn" id="quit-slide">Play <span></span></div>
+        <div class="tuto-btn" id="next-slide">Next <span>&rsaquo;</span></div>
+      </div>
+    </div>
   </div>
 </body>
 </html>

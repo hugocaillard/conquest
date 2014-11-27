@@ -4,7 +4,7 @@
 .overlays>div {z-index: -1;display: none;}
   .overlays>div.show {
     display: block;
-    z-index: 4;
+    z-index: 6;
     text-transform: uppercase;
   }
 
@@ -160,3 +160,99 @@ div.countdown {
   .countdown.gamma .count {
     background-image: url('./imgs/spawn/blue_respawn.png');
   }
+
+
+/** RESULT VICTORY-DEFEAT */
+.result {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 513px;
+  height: 322px;
+  margin-top: -161px;
+  margin-left: -257px;
+  background-size: cover;
+}
+  .alpha .victory {background-image: url('./imgs/game/red_victory.png')}
+  .beta  .victory {background-image: url('./imgs/game/green_victory.png')}
+  .gamma .victory {background-image: url('./imgs/game/blue_victory.png')}
+
+  .alpha .defeat {background-image: url('./imgs/game/red_defeat.png')}
+  .beta  .defeat {background-image: url('./imgs/game/green_defeat.png')}
+  .gamma .defeat {background-image: url('./imgs/game/blue_defeat.png')}
+
+
+/** TUTO SLIDER */
+.tuto {
+  position: absolute;
+  top: 0;bottom: 0;
+  left: 0;right: 0;
+  background-color: rgba(0,0,0,.6);
+}
+  .tuto:after { /* preload images */
+    display:none;
+    content: url('./imgs/tuto/slide1.jpg')
+             url('./imgs/tuto/slide2.jpg')
+             url('./imgs/tuto/slide3.jpg')
+             url('./imgs/tuto/slide4.jpg')
+             url('./imgs/tuto/slide5.jpg')
+             url('./imgs/tuto/slide6.jpg')
+             url('./imgs/tuto/slide7.jpg');
+  }
+  .tuto .tuto-btn {
+    position: absolute;
+    bottom: 6px;
+    color: #fff;
+    cursor: pointer;
+  }
+    .tuto .tuto-btn.hide {display: none;}
+    .tuto .tuto-btn:nth-child(1) {left: 13px;}
+    .tuto .tuto-btn:nth-child(3) {right: 13px;}
+    .tuto .tuto-btn:nth-child(2) {
+      width: 50px;
+      left: 50%;
+      margin-left: -25px;
+      text-align: center;
+    }
+    .tuto .tuto-btn span {
+      position: relative;
+      left: 0;
+      font-size:20px;
+      transition: left .15s ease-in;
+    }
+    .tuto .tuto-btn:nth-child(2) {
+      transition: transform .1s ease-in;
+    }
+    .tuto .tuto-btn:nth-child(1):hover span {left:-3px;}
+    .tuto .tuto-btn:nth-child(2):hover {transform: scale(1.1);}
+    .tuto .tuto-btn:nth-child(3):hover span {left:3px;}
+  .tuto .img-container {
+    position: absolute;
+    top: 8%;
+    left: 8%;
+    width: 82%;
+    height: 82%;
+    background-position: center;
+    background-size: cover;
+  }
+    .tuto .img-container[data-index="1"] {
+      background-image: url('./imgs/tuto/slide1.jpg');
+    }
+    .tuto .img-container[data-index="2"] {
+      background-image: url('./imgs/tuto/slide2.jpg');
+    }
+    .tuto .img-container[data-index="3"] {
+      background-image: url('./imgs/tuto/slide3.jpg');
+    }
+    .tuto .img-container[data-index="4"] {
+      background-image: url('./imgs/tuto/slide4.jpg');
+    }
+    .tuto .img-container[data-index="5"] {
+      background-image: url('./imgs/tuto/slide5.jpg');
+    }
+    .tuto .img-container[data-index="6"] {
+      background-image: url('./imgs/tuto/slide6.jpg');
+    }
+    .tuto .img-container[data-index="7"] {
+      background-image: url('./imgs/tuto/slide7.jpg');
+    }

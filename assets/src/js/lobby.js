@@ -1,3 +1,5 @@
+'use strict';
+
 var _ = require('tools');
 
 var lobby {

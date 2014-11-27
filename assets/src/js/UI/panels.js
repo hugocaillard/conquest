@@ -1,3 +1,5 @@
+'use strict';
+
 var _      = require('../tools.js');
 var sockets = require('../sockets.js');
 
@@ -59,6 +61,7 @@ var panels = {
     if (countdown) _.$$('.countdown').classList.add(team, 'show');
     _.$$('.loader-container').classList.remove('show');
     _.$$('#left-panel').classList.add(team);
+    _.$$('#overlays').classList.add(team);
     _.$$('#right-panel').classList.add(team);
     _.$$('.choose-faction').classList.add(team);
     _.$$('.connect-turret').classList.add(team);
@@ -241,6 +244,21 @@ var panels = {
       self.scoreBeta.style.width  = (scoreB <= 100) ? scoreB+'%' : '100%';
     if (self.scoreGamma.style.width != scoreG)
       self.scoreGamma.style.width = (scoreG <= 100) ? scoreG+'%' : '100%';
+  },
+
+
+  displayVictory: function() {
+    _.byId('victory').classList.add('show');
+    setTimeout(function() {
+      window.location.href = "/lobby";
+    }, 3000);
+  },
+
+  displayDefeat: function() {
+    _.byId('defeat').classList.add('show');
+    setTimeout(function() {
+      window.location.href = "/lobby";
+    }, 3000);
   }
 };
 

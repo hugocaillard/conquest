@@ -64,6 +64,11 @@ video {
   display: none;
 }
 
+#instantclick {
+  display: none;
+}
 
-::-moz-selection {background: none;}
-::selection      {background: none;}
+
+
+.board ::-moz-selection {background: none;}
+.board ::selection      {background: none;}

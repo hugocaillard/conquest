@@ -3,15 +3,26 @@
   "port": 3000,
   "secret": "your secret",
   "mobilesecret": "another secret",
+  "activationkey": "same here",
   "superadmin": "hugo@hugo.com",
   "bitly": {
     "username": "your bit.ly username",
     "token": "bit.ly api key"
   },
-
   "yo": {
     "username" : "your yo username",
     "token" : "yo api key"
+  },
+  "twitter": {
+    "consumer_key"       : "",
+    "consumer_secret"    : "",
+    "access_token"       : "",
+    "access_token_secret": ""
+  },
+  "mail": {
+    "host": "mail.host.com",
+    "user": "mail@domain.com",
+    "pass": "password"
   },
 
   "db": {

@@ -38,6 +38,22 @@ h1 {
     margin-top: 0;
   }
 
+h1+.message {
+  width: 750px;
+  height: 100px;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -375px;
+  text-align: center;
+  color: #fff;
+  z-index: -1;
+}
+  .message.show {
+    z-index: 5;
+  }
+
 .outer-planet {
   width: 570px;
   height: 570px;
@@ -112,17 +128,12 @@ form {
   font-weight: normal;
 }
 
-.landing .buttons a, .lobby .buttons a {
+.landing .buttons>a, .lobby .buttons>a {
   color: #fff;
   text-decoration: none;
-}
-
-.landing .buttons .about, .landing .buttons .how-to, .lobby .buttons .about, .lobby .buttons .how-to {
   display: inline-block;
-}
-
-.landing .buttons .how-to, .lobby .buttons .how-to {
   margin-left: 25px;
+  cursor: pointer;
 }
 
 .landing .start {
@@ -135,12 +146,10 @@ form {
 .landing .start.show{
   display: inline-block;
 }
-
 .landing .start a {
   color: #fff;
   text-decoration: none;
 }
-
 
 .landing .start-contain {
   position: absolute;

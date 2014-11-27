@@ -178,16 +178,14 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: 100;
   }
-  .message.action>.content {
-    color: #444;
-  }
+  .message.notice>.content {color: #777}
 
-.message .username {
-  font-family: 'Montserrat', sans-serif;
-}
-  .message.alpha .username {color:#df1b28;}
-  .message.beta  .username {color:#50b04c;}
-  .message.gamma .username {color:#0272fc;}
+.message .username {font-family: 'Montserrat', sans-serif}
+  .message .username:after {content: ": "}
+  .message.notice .username:after {content: ""}
+  .right-panel.alpha .chat .username {color:#df1b28;}
+  .right-panel.beta  .chat .username {color:#50b04c;}
+  .right-panel.gamma .chat .username {color:#0272fc;}
 
 .message .team {
   text-transform: uppercase;
