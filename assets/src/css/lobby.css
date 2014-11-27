@@ -1,20 +1,20 @@
 .lobby .next-game {
   color: #fff;
   font-family: 'Montserrat', sans-serif;
-  padding-top: 100px;
+  padding-top: 25px;
   position: relative;
   z-index: 2;
 }
 
   .lobby .title {
     text-transform: uppercase;
-    font-size: 24px;
+    font-size: 18px;
   }
 
   #time-till-game {
     font-family: 'Open Sans', sans-serif;
     font-weight: lighter;
-    font-size: 68px;
+    font-size: 40px;
   }
 
   #players-next-game {
@@ -46,7 +46,6 @@
 .game-history {
   width: 800px;
   margin: 0 auto;
-  margin-top: 25px;
 }
 
   .game-history > div {
@@ -60,6 +59,7 @@
     position: relative;
     z-index: 2;
     overflow: hidden;
+    font-size: 12px;
   }
 
   .game-history > div .your-team {
