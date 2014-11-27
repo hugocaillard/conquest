@@ -25,6 +25,9 @@ var sockets = {
     self.socket.on('newJoinMsg', chat.displayMsg);
     self.socket.on('victory', panels.displayVictory);
     self.socket.on('defeat', panels.displayDefeat);
+    self.socket.on('redirect', function(d) {
+      window.location.href = d.url;
+    });
   },
 
   flash: function(resData) {
