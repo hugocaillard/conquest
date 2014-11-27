@@ -167,10 +167,10 @@ div.countdown {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 513px;
-  height: 322px;
-  margin-top: -161px;
-  margin-left: -257px;
+  width: 400px;
+  height: 251px;
+  margin-top: -126px;
+  margin-left: -200px;
   background-size: cover;
 }
   .alpha .victory {background-image: url('./imgs/game/red_victory.png')}

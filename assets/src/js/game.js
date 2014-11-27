@@ -126,7 +126,7 @@ var game = {
         game.ready(game.player.team, game.player.bitly);
         panels.setTileStats(game.map[game.spawn]);
         game.currentTileStats = JSON.stringify(game.map[game.spawn]);
-        game.currentPosition = game.spawn
+        game.currentPosition = game.spawn;
       }
       if (game.firstTick) {
         _.$$('.countdown').classList.remove('show');
@@ -153,7 +153,7 @@ var game = {
     if (flashMessages.isVisible) flashMessages.hide();
     sounds.pFactionSelected();
   }
-}
+};
 
 
 module.exports = game;
