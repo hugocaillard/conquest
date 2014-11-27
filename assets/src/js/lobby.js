@@ -12,7 +12,7 @@ var lobby = {
 
     _.get('/lobby/games', function(d) {
       console.log(d);
-      self.setLobby(d.logged, d.games, d.maxPlayers)
+      self.setLobby(d.logged, d.games, d.maxPlayers*3)
     });
   },
 
@@ -41,6 +41,9 @@ var lobby = {
       else
         title.innerHTML = 'A game is currently in progress';
 
+      if (games[0].nbOfPlayers === maxPlayers) {
+        _.byId('game-full').classList.add('show')
+      }
       if (games[0].nbOfPlayers === maxPlayers && logged) {
         join.classList.add('inactive');
       }
