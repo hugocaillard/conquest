@@ -90,6 +90,7 @@ var views = require(__dirname+'/lib/views');
 app.get('/', views.home);
 app.get('/game', views.game);
 app.get('/lobby', views.lobby);
+app.get('/about', views.about);
 app.get('/admin', views.admin);
 app.get('/admin/map', views.adminMap);
 app.get('/mobile/:token', views.mobile);
