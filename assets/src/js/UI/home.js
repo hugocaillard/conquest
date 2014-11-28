@@ -66,6 +66,7 @@ var home = {
       this.classList.remove('show');
       _.$$('h1').classList.add('up');
       _.$$('.login-section').classList.add('appear');
+      _.byId('login-username').focus();
     });
 
     _.$$('.cancel').addEventListener('click', function(e) {
@@ -87,6 +88,7 @@ var home = {
       _.$$('.login-cta').classList.remove('show');
       _.$$('h1').classList.add('up');
       _.$$('.login-section').classList.add('appear');
+      _.byId('register-username').focus();
     });
 
     var inputUsername = _.byId('register-username')

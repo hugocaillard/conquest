@@ -182,6 +182,8 @@ form {
     opacity: 1;
   }
   .login-section .cancel-contain a {
+    position: relative;
+    top: 14px;
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;

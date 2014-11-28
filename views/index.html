@@ -44,18 +44,18 @@
 
     <div class="login-section">
       <section class="login">
-        <form action="/users/login" method="post" class="ajax">
+        <form action="/users/login" method="post" class="ajax" id="login-username">
           <input class="form-username" type="text" name="username" placeholder="Enter your username">
           <input class="form-password" type="password" name="password" placeholder="Password">
           <input type="checkbox" data-action="showPassword">
           <label for="showPassword"><small>Show password</small></label>
           <button class="submit" type="submit">Log In</button>
         </form>
-        <div class="form-separator">or</div>
+<!--         <div class="form-separator">or</div>
         <div class="social-connect">
           <a href="" class="facebook-connect social-button-connect">Log in with Facebook</a>
           <a href="" class="twitter-connect social-button-connect">Log in with Twitter</a>
-        </div>
+        </div> -->
       </section>
 
       <section class="register">
@@ -69,7 +69,7 @@
        </form>
       </section>
       <div class="cancel-contain">
-        <div class="cancel"><a href="#cancel">Cancel</a></div>
+        <div class="cancel"><a href="">Cancel</a></div>
       </div>
     </div>
 
