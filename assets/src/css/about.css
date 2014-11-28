@@ -1,0 +1,19 @@
+.about-page .about-container {
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
+}
+
+  .about-page .about-container .title {
+    font-size: 48px;
+    margin-bottom: 50px;
+    padding-top: 100px;
+  }
+
+  .about-page .about-container a {
+    color: #fff;
+  }
+
+    .about-page .about-container ul li {
+      list-style: none;
+    }
