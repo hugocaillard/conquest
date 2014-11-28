@@ -1,7 +1,13 @@
 .about-page .about-container {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+  padding: 0 20px;
   color: #fff;
   font-family: 'Montserrat', sans-serif;
   font-weight: lighter;
+  line-height: 24px;
+  z-index: 4;
 }
 
   .about-page .about-container .title {
@@ -9,11 +15,9 @@
     margin-bottom: 50px;
     padding-top: 100px;
   }
-
   .about-page .about-container a {
     color: #fff;
   }
-
     .about-page .about-container ul li {
       list-style: none;
     }
@@ -23,9 +27,8 @@
   left: 20px;top: 20px;
   z-index: 2;
 }
-
 .twitter-follow-button {
   position: absolute;
-  left: 90px; top: 15px;
+  left: 90px; top: 20px;
   z-index: 2;
 }
