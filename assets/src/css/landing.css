@@ -115,7 +115,7 @@ form {
   color: #fff;
 }
 
-.landing .buttons, .lobby .buttons {
+.landing .buttons, .lobby .buttons, .about-page .buttons {
   position: absolute;
   top: 25px;
   right: 50px;
@@ -128,7 +128,7 @@ form {
   font-weight: normal;
 }
 
-.landing .buttons>a, .lobby .buttons>a {
+.landing .buttons>a, .lobby .buttons>a, .about-page .buttons>a {
   color: #fff;
   text-decoration: none;
   display: inline-block;
