@@ -328,7 +328,21 @@
   <!--
     SOUNDS
   -->
-  <video src="/sounds/faction-hover.mp3" id="s-faction-hover"></video>
-  <video src="/sounds/faction-selected.mp3" id="s-faction-selected"></video>
+  <video preload loop id="s-faction-selected">
+    <source src="/sounds/faction-selected.ogg" type="video/ogg">
+    <source src="/sounds/faction-selected.mp3" type="audio/mpeg">
+  </audio>
+  <video preload loop id="s-upgrade">
+    <source src="/sounds/level-up.ogg" type="video/ogg">
+    <source src="/sounds/level-up.mp3" type="audio/mpeg">
+  </audio>
+  <video preload loop id="s-victory">
+    <source src="/sounds/victory.ogg" type="video/ogg">
+    <source src="/sounds/victory.mp3" type="audio/mpeg">
+  </audio>
+  <video preload loop id="s-defeat">
+    <source src="/sounds/defeat.ogg" type="video/ogg">
+    <source src="/sounds/defeat.mp3" type="audio/mpeg">
+  </audio>
 </body>
 </html>

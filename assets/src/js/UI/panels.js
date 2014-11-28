@@ -2,6 +2,7 @@
 
 var _      = require('../tools.js');
 var sockets = require('../sockets.js');
+var sounds  = require('./sounds.js');
 
 var panels = {
   init: function(team) {
@@ -84,7 +85,10 @@ var panels = {
     });
 
     _.elLoop(self.playerUpgrades, function(el) {
-      el.addEventListener('click', sockets.upgrade);
+      el.addEventListener('click', function() {
+        sockets.upgrade.call(this);
+        sounds.pUpgrade();
+      });
     });
   },
 
@@ -250,6 +254,7 @@ var panels = {
 
 
   displayVictory: function() {
+    sounds.pVictory();
     _.byId('victory').classList.add('show');
     setTimeout(function() {
       window.location.href = "/lobby";
@@ -257,6 +262,7 @@ var panels = {
   },
 
   displayDefeat: function() {
+    sounds.pDefeat();
     _.byId('defeat').classList.add('show');
     setTimeout(function() {
       window.location.href = "/lobby";

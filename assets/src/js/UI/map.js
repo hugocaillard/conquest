@@ -29,8 +29,9 @@ var map = {
         self.currentPos.element.back().first().stroke({'width': 1, 'color': '#181818'});
       if (player.faction === null)
         flashMessages.show('Welcome.<br>Click on a tile owned by your team to spawn');
-      else
+      else {
         flashMessages.show('You are dead<br>Click on a tile owned by your team to respawn');
+      }
 
     }
   },
