@@ -25,6 +25,7 @@ var panels = {
     // tile panel DOM elements
     self.tile          = _.byId('tile');
     self.sector        = _.byId('tile-sector');
+    self.ppm           = _.byId('ppm');
     self.captState     = _.byId('capt-state');
     self.captProgress  = _.byId('capt-progress');
     self.sectorName   = _.$$('.right-panel .sector-name')
@@ -180,6 +181,7 @@ var panels = {
       self.setScoreDisplay('gamma', d.scores.gamma);
     else
       self.setScoreDisplay(null, 0);
+    self.ppm.innerHTML = (d.pPT > 1) ? (d.pPT*3) +'pts/mn' : (d.pPT*3) +'pts/mn';
   },
 
   setFactionsStats: function(d) {

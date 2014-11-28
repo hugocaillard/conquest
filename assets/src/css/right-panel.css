@@ -45,11 +45,12 @@
   font-weight: 100;
   font-size: 10px;
 }
-#icon-team, #icon-fight {
-  width: 52px;
-  height: 42px;
-  position: absolute;;
-  top: 20px;
+div.ppm {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  font-size: 22px;
+  font-family: 'Open Sans', sans-serif;
 }
 .deploy-turret {
   width: 64px;
