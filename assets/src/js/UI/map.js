@@ -172,6 +172,16 @@ var map = {
                      .stroke({width: 0})
                      .fill('#fff');
 
+
+      if (i==0) {
+        var center = nested.path('M249.7 422.7l28.3-49h-56.6zM388.6 180.8H332l28.3 49zM166.3 181.4h-56.6l28.3 49zM275.2 306.2l50.9-.1-50.9-88.1v.1L249.7 174l-50.9 88.2h.1l-25.5 44.1h101.8zm-25.5-44.1zM409.1 354.1l-106.2-184v.1l-53.1-92-106.2 184h.1l-53.1 92H303v-.1h106.1zM213.2 198.9l36.5-63.3 73 126.5h.1l36.5 63.2H213.2v.1h-73l73-126.5z');
+
+        center.move(-159, -173)
+              .fill('#fff')
+              .stroke({width: 0})
+              .scale(.07);
+      }
+
       nested.attr('id', i);
       nested.attr('name', t.id);
       nested.attr('data-rank', i);
