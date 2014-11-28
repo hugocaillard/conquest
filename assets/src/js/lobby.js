@@ -36,8 +36,15 @@ var lobby = {
       title.innerHTML = 'A new game will start very soon!';
     }
     else {
-      if (!games[0].ticks && games[0].willStartAt > Date.now())
+      if (!games[0].ticks && games[0].willStartAt > Date.now()) {
         title.innerHTML = 'Next game starting soon';
+        if (logged) {
+          join.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = '/game';
+          });
+        }
+      }
       else
         title.innerHTML = 'A game is currently in progress';
 
