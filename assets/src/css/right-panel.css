@@ -39,6 +39,7 @@
 }
   .sector-name:before {content: 'sector ';}
   .sector-name.light:before {display: none;}
+
 .sector-deco {
   font-family: 'Open Sans', sans-serif;
   font-weight: 100;
@@ -49,21 +50,6 @@
   height: 42px;
   position: absolute;;
   top: 20px;
-}
-#icon-team {
-  right: 14px;
-  background: url('./imgs/game/neutral_control.png') no-repeat center;
-  /*
-  background: url('./imgs/game/green_team_symbol.png') no-repeat center;
-  background: url('./imgs/game/red_team_symbol.png.png') no-repeat center;
-  background: url('./imgs/game/blue_team_symbol..png') no-repeat center;
-  */
-  background-size: 40px;
-}
-#icon-fight {
-  right: 65px;
-  background: url('./imgs/game/figth.png') no-repeat center;
-  background-size: 34px;
 }
 .deploy-turret {
   width: 64px;
@@ -142,7 +128,7 @@
     background: url('./imgs/game/medic_grey.png') no-repeat center;
     background-size: 20px;
   }
-  .tile-stats>div.alpha {background-color: #49161D;}
+  .tile-stats>div.alpha {background-color: #49161d;}
   .tile-stats>div.beta  {background-color: #1d442a;}
   .tile-stats>div.gamma {background-color: #0d3063;}
   .stats-container>.shadows {

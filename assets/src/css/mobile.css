@@ -7,23 +7,171 @@ html, body {
   font-family: 'Montserrat', sans-serif;
 }
 body {
-  max-width: 1000px;
-  margin: auto;
+  background-image: url('./imgs/mobile/bg_phone_HD.jpg');
+  background-position: center top;
+  background-size: cover;
 }
 
-div.btn {
-  width: 100px;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  border: solid 1px #555;
-  cursor: pointer;
-  opacity: .6;
-  transition: opacity .15s ease-in;
-}
-  div.btn:hover {
-    opacity: 1;
+
+  /** HOME */
+  h1 {
+    margin-top: 50px;
+    height: 43px;
+    background: url('./imgs/mobile/logo_phone.png') no-repeat center;
+    background-size: 268px 43px;
+    color: transparent;
   }
+  div.content {
+    margin-top: 50px;
+    padding: 0 10%;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  /** TURRET */
+  .sector {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+  }
+    .sector:before {content: 'sector ';}
+    .sector.light:before {display: none;}
+
+
+  div.button {
+    width: 40%;
+    padding-top: 30%;
+    margin: 0 5%;
+    float: left;
+    background: url('') no-repeat center;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+  }
+    div.deploy {
+      background-image: url('./imgs/mobile/turret.png');
+      background-size: 75px 45px;
+    }
+    .deploy.inactive {
+      background-image: url('./imgs/mobile/turret_inactive.png');
+      background-size: 75px 45px;
+      color: #555;
+    }
+    div.get-back {
+      background-image: url('./imgs/mobile/retake.png');
+      background-size: 55px 45px;
+    }
+    .get-back.inactive {
+      background-image: url('./imgs/mobile/retake_inactive.png');
+      background-size: 55px 45px;
+      color: #555;
+    }
+  .gold {
+    padding: 3%;
+    line-height: 40px;
+    background-color: #222;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    box-shadow: inset 0 1px 2px black;
+  }
+    .gold>span {
+      display: block;
+      position: absolute;
+      top: 10px;
+      right: 3%;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 120%;
+    }
+    .alpha .gold>span {color:#bf2318;}
+    .beta  .gold>span {color:#50b04c;}
+    .gamma .gold>span {color:#0272fc;}
+
+  .skills {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    background-color: #161616;
+  }
+    .skill {
+      position: relative;
+      margin: 0;
+      padding: 3%;
+    }
+      .skill.life {
+        z-index: 2;
+        border-bottom: solid 1px #000;
+        box-shadow: 0 1px 0 #222;
+      }
+      .skill.life h2 {
+        background: url('./imgs/game/life.png') no-repeat left / 20%;
+      }
+      .skill.dmg h2 {
+        background: url('./imgs/mobile/damage.png') no-repeat left / 20%;
+      }
+      h2 {
+        margin: 0;
+        text-transform: uppercase;
+        font-size: 16px;
+        line-height: 40px;
+        padding-left: 20px;
+      }
+        h2>span {
+          font-family: 'Open Sans', sans-serif;
+          color: #777;
+        }
+          h2>span>span {
+            display: inline-block;
+            position: relative;
+            left: 4px;
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            font-size: 28px;
+          }
+      .upgrade-btn {
+        position: absolute;
+        top: 10px;
+        right: 3%;
+        font-family: 'Open Sans', sans-serif;
+        text-transform: uppercase;
+        border: solid 1px #fff;
+        border-radius: 3px;
+        padding: 6px 10px;
+        display: none;
+      }
+        .upgrade-btn.show {
+          display: block;
+        }
+        .upgrade-btn:active {
+          background-color: rgba(255,255,255,.2);
+        }
+      .description {
+        margin: 4px 0;
+        font-size: 80%;
+        font-family: 'Open Sans', sans-serif;
+        color: #777;
+      }
+      .life-bar {
+        margin: 6px 0;
+        width: 100%;
+        height: 4px;
+        border-radius: 2px;
+        background-color: #777;
+        overflow: hidden;
+      }
+        .life-bar>div {
+          height: 4px;
+          width: 50%;
+          border-radius: 2px;
+        }
+        .alpha .life-bar>div {background-color: #bf2318;}
+        .beta  .life-bar>div {background-color: #50b04c;}
+        .gamma .life-bar>div {background-color: #0272fc;}
 
 
 ::-moz-selection {background: none;}

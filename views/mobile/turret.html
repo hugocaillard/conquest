@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <title>Conquest - Turret</title>
 
   <link rel="icon" href="/favicon.ico">
@@ -23,8 +23,28 @@
       ga('send', 'pageview');
     }
   </script>
-  <div class="deploy btn" id="deploy">Deploy</div>
-  <div class="get-back btn" id="get-back">Get Back</div>
+
+  <p class="sector" id="sector"></p>
+  <div class="deploy button inactive" id="deploy">Deploy</div>
+  <div class="get-back button inactive" id="get-back">Get Back</div>
+
+  <div class="skills" id="skills">
+    <div class="gold">
+      Gold remaining
+      <span id="gold">0</span>
+    </div>
+    <div class="skill life">
+      <h2>Life <span>Grade <span id="life-grade">1</span></span></h2>
+      <button class="upgrade-btn" id="up-life">Upgrade</button>
+      <div class="life-bar" id="life-bar"><div></div></div>
+      <div class="description">The life level determines the amount of life points that own your turret.</div>
+    </div>
+    <div class="skill dmg">
+      <h2>Damages <span>Grade <span id="dmg-grade">1</span></span></h2>
+      <button class="upgrade-btn" id="up-dmg">Upgrade</button>
+      <div class="description">The level determines the amount of damages that deals your turret.</div>
+    </div>
+  </div>
 
 </body>
 </html>
