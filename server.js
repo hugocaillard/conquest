@@ -31,6 +31,8 @@ else {
 **/
 var app = require('koa')();
 
+// init db
+require(__dirname+'/lib/db');
 
 // session
 var session = require('koa-generic-session');

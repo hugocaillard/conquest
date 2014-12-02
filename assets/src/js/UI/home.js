@@ -93,8 +93,8 @@ var home = {
 
     var inputUsername = _.byId('register-username')
     var cleanUsername = function() {
-      if (this.value != this.value.replace(/[\/|&;$%@"'<>{}()+,]/g, ''))
-        this.value = this.value.replace(/[\/|&;$%@"'<>{}()+,]/g, '');
+      if (this.value != this.value.replace(/[\/|&;$%@"'<>{}()+,.!?]/g, ''))
+        this.value = this.value.replace(/[\/|&;$%@"'<>{}()+,.!?]/g, '');
     };
 
     inputUsername.addEventListener('keypress', cleanUsername);
