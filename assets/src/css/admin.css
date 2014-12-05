@@ -4,6 +4,7 @@
   bottom: 0;right: 0;
   padding: 0 30px 200px;
   background-color: #fefefe;
+  overflow: auto;
 }
   .admin-container h1 {
     display: none;

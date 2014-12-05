@@ -5,13 +5,18 @@ var _ = require('../tools.js');
 var admin = {
   searchUsers: _.byId('search-users'),
   usersResults: _.byId('users-results'),
+
+  registeredEl: _.byId('registered'),
+  confirmedEl: _.byId('confirmed'),
+
   template: _.byId('template'),
   init: function() {
     var self = this;
 
-    self.searchUsers.addEventListener('keyup', function() {
+    self.searchUsers.addEventListener('input', function() {
       _.post('/admin/users', {userReq: self.searchUsers.value}, function(data) {
-        self.displayUsers(data);
+        self.displayUsers(data.users);
+        self.displayStats(data.registered, data.confirmed);
       });
     });
   },
@@ -42,6 +47,13 @@ var admin = {
       }
       self.usersResults.appendChild(container);
     }
+  },
+
+  displayStats: function(registered, confirmed) {
+    var self = this;
+
+    self.registeredEl.innerHTML = registered;
+    self.confirmedEl.innerHTML = confirmed;
   },
 
   updateUser: function() {
