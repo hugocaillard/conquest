@@ -2,6 +2,7 @@
 
 [Conquest.io](http://conquest.io)
 
+![conquest](https://pbs.twimg.com/profile_banners/2889636136/1417041584/1500x500)
 
 RTS game.
 Made with with modern Web technologies.
