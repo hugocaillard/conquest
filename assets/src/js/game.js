@@ -9,7 +9,7 @@ var chooseFaction = require('./UI/chooseFaction.js');
 var flashMessages = require('./UI/flashMessages.js');
 var panels        = require('./UI/panels.js');
 var connectTurret = require('./UI/connectTurret.js');
-var sounds        = require('./UI/sounds.js');
+
 
 var game = {
   isReady: false,
@@ -35,7 +35,6 @@ var game = {
 
       chooseFaction.init();
       flashMessages.init();
-      sounds.init();
       panels.init();
       chat.init();
     }
@@ -151,7 +150,6 @@ var game = {
     sockets.setFaction(faction);
     if (chooseFaction.isVisible) chooseFaction.hide();
     if (flashMessages.isVisible) flashMessages.hide();
-    sounds.pFactionSelected();
   }
 };
 

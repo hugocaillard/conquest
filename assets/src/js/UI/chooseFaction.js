@@ -12,7 +12,6 @@ var chooseFaction = {
     var self = this;
 
     var game = require('../game.js');
-    var sounds = require('./sounds.js');
 
     // Get DOM elements and set event listeners
     var factions = ['soldier', 'engineer', 'medic'];
