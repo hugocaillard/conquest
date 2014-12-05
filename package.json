@@ -1,7 +1,7 @@
 {
   "name": "conquest",
   "version": "0.1.0",
-  "description": "RTS game made with Koa and MongoDB.",
+  "description": "Multiplayer Online RTS game made with Koa, Socket.IO and MongoDB. http://conquest.io",
   "main": "app.js",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
@@ -13,11 +13,11 @@
     "duo": "~0.8.10",
     "gulp": "~3.8.10",
     "gulp-autoprefixer": "~2.0.0",
-    "gulp-imagemin": "^2.0.0",
+    "gulp-imagemin": "~2.0.0",
     "gulp-livereload": "~2.1.1",
-    "gulp-minify-css": "^0.3.11",
-    "gulp-uglify": "^1.0.1",
-    "imagemin-pngquant": "^4.0.0",
+    "gulp-minify-css": "~0.3.11",
+    "gulp-uglify": "~1.0.1",
+    "imagemin-pngquant": "~4.0.0",
     "koa": "~0.13.0",
     "koa-bodyparser": "~1.2.0",
     "koa-csrf": "~2.1.3",
@@ -30,12 +30,15 @@
     "map-stream": "~0.1.0",
     "mobile-detect": "~0.4.2",
     "monk": "~0.9.0",
-    "nodemailer": "^1.3.0",
-    "nodemailer-smtp-transport": "^0.1.13",
+    "nodemailer": "~1.3.0",
+    "nodemailer-smtp-transport": "~0.1.13",
     "passport-local": "~1.0.0",
     "request": "~2.48.0",
     "socket.io": "~1.1.0",
-    "twit": "^1.1.18"
+    "twit": "~1.1.18"
+  },
+  "engines": {
+    "node": ">= 0.11.13"
   },
   "scripts": {
     "start": "node --harmony server",
@@ -45,8 +48,7 @@
     "type": "git",
     "url": "https://github.com/hugocaillard/conquest.git"
   },
-  "author": "",
-  "license": "MIT",
+  "license": "GPL",
   "bugs": {
     "url": "https://github.com/hugocaillard/conquest/issues"
   },
