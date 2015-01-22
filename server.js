@@ -83,8 +83,16 @@ app.get('/lobby/games', lobby.getGames);
 
 
 // serve assets
-var serve = require('koa-static');
-app.use(serve(__dirname+'/assets/public'));
+// gzip assets
+var gzip = require('koa-gzip');
+app.use(gzip());
+
+// keep in cache
+var serve = require('koa-static-cache');
+app.use(serve(__dirname+'/assets/public', {
+  maxAge: 365 * 24 * 60 * 60,
+  gzip: true
+}));
 
 
 // serve views

@@ -65,7 +65,7 @@ h1+.message {
   background: url("./imgs/outer-planet.png");
   background-size: cover;
   opacity: .3;
-  animation:spin 40s linear infinite;
+  animation:spin 60s linear infinite;
 }
 @keyframes spin { 100% { transform:rotate(360deg); } }
 
@@ -124,7 +124,7 @@ form {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 14px;
-  z-index: 3;
+  z-index: 5;
   font-weight: normal;
 }
 
