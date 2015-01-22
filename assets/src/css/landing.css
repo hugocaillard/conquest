@@ -80,7 +80,7 @@ h1+.message {
   background: url("./imgs/med-planet.png");
   background-size: cover;
   opacity: .3;
-  animation:spin 20s linear infinite;
+  animation:spin 50s linear infinite;
 }
 @keyframes spin-bis { 100% { transform:rotate(-360deg); } }
 
@@ -95,7 +95,7 @@ h1+.message {
   background: url("./imgs/med-planet2.png");
   background-size: cover;
   opacity: .7;
-  animation:spin-bis 20s linear infinite;
+  animation:spin-bis 50s linear infinite;
 }
 .inner-planet {
   width: 530px;
@@ -108,7 +108,7 @@ h1+.message {
   background: url("./imgs/inner-planet.png");
   background-size: cover;
   opacity: .7;
-  animation:spin-bis 20s linear infinite;
+  animation:spin-bis 70s linear infinite;
 }
 
 form {

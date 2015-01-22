@@ -22,7 +22,7 @@ var home = {
           enable_auto: true,
           distance: 100,
           color: '#fff',
-          opacity: .3,
+          opacity: .1,
           width: 1,
           condensed_mode: {
             enable: false,
@@ -32,13 +32,13 @@ var home = {
         },
         anim: {
           enable: true,
-          speed: 2
+          speed: 1
         }
       },
       interactivity: {
         enable: true,
         mouse: {
-          distance: 250
+          distance: 200
         },
         detect_on: 'window', // "canvas" or "window"
         mode: 'grab',

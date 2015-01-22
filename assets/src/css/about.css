@@ -3,25 +3,34 @@
   max-width: 600px;
   margin: auto;
   padding: 0 20px;
-  color: #fff;
+  color: #cdcdcd;
   font-family: 'Montserrat', sans-serif;
   font-weight: 100;
   line-height: 26px;
-  z-index: 4;
+  z-index: 2;
   scroll: auto;
 }
 
-  .about-page .about-container .title {
-    font-size: 48px;
-    margin-bottom: 50px;
+  .about-page .title {
     padding-top: 100px;
+    margin-bottom: 50px;
+    color: #fff;
+    font-size: 48px;
   }
-  .about-page .about-container a {
+  .about-page a {
+    text-decoration: none;
     color: #fff;
   }
-    .about-page .about-container ul li {
-      list-style: none;
-    }
+  .about-page a:hover {
+    text-decoration: underline;
+  }
+  .about-page li {
+    list-style: none;
+  }
+  .about-page em {
+    font-style: normal;
+    color: #fff;
+  }
 
 .star-github {
   position: absolute;

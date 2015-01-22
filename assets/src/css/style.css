@@ -54,8 +54,7 @@ body {
     width: 200%;
     height: 200%;
     display: block;
-    margin-left: 1px;
-    margin-top: 1px;
+    margin: 0 1px;
   }
 .panel {
   position: fixed;
@@ -68,7 +67,6 @@ video {
 #instantclick {
   display: none;
 }
-
 
 
 .board ::-moz-selection {background: none;}

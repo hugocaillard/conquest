@@ -33,6 +33,13 @@ You also need to run MongoDB.
 - [SVG.JS](https://github.com/wout/svg.js)
 
 
+## Contributing
+
+- Issues and milestones are currently used as a todo-list (and a roadmap)
+- Pull Requests should mainly be done on the development branch
+- Only releases are merged on the master
+
+
 ## License
 
 All the files are under the GNU GPL License.

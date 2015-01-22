@@ -38,7 +38,7 @@
   },
 
   "game": {
-    "maxPlayers": 30,
+    "maxPlayers": 90,
     "win": 1000,
     "countdown": 0.1,
     "teams": ["alpha", "beta", "gamma"],
