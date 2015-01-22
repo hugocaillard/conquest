@@ -6,7 +6,7 @@
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "bitly": "~1.2.5",
-    "co": "~3.1.0",
+    "co": "~4.1.0",
     "co-monk": "~1.0.0",
     "colors": "~1.0.2",
     "cookie": "~0.1.2",

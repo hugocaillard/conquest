@@ -25,11 +25,13 @@ function domReady() {
       var method = _.attr(self, 'method');
       var data = _.serialize(self);
       if (data && method === 'post' && url === '/users/login') {
+        console.log('login')
         _.post(url, data, function(d) {
           if (d.logged === true) {
             window.location.href = '/game';
           }
         });
+        return;
       }
       if (data && method === 'post' && url === '/users/register') {
         _.post(url, data, function(d) {
