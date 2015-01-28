@@ -1,0 +1,60 @@
+<div class="landing" id="landing">
+  <div class="buttons">
+    <a href="/lobby" data-instant>Lobby</a>
+    <a class="about" href="/about" data-instant>About</a>
+    <a class="how-to" id="show-slide">How to play</a>
+  </div>
+
+  <div id="particles-js"></div>
+
+  <h1 class="title">conquest</h1>
+  <p class="message" id="message"></p>
+  <div class="planet">
+    <div class="outer-planet"></div>
+    <div class="med-planet"></div>
+    <div class="med2-planet"></div>
+    <div class="inner-planet"></div>
+  </div>
+
+
+  <div class="login-section">
+    <section class="login">
+      <form action="/users/login" method="post" class="ajax" id="login-username">
+        <input class="form-username" type="text" name="username" placeholder="Enter your username">
+        <input class="form-password" type="password" name="password" placeholder="Password">
+        <input type="checkbox" data-action="showPassword">
+        <label for="showPassword"><small>Show password</small></label>
+        <button class="submit" type="submit">Log In</button>
+      </form>
+    </section>
+
+    <section class="register">
+      <form action="/users/register" method="post" class="ajax">
+         <input class="form-username" type="text" name="username" placeholder="Username" id="register-username">
+         <input class="form-email" type="email" name="email" placeholder="email">
+         <input class="form-password" type="password" name="password" placeholder="Password">
+         <input type="checkbox" data-action="showPassword">
+         <label for="showPassword"><small>Show password</small></label>
+         <button class="submit" type="submit">Sign Up</button>
+      </form>
+    </section>
+    <div class="cancel-contain">
+      <div class="cancel"><a href="">Cancel</a></div>
+    </div>
+  </div>
+
+  <div class="start-contain">
+    <div class="login-cta show"><a href="#login">Log In</a></div>
+    <div class="signin-cta show"><a href="#signin">Sign In</a></div>
+  </div>
+</div>
+
+<div class="overlays" id="overlays">
+  <div class="tuto" id="tuto">
+    <div class="img-container" id="img-container" data-index="1">
+      <div class="tuto-btn hide" id="previous-slide"><span>&lsaquo;</span> Previous</div>
+      <div class="tuto-btn" id="quit-slide">Play <span></span></div>
+      <div class="tuto-btn" id="next-slide">Next <span>&rsaquo;</span></div>
+    </div>
+  </div>
+</div>

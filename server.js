@@ -31,6 +31,13 @@ else {
 **/
 var app = require('koa')();
 
+var hbs = require('koa-hbs');
+app.use(hbs.middleware({
+  viewPath: __dirname + '/views',
+  layoutsPath: __dirname + '/views/layouts',
+  defaultLayout: 'main'
+}));
+
 // init db
 require(__dirname+'/lib/db');
 
@@ -96,6 +103,7 @@ app.use(serve(__dirname+'/assets/public', {
 
 
 // serve views
+
 var views = require(__dirname+'/lib/views');
 app.get('/', views.home);
 app.get('/game', views.game);

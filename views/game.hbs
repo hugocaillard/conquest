@@ -1,0 +1,300 @@
+<div class="bg-container" id="bg-container"></div>
+<div id="board" class="board"></div>
+<div class="top-panel">
+  <div class="time" id="duration">00:00:00</div>
+  <div class="score">
+    <div class="score-bar"><span id="score-alpha"></span></div>
+    <div class="score-bar"><span id="score-beta"></span></div>
+    <div class="score-bar"><span id="score-gamma"></span></div>
+  </div>
+</div>
+
+
+<!-- OVERLAYS -->
+<div class="overlays" id="overlays">
+  <div class="loader-container show">
+    <div class="loader" id="loader"></div>
+  </div>
+
+  <div class="flash" id="flash">
+    <p class="spawning">Click on a tile to spawn</p>
+  </div>
+
+  <div class="countdown">
+    <div class="count">
+      <p>The game starts in</p>
+      <p id="countdown">00:00:00</p>
+    </div>
+  </div>
+
+  <div class="choose-faction" id="choose-faction">
+    <div id="soldier">
+      <h3>Soldier</h3>
+      <h3 class="level">Level <span></span></h3>
+      <div class="inner">
+        <img src="/imgs/soldier_white.png">
+        <p class="life">Life <span></span></p>
+        <p class="damages">Strength grade <span></span></p>
+        <p class="capture">Capture grade <span></span></p>
+        <p class="healing">Health grade <span></span></p>
+      </div>
+    </div>
+    <div id="engineer">
+      <h3>Engineer</h3>
+      <h3 class="level">Level <span></span></h3>
+      <div class="inner">
+        <img src="/imgs/engineer_white.png">
+        <p class="life">Life <span></span></p>
+        <p class="damages">Strength grade <span></span></p>
+        <p class="capture">Capture grade <span></span></p>
+        <p class="healing">Health grade <span></span></p>
+      </div>
+    </div>
+    <div id="medic">
+      <h3>Medic</h3>
+      <h3 class="level">Level <span></span></h3>
+      <div class="inner">
+        <img src="/imgs/medic_white.png">
+        <p class="life">Life <span></span></p>
+        <p class="damages">Strength grade <span></span></p>
+        <p class="capture">Capture grade <span></span></p>
+        <p class="healing">Health grade <span></span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="connect-turret" id="connect-turret">
+    <div class="close-turret"></div>
+    <p>Follow the instructions to deploy a turret.</p>
+    <div class="qrcode">
+      <p>Flash the QR Code with your smartphone</p>
+      <img src="" id="qrcode" width="100px" height="100px">
+    </div>
+    <div class="or">OR</div>
+    <div class="bitly">
+      <p>Enter this link<br> on your smartphone</p>
+      <p class="bitly" id="bitly"></p>
+    </div>
+  </div>
+
+  <div class="tuto" id="tuto">
+    <div class="img-container" id="img-container" data-index="1">
+      <div class="tuto-btn hide" id="previous-slide"><span>&lsaquo;</span> Previous</div>
+      <div class="tuto-btn" id="quit-slide">Play <span></span></div>
+      <div class="tuto-btn" id="next-slide">Next <span>&rsaquo;</span></div>
+    </div>
+  </div>
+
+  <div class="result victory" id="victory"></div>
+
+  <div class="result defeat" id="defeat"></div>
+</div>
+
+<!-- PANELS -->
+<div id="left-panel" class="panel left-panel">
+  <div class="tabs-section">
+    <div class="tab" id="player-tab"></div>
+    <div class="tab" id="team-tab"></div>
+    <div class="tab" id="show-slide"></div>
+    <div class="tab" id="hide-panel-tab"><span></span></div>
+  </div>
+  <div class="top-section-container">
+    <a class="logout" href="/logout"></a>
+    <div id="tab-name">Player Review</div>
+  </div>
+
+<!--Player infos-->
+
+  <div id="player-infos" class="infos">
+
+    <div class="first-infos-wrapper">
+      <span id="player-name"></span>
+      <span id="player-class"></span>
+      <div class="sector-deco">/////////////////////////////////////</div>
+      <div class="faction-icon" id="faction-icon"></div>
+      <div class="level-wrapper">
+        <div class="xp-wrapper">
+          <div class="level">Level</div>
+          <div id="xp-progress"><span></span></div>
+        </div>
+        <div id="number-level">0</div>
+      </div>
+    </div>
+
+    <div class="skills">
+      <div class="skills-title-wrapper">
+        <span class="title-skills">Skills :</span>
+        <span id="skill-points"></span>
+      </div>
+      <div class="skill-container">
+        <div class="skill-row">
+          <div class="skill-name-container">
+            <span class="skill-name">Life</span>
+            <div class="right-part">
+              <span class="grade" id="life-grade">0</span>
+              <button class="upgrade" data-skill="maxLife">upgrade</button>
+            </div>
+          </div>
+          <div class="skill-description">Amount of life points that owns your character. Remember to improve your health to better withstand during fights phases.
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-name-container">
+            <span class="skill-name">Strength</span>
+            <div class="right-part">
+              <span>grade</span>
+              <span class="grade" id="dmg-grade">0</span>
+              <button class="upgrade" data-skill="dmg">upgrade</button>
+            </div>
+          </div>
+          <div class="skill-description">Amount of damages that deals your character. The more strength you will have, the easier the fight will be !
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-name-container">
+            <span class="skill-name">Capture</span>
+            <div class="right-part">
+              <span>grade</span>
+              <span class="grade" id="capt-grade">0</span>
+              <button class="upgrade" data-skill="capt">upgrade</button>
+            </div>
+          </div>
+          <div class="skill-description">Effectiveness of your character to quickly capture areas of the map. The better your capture grade is the faster you will conquer.
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-name-container">
+            <span class="skill-name">Heal</span>
+            <div class="right-part">
+              <span>grade</span>
+              <span class="grade" id="healing-grade">0</span>
+              <button class="upgrade" data-skill="heal">upgrade</button>
+            </div>
+          </div>
+          <div class="skill-description">Number of heal points that your character gives every second. The higher the heal is, the higher your chance to survive will be.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Team infos-->
+
+    <div id="team-infos" class="infos">
+
+    <div class="first-infos-wrapper">
+      <span id="player-name">Wadzy</span>
+      <span id="player-class"></span>
+      <div class="sector-deco">/////////////////////////////////////</div>
+      <div class="level-wrapper">
+        <div class="score-left-wrapper">
+          <div class="score">Score</div>
+          <div id="score-left-progress"><span></span></div>
+        </div>
+        <div id="number-score">52%</div>
+      </div>
+    </div>
+
+    <div class="sectors-possessions">
+      <div class="sectors-title-wrapper">
+        <span class="title-sectors">Sector possessions</span>
+      </div>
+      <div class="sectors-content">
+        <div class="info-hover">Hover the graph to see details</div>
+      </div>
+    </div>
+    <div class="players-team">
+      <div class="players-team-title-wrapper">
+        <span class="title-players-team">Players in the team</span><span id="players-number">42</span>
+      </div>
+      <div class="teamates-types-container">
+        <div class="teamates-type-row">
+          <div class="type-name-container">
+            <span class="type-name">Soldiers</span>
+            <div class="right-part">
+              <span id="soldier-number">14</span>
+            </div>
+          </div>
+          <div class="type-description">
+            Soldiers deal the greatest damages. They are very efficient during fights but don’t capture sectors very quickly.
+          </div>
+        </div>
+        <div class="teamates-type-row">
+          <div class="type-name-container">
+            <span class="type-name">Medic</span>
+            <div class="right-part">
+              <span id="soldier-number">21</span>
+            </div>
+          </div>
+          <div class="type-description">
+            Medics can heal other teamates. However it is the class that deals the less damages.
+          </div>
+        </div>
+        <div class="teamates-type-row">
+          <div class="type-name-container">
+            <span class="type-name">Engineers</span>
+            <div class="right-part">
+              <span id="soldier-number">8</span>
+            </div>
+          </div>
+          <div class="type-description">
+            Engineer can capture sectors faster than any other class. They don’t deal many damages but are essential for the victory.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="panel right-panel" id="right-panel">
+  <div class="sector-info">
+    <div class="block1">
+      <div class="sector-name"><span id="tile-sector">0</span></div>
+      <div id="icons-team-fight">
+        <div class="ppm" id="ppm"></div>
+        <div id="icon-team"></div>
+        <div id="icon-fight"></div>
+      </div>
+      <div class="sector-deco">/////////////////////////////////////</div>
+    </div>
+    <div class="deploy-turret" id="deploy-turret">Deploy Turret</div>
+    <div class="capture-wrapper">
+        <div class="score-cap-wrapper">
+          <div class="score-cap">capture</div>
+          <div class="capture-progress"><span id="capt-progress"></span></div>
+        </div>
+        <div class="percent-capture" id="capt-state">0</div>
+      </div>
+  </div>
+  <div class="stats-container">
+    <div class="tile-stats" id="tile-soldiers">
+      <div></div>
+      <div class="alpha">0</div>
+      <div class="beta">0</div>
+      <div class="gamma">0</div>
+    </div>
+    <div class="tile-stats" id="tile-engineers">
+      <div></div>
+      <div class="alpha">0</div>
+      <div class="beta">0</div>
+      <div class="gamma">0</div>
+    </div>
+    <div class="tile-stats" id="tile-medics">
+      <div></div>
+      <div class="alpha">0</div>
+      <div class="beta">0</div>
+      <div class="gamma">0</div>
+    </div>
+    <div class="shadows"></div>
+  </div>
+
+  <div class="chat">
+    <div class="messages" id="messages">
+      <p class="message" id="template-message">
+        <span class="username"></span>
+        <span class="content"></span>
+      </p>
+    </div>
+  </div>
+  <input class="send-msg" id="send-msg" type="text" placeholder="write something">
+</div>

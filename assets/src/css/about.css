@@ -39,6 +39,6 @@
 }
 .twitter-follow-button {
   position: absolute;
-  left: 90px; top: 20px;
+  left: 100px; top: 20px;
   z-index: 2;
 }

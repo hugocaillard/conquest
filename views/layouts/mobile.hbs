@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-  <meta name="description" content="Conquest - The latest futuristic tactical free game of space exploration! Discover its world with dozens of other players. MMO RTS in browser!">
-  <title>Conquest - Turret</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>{{title}}</title>
 
   <link rel="icon" href="/favicon.ico">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/mobile.css">
 
+  <script src="/socket.io/socket.io.js" defer></script>
+  {{#if script}}
+    <script src="/mobile.js" defer></script>
+  {{/if}}
 </head>
 <body>
   <script>
@@ -23,12 +26,7 @@
     }
   </script>
 
-  <h1>Conquest</h1>
+  {{{body}}}
 
-  <div class="content">
-    <p>Please enter this url on your computer and join a game.</p>
-    <p>A link will be provided to allow you to enjoy a specific mobile functionality.</p>
-    <p>We hope to you soon on conquest!</p>
-  </div>
 </body>
 </html>

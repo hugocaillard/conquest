@@ -1,0 +1,42 @@
+<div id="particles-js"></div>
+<div class="lobby" id="lobby">
+
+  <div class="buttons">
+    <a class="login" href="/" data-instant>Login/Signin</a>
+    <a href="/about" data-instant>About</a>
+    <a id="show-slide">How to play</a>
+  </div>
+
+  <div class="next-game">
+    <div class="title" id="title">Next game starting in</div>
+    <div id="players-next-game"></div>
+    <div id="game-full">
+      The game is full.<br>
+      Follow <a class="twitter" href="http://twitter.com/ConquestioGame">@ConquestioGame</a><br>
+      or send a <a class="yo" href="http://justyo.co">Yo to @ConquestYO</a><br>
+      to know when a new game will start.
+    </div>
+    <button id="lobby-join">Join</button>
+    <button id="lobby-spectate" class="inactive">Spectate</button>
+    <div class="title">Last games results</div>
+  </div>
+
+  <div class="game-history">
+    <div id="template">
+      <div class="winner-team">No team won</div>
+      <div class="your-team">You didn't play</div>
+      <div class="player-numbers"></div>
+      <button>Replay</button>
+    </div>
+  </div>
+
+  <div class="overlays" id="overlays">
+    <div class="tuto" id="tuto">
+      <div class="img-container" id="img-container" data-index="1">
+        <div class="tuto-btn hide" id="previous-slide"><span>&lsaquo;</span> Previous</div>
+        <div class="tuto-btn" id="quit-slide">Play <span></span></div>
+        <div class="tuto-btn" id="next-slide">Next <span>&rsaquo;</span></div>
+      </div>
+    </div>
+  </div>
+</div>
