@@ -1,6 +1,6 @@
 # Conquest
 
-[Conquest.io](http://conquest.io)
+[Visuals](https://www.behance.net/gallery/23348031/Conquest)
 
 ![conquest](https://pbs.twimg.com/profile_banners/2889636136/1417041584/1500x500)
 
@@ -12,7 +12,7 @@ You can use [n](https://www.npmjs.org/package/n) to manage several versions of n
 
 ## Getting starterd
 
-```
+```bash
     $ git clone git@github.com:hugocaillard/conquest.git
     $ cd conquest
     $ npm i
